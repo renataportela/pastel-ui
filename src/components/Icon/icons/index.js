@@ -1,0 +1,9 @@
+export { default as Activity } from './Activity';
+export { default as AlertTriangle } from './AlertTriangle';
+export { default as ArrowUp } from './ArrowUp';
+export { default as Check } from './Check';
+export { default as Info } from './Info';
+export { default as Loader } from './Loader';
+export { default as Menu } from './Menu';
+export { default as User } from './User';
+export { default as X } from './X';
