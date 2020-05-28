@@ -1,7 +1,6 @@
 import React from 'react'
 
 import { 
-  Alert,
   Avatar,
   BackTop,
   Badge,
@@ -25,15 +24,6 @@ function App() {
      <Theme>
        <Container>
         <h1>Pastel UI</h1>
-
-        <h2>Alert</h2>
-
-        <div style={{ padding: '30px' }}>
-          <Alert kind="success" icon onClose={() => {}}>Success</Alert>
-          <Alert kind="warning" icon onClose={() => {}}>Warning</Alert>
-          <Alert kind="danger" icon onClose={() => {}}>Danger</Alert>
-          <Alert kind="info" icon onClose={() => {}}>Info</Alert>
-        </div>
 
         <h2>Avatar</h2>
 
