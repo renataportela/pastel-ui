@@ -2,9 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import { BaseColors } from '~/components/Theme'
-import Icon from '~/components/Icon'
-import { Close } from '~/components/Button'
+import { BaseColors } from '~/components/layout/Theme'
+import { Close } from '~/components/layout/Button'
+import Icon from '~/components/content/Icon'
 
 const Outer = styled(BaseColors)`
   padding: .7rem .9rem;

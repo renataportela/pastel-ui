@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 import { opacityInOut } from '~/styles/transitions'
-import Button from '~/components/Button'
+import Button from '~/components/layout/Button'
 
 const BackTopButton = styled(Button)`
   position: fixed;

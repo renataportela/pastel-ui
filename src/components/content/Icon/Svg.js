@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import useTheme from '~/components/Theme/useTheme'
+import useTheme from '~/components/layout/Theme/useTheme'
 
 function Svg({ children, color, fill, height, viewBox, width, ...props }) {
   const { colors } = useTheme()

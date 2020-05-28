@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import { BaseColors } from '~/components/Theme'
+import { BaseColors } from '~/components/layout/Theme'
 
 const TagStyle = styled(BaseColors).attrs(() => ({
   forwardedAs: 'span',

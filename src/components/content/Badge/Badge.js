@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import styled, { css, keyframes } from 'styled-components'
 
 import { roundShape } from '~/styles/mixins'
-import { BaseColors } from '~/components/Theme'
+import { BaseColors } from '~/components/layout/Theme'
 
 const pulse = keyframes`
   0% {

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import BaseColors from '~/components/Theme/BaseColors'
+import BaseColors from '~/components/layout/Theme/BaseColors'
 
 const Text = styled(BaseColors)(props => {
   return {

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import useTheme from '~/components/Theme/useTheme'
+import useTheme from '~/components/layout/Theme/useTheme'
 import TextFieldStyle from './TextFieldStyle'
 
 function TextField({ disabled, error, flat, rows, type, ...props }) {

@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import useTheme from '~/components/Theme/useTheme'
-import Icon from '~/components/Icon'
+import useTheme from '~/components/layout/Theme/useTheme'
+import Icon from '~/components/content/Icon'
 import ButtonStyle from './ButtonStyle'
 
 function Button({ disabled, icon, label, loading, ...props }) {

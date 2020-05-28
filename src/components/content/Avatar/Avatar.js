@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import { roundShape } from '~/styles/mixins'
 import { fontSizes } from '~/styles/params'
 import { Icon } from '~/components'
-import { BaseColors } from '~/components/Theme'
+import { BaseColors } from '~/components/layout/Theme'
 
 const roundSizes = {
   sm: '1.55rem',

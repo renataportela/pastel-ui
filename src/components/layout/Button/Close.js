@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import useTheme from '~/components/Theme/useTheme'
+import useTheme from '~/components/layout/Theme/useTheme'
 import Button from './Button'
 
 const ButtonStyled = styled(Button)`

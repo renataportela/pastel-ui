@@ -1,15 +1,20 @@
-export { default as Alert } from './Alert'
-export { default as Avatar } from './Avatar'
-export { default as BackTop } from './BackTop'
-export { default as Badge } from './Badge'
-export { default as Button, Close } from './Button'
-export { default as Chip } from './Chip'
-export { default as Icon, iconNames, Svg } from './Icon'
-export { default as Ripple } from './Ripple'
-export { default as Tag } from './Tag'
-export { default as TextField } from './TextField'
-export { default as Theme } from './Theme'
+// Content
+export { default as Avatar } from './content/Avatar'
+export { default as Badge } from './content/Badge'
+export { default as Chip } from './content/Chip'
+export { default as Icon, iconNames, Svg } from './content/Icon'
+export { default as Tag } from './content/Tag'
+export { Heading, Paragraph, Text } from './content/typography'
 
-export * from './Grid'
-export * from './Theme'
-export * from './typography'
+// Data Entry
+export { default as TextField } from './dataEntry/TextField'
+
+// Dialog
+export { default as Alert } from './dialog/Alert'
+
+// Layout
+export * from './layout/Grid'
+export { default as BackTop } from './layout/BackTop'
+export { default as Button, Close } from './layout/Button'
+export { default as Ripple } from './layout/Ripple'
+export { default as Theme, BaseColors, useTheme } from './layout/Theme'
