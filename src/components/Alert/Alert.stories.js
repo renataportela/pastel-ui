@@ -8,63 +8,45 @@ export default {
   decorators: [withKnobs],
 }
 
+const KINDS = ['success', 'warning', 'danger', 'info'];
+
 export const closeable = () => {
-  const [show, setShow] = useState([true, true, true, true])
-  const handleClose = index => () =>
-    setShow(prevState => {
-      const newState = [...prevState]
-      newState[index] = false
-      return newState
-    })
+  const [show, setShow] = useState({ success: true, warning: true, danger: true, info: true })
+  const handleClose = kind => () => setShow(() => {
+    return {
+      ...show,
+      [kind]: false
+    }
+  })
+
   return (
     <>
-      {show[0] && (
-        <Alert kind="success" icon onClose={handleClose(0)}>
-          Success
-        </Alert>
-      )}
-      {show[1] && (
-        <Alert kind="warning" icon onClose={handleClose(1)}>
-          Warning
-        </Alert>
-      )}
-      {show[2] && (
-        <Alert kind="danger" icon onClose={handleClose(2)}>
-          Danger
-        </Alert>
-      )}
-      {show[3] && (
-        <Alert kind="info" icon onClose={handleClose(3)}>
-          Info
-        </Alert>
-      )}
+      {KINDS.map(kind => {
+        if (!show[kind]) return null;
+        return (
+          <Alert 
+            key={kind} 
+            kind={kind} 
+            icon={boolean('Icon', false)} 
+            onClose={handleClose(kind)}
+            style={{ textTransform: 'capitalize' }}
+          >
+            {kind}
+          </Alert>
+        );
+      })}
     </>
   )
 }
 
 export const alerts = () => {
-  const [showIcon, setShowIcon] = useState([false, false, false, false])
-  const handleShowIcon = index => () =>
-    setShowIcon(prevState => {
-      const newState = [...prevState]
-      newState[index] = !newState[index]
-      return newState
-    })
-
   return (
     <>
-      <Alert kind="success" icon={boolean('Icon', false)}>
-        {text('Content', 'This an alert.')}
-      </Alert>
-      <Alert kind="warning" icon={boolean('Icon', false)}>
-        {text('Content', 'This an alert.')}
-      </Alert>
-      <Alert kind="danger" icon={boolean('Icon', false)}>
-        {text('Content', 'This an alert.')}
-      </Alert>
-      <Alert kind="info" icon={boolean('Icon', false)}>
-        {text('Content', 'This an alert.')}
-      </Alert>
+      {KINDS.map(kind => (
+        <Alert key={kind} kind={kind} icon={boolean('Icon', false)}>
+          {text('Content', 'This an alert.')}
+        </Alert>
+      ))}
     </>
   )
 }
