@@ -5,7 +5,7 @@ import { Container, Theme } from '../src/components'
 
 addDecorator(story => (
   <Theme>
-    <Container>
+    <Container style={{ marginTop: 30 }}>
       {story()}
     </Container>
   </Theme>
