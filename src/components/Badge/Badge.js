@@ -5,6 +5,24 @@ import styled, { css, keyframes } from 'styled-components'
 import { roundShape } from '~/styles/mixins'
 import { BaseColors } from '~/components/layout/Theme'
 
+function Badge({ bgColor, children, content, dot, textColor, round, ...props}) {
+  if (!content && !dot) return children;
+
+  return (
+    <Outer {...props}>
+      <BadgeIcon 
+        bgColor={bgColor} 
+        textColor={dot ? bgColor : textColor + 'Contrast'}
+        round={round}
+        dot={dot}
+      >
+        {''}{content}
+      </BadgeIcon>
+      {children}
+    </Outer>
+  )
+}
+
 const pulse = keyframes`
   0% {
     transform: scale(0.95);
@@ -24,6 +42,7 @@ const pulse = keyframes`
 
 const Outer = styled.div`
   position: relative;
+  display: inline-block;
 `
 
 const squareBadge = css`
@@ -34,7 +53,7 @@ const squareBadge = css`
 
 const roundBadge = css`
   ${roundShape}
-  top: -1.3rem;
+  top: -1.1rem;
 `;
 
 const dotBadge = css`
@@ -56,24 +75,6 @@ const BadgeIcon = styled(BaseColors).attrs(props => ({
   z-index: 1;
   ${props => props.round ? roundBadge : (props.dot ? dotBadge : squareBadge)}
 `;
-
-function Badge({ bgColor, children, content, dot, textColor, round, ...props}) {
-  if (!content && !dot) return children;
-
-  return (
-    <Outer {...props}>
-      <BadgeIcon 
-        bgColor={bgColor} 
-        textColor={dot ? bgColor : textColor + 'Contrast'}
-        round={round}
-        dot={dot}
-      >
-        {''}{content}
-      </BadgeIcon>
-      {children}
-    </Outer>
-  )
-}
 
 Badge.defaultProps = {
   bgColor: 'primary',

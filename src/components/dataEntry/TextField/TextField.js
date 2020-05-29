@@ -3,71 +3,63 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 import useTheme from '~/components/layout/Theme/useTheme'
-import TextFieldStyle from './TextFieldStyle'
+import ElementStyle from './ElementStyle'
 
-function TextField({ disabled, error, flat, rows, type, ...props }) {
+function TextField({
+  disabled,
+  error,
+  flat,
+  left,
+  right,
+  rows,
+  type,
+  ...props
+}) {
   const { colors } = useTheme()
   const [isFocused, setIsFocused] = useState(false)
-  const hasError = !!error
 
   const handleFocus = () => setIsFocused(true)
   const handleBlur = () => setIsFocused(false)
 
   return (
-    <Outer hasError={hasError}>
-      <TextFieldStyle
-        colors={colors}
-        hasError={hasError}
+    <ElementStyle
+      colors={colors}
+      error={error}
+      disabled={disabled}
+      isFocused={isFocused}
+      left={left}
+      right={right}
+    >
+      <InputStyle
+        error={error}
         disabled={disabled}
-        isFocused={isFocused}
-      >
-        <InputStyle
-          hasError={hasError}
-          disabled={disabled}
-          colors={colors}
-          as={!!rows ? 'textarea' : null}
-          onFocus={handleFocus}
-          onBlur={handleBlur}
-          {...props}
-        />
-      </TextFieldStyle>
-
-      {hasError && (
-        <ErrorMessage textColor={colors.danger}>{error}</ErrorMessage>
-      )}
-    </Outer>
+        colors={colors}
+        as={!!rows ? 'textarea' : null}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
+        {...props}
+      />
+    </ElementStyle>
   )
 }
 
-const Outer = styled.div`
-  margin-bottom: ${props => props.hasError ? '0.5em' : '1em'};
-`
-
 const InputStyle = styled.input`
   outline: 0;
-  width: 100%;
-  height: 100%;
+  flex: 1;
   border: 0;
   background-color: transparent;
   padding: .7rem .8rem;
   font-size: 1.02rem;
-  color: ${props => props.hasError ? props.colors.danger : (props.disabled ? props.colors.disabledContrast : props.colors.text)};
-`
-
-const ErrorMessage = styled.span`
-  font-size: 0.8rem;
-  color: ${props => props.textColor};
-  margin-top: 0.6em;
+  color: ${props => props.error ? props.colors.danger : (props.disabled ? props.colors.disabledContrast : props.colors.text)};
 `
 
 TextField.defaultProps = {
   kind: 'default',
-  error: '',
   type: 'text',
 }
 
 TextField.propTypes = {
-  error: PropTypes.string,
+  error: PropTypes.bool,
   flat: PropTypes.bool,
   rows: PropTypes.number,
   type: PropTypes.string,
