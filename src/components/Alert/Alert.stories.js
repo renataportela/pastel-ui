@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { withKnobs, text, boolean, number } from '@storybook/addon-knobs'
+import { withKnobs, text, boolean } from '@storybook/addon-knobs'
 
 import { Alert } from '~/components'
 

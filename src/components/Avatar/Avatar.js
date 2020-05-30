@@ -5,7 +5,22 @@ import styled from 'styled-components'
 import { roundShape } from '~/styles/mixins'
 import { fontSizes } from '~/styles/params'
 import { Icon } from '~/components'
-import { BaseColors } from '~/components/layout/Theme'
+import { BaseColors } from '~/components/Theme'
+
+function Avatar({ icon, image, text, title, ...props }) {
+  const avatarText = text ? (text.length > 2 ? text.substr(0, 2) : text) : null;
+
+  return (
+    <Round 
+      title={title || text}
+      {...props}
+    >
+      {image && <Image src={image} />}
+      {icon && !image && <Icon name={icon} />}
+      {!icon && <Text>{avatarText}</Text>}
+    </Round>
+  )
+}
 
 const roundSizes = {
   sm: '1.55rem',
@@ -33,21 +48,6 @@ const Image = styled.img`
 const Text = styled.span`
   z-index: 0;
 `;
-
-function Avatar({ icon, image, text, title, ...props }) {
-  const avatarText = text ? (text.length > 2 ? text.substr(0, 2) : text) : null;
-
-  return (
-    <Round 
-      title={title || text}
-      {...props}
-    >
-      {image && <Image src={image} />}
-      {icon && !image && <Icon name={icon} />}
-      {!icon && <Text>{avatarText}</Text>}
-    </Round>
-  )
-}
 
 Avatar.defaultProps = {
   bgColor: 'primary',

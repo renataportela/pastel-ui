@@ -2,9 +2,19 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import { BaseColors } from '~/components/layout/Theme'
-import { Close } from '~/components/layout/Button'
-import Icon from '~/components/content/Icon'
+import { BaseColors } from '~/components/Theme'
+import { Close } from '~/components/Button'
+import Icon from '~/components/Icon'
+
+function Alert({ children, icon, kind, onClose, ...props}) {
+  return (
+    <Outer bgColor={kind} {...props}>
+      {icon && <AlertIcon name={icons[kind]} />}
+      {children}        
+      {onClose && <CloseButton size="sm" onClick={onClose} />}
+    </Outer>
+  )
+}
 
 const Outer = styled(BaseColors)`
   padding: .7rem .9rem;
@@ -32,16 +42,6 @@ const icons = {
   success: 'check',
   warning: 'warning',
 };
-
-function Alert({ children, icon, kind, onClose, ...props}) {
-  return (
-    <Outer bgColor={kind} {...props}>
-      {icon && <AlertIcon name={icons[kind]} />}
-      {children}        
-      {onClose && <CloseButton size="sm" onClick={onClose} />}
-    </Outer>
-  )
-}
 
 Alert.propTypes = {
   children: PropTypes.node.isRequired,

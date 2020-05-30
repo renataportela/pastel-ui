@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import styled, { css, keyframes } from 'styled-components'
 
 import { roundShape } from '~/styles/mixins'
-import { BaseColors } from '~/components/layout/Theme'
+import { BaseColors } from '~/components/Theme'
 
 function Badge({ bgColor, children, content, dot, textColor, round, ...props}) {
   if (!content && !dot) return children;
