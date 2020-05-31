@@ -19,11 +19,11 @@ export const formField = () => {
       label={text('Label', 'Label field')}
       value={value} 
       onChange={handleChange}
-      error={text('Error', '')}    
+      error={text('Error', '')}
+      disabled={boolean('Disabled', false)} 
       inputField={(
         <TextField 
-          placeholder={text('Placeholder', 'Input')} 
-          disabled={boolean('Disabled', false)} 
+          placeholder={text('Placeholder', 'Input')}           
           rows={number('Rows', null)}
           left={text('Left', '')} 
           right={text('Right', '')} 

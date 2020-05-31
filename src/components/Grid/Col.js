@@ -58,7 +58,7 @@ const md = props => mediaQuery('md', props)
 const lg = props => mediaQuery('lg', props)
 const xl = props => mediaQuery('xl', props)
 
-const ColStyle = styled(Flex)`  
+const ColStyle = styled(Flex)`
   position: relative;
   min-height: 1px;
   padding-right: 15px;

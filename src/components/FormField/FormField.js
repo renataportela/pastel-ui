@@ -4,16 +4,17 @@ import styled from 'styled-components'
 
 import useTheme from '~/components/Theme/useTheme'
 
-function FormField({ error, label, name, inputField, value, onChange, ...props }) {
+function FormField({ disabled, error, inputField, label, name, value, onChange, ...props }) {
   const { colors } = useTheme()
   const hasError = !!error;
-  const labelColor = hasError ? colors.danger : 'inherit';
+  const labelColor = hasError ? colors.dangerTint : (disabled ? colors.disabledContrast : 'inherit' );
   const cloneInput = {
     ...inputField,
     props: {
       ...inputField.props,
       name,
       error: hasError,
+      disabled,
       value,
       onChange
     }
@@ -21,7 +22,7 @@ function FormField({ error, label, name, inputField, value, onChange, ...props }
 
   return (
     <Outer {...props}>
-      {label && <Label textColor={labelColor} error={hasError}>{label}</Label>}
+      {label && <Label textColor={labelColor}>{label}</Label>}
       {cloneInput}
       {hasError && (
         <ErrorMessage textColor={colors.danger}>{error}</ErrorMessage>
@@ -35,7 +36,7 @@ const Outer = styled.div`
 `
 
 const Label = styled.label`
-  color: ${props => props.error ? 'red' : 'inherit'};
+  color: ${props => props.textColor};
   font-weight: bold;
   margin-bottom: 0.5rem;
 `
