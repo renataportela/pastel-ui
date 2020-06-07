@@ -18,10 +18,10 @@ export const tags = () => {
       }}
     >
       <Tag>Primary</Tag>
-      <Tag bgColor="success">Success</Tag>
-      <Tag bgColor="warning">Warning</Tag>
-      <Tag bgColor="danger">Danger</Tag>
-      <Tag bgColor="info">Info</Tag>
+      <Tag kind="success">Success</Tag>
+      <Tag kind="warning">Warning</Tag>
+      <Tag kind="danger">Danger</Tag>
+      <Tag kind="info">Info</Tag>
       <Tag bgColor="lightgreen" textColor="blue">
         Color
       </Tag>

@@ -1,6 +1,7 @@
 import React from 'react'
-import { text, withKnobs } from '@storybook/addon-knobs'
+import { text, withKnobs, select } from '@storybook/addon-knobs'
 
+import { AVAILABLE_KINDS } from '~/styles/params'
 import { Chip } from '~/components'
 
 export default {
@@ -31,12 +32,20 @@ export const chips = () => {
       >
         Avatar delete chip
       </Chip>
+      <Chip kind="warning">Warning</Chip>
     </div>
   )
 }
 
-export const color = () => {
+export const colors = () => {
   return (
-    <Chip onDelete={() => {}} bgColor={text('BgColor', 'danger')}>{text('Content', 'Color chip')}</Chip>
+    <Chip 
+      onDelete={() => {}} 
+      kind={select('Kind', AVAILABLE_KINDS, null)} 
+      bgColor={text('BgColor', '#ad0')} 
+      textColor={text('textColor', 'purple')} 
+    >
+      {text('Content', 'Color chip')}
+    </Chip>
   )
 }

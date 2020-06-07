@@ -2,7 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
+import { AVAILABLE_KINDS } from '~/styles/params'
 import { BaseColors } from '~/components/Theme'
+
+function Tag({ children, kind, ...props}) {
+  return (
+    <TagStyle pallete={kind} {...props}>{children}</TagStyle>
+  )
+}
 
 const TagStyle = styled(BaseColors).attrs(() => ({
   forwardedAs: 'span',
@@ -13,18 +20,13 @@ const TagStyle = styled(BaseColors).attrs(() => ({
   display: inline-block;
 `;
 
-function Tag({ children, ...props}) {
-  return (
-    <TagStyle {...props}>{children}</TagStyle>
-  )
-}
-
 Tag.defaultProps = {
-  bgColor: 'primary',
+  kind: 'primary',
 }
 
 Tag.propTypes = {
   content: PropTypes.node,
+  kind: PropTypes.oneOf(AVAILABLE_KINDS),
   title: PropTypes.string,
 }
 

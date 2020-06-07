@@ -26,45 +26,61 @@ export const button = () => {
   );
 }
 
-export const defaultButtons = () => {
+export const buttons = () => {
   return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'space-evenly',
-        marginBottom: '30px',
-      }}
-    >
-      <Button label="Primary" />
-      <Button label="Success" color="success" />
-      <Button label="Warning" color="warning" />
-      <Button label="Danger" color="danger" />
-      <Button label="Info" color="info" />
-      <Button label="Neutral" color="neutral" />
-      <Button round icon="menu" />
-      <Button label="Loading" loading />
-    </div>
-  )
-}
-
-export const outline = () => {
-  return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'space-evenly',
-        marginBottom: '30px',
-      }}
-    >
-      <Button label="Primary" kind="outline" />
-      <Button label="Success" color="success" kind="outline" />
-      <Button label="Warning" color="warning" kind="outline" />
-      <Button label="Danger" color="danger" kind="outline" />
-      <Button label="Info" color="info" kind="outline" />
-      <Button label="Neutral" color="neutral" kind="outline" />
-      <Button round icon="menu" kind="outline" />
-      <Button label="Loading" kind="outline" loading />
-    </div>
+    <>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-evenly',
+          marginBottom: '30px',
+        }}
+      >
+        <Button label="Primary" />
+        <Button label="Secondary" kind="secondary" />
+        <Button label="Success" kind="success" />
+        <Button label="Warning" kind="warning" />
+        <Button label="Danger" kind="danger" />
+        <Button label="Info" kind="info" />
+        <Button label="Neutral" kind="neutral" />
+        <Button round icon="menu" />
+        <Button label="Loading" loading />
+      </div>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-evenly',
+          marginBottom: '30px',
+        }}
+      >
+        <Button label="Primary" variant="outline" />
+        <Button label="Secondary" kind="secondary" variant="outline" />
+        <Button label="Success" kind="success" variant="outline" />
+        <Button label="Warning" kind="warning" variant="outline" />
+        <Button label="Danger" kind="danger" variant="outline" />
+        <Button label="Info" kind="info" variant="outline" />
+        <Button label="Neutral" kind="neutral" variant="outline" />
+        <Button round icon="menu" variant="outline" />
+        <Button label="Loading" loading variant="outline" />
+      </div>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-evenly',
+          marginBottom: '30px',
+        }}
+      >
+        <Button label="Primary" variant="ghost" />
+        <Button label="Secondary" kind="secondary" variant="ghost" />
+        <Button label="Success" kind="success" variant="ghost" />
+        <Button label="Warning" kind="warning" variant="ghost" />
+        <Button label="Danger" kind="danger" variant="ghost" />
+        <Button label="Info" kind="info" variant="ghost" />
+        <Button label="Neutral" kind="neutral" variant="ghost" />
+        <Button round icon="menu" variant="ghost" />
+        <Button label="Loading" loading variant="ghost" />
+      </div>
+    </>
   )
 }
 

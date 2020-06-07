@@ -8,10 +8,10 @@ import Icon from '~/components/Icon'
 
 function Alert({ children, icon, kind, onClose, ...props}) {
   return (
-    <Outer bgColor={kind} {...props}>
+    <Outer pallete={kind} {...props}>
       {icon && <AlertIcon name={icons[kind]} />}
       {children}        
-      {onClose && <CloseButton size="sm" onClick={onClose} />}
+      {onClose && <CloseButton kind={kind} size="sm" onClick={onClose} />}
     </Outer>
   )
 }
@@ -46,8 +46,8 @@ const icons = {
 Alert.propTypes = {
   children: PropTypes.node.isRequired,
   icon: PropTypes.bool,
-  onClose: PropTypes.func,
   kind: PropTypes.oneOf(['success', 'warning', 'danger', 'info']).isRequired,
+  onClose: PropTypes.func,
 }
 
 export default Alert

@@ -5,25 +5,24 @@ import useTheme from './useTheme'
 
 const BaseStyle = styled.div(({ bgColor, textColor }) => {
   return {
-    backgroundColor: bgColor || null,
-    color: textColor || 'currentColor',
+    backgroundColor: bgColor,
+    color: textColor,
   }
 })
 
-function BaseColors({ bgColor, kind, textColor, ...props }) {
+function BaseColors({ bgColor, pallete, textColor, ...props }) {
   const { colors } = useTheme()
-  const bg = colors[bgColor] || bgColor || kind;
-  let color = textColor
+  const palleteColor = pallete && colors[pallete] ? colors[pallete] : { text: 'currentColor', bg: null };
 
-  if (color && colors[color]){
-    color = colors[color];
-  }
-  else if (!color) {
-    color = colors[(bgColor || kind) + 'Contrast'];
-  } 
-
+  const color = colors[textColor] ? colors[textColor].bg : textColor;
+  const bg = colors[bgColor] ? colors[bgColor].bg : bgColor;
+  
   return (
-    <BaseStyle textColor={color} bgColor={bg} {...props} />
+    <BaseStyle 
+      textColor={color || palleteColor.text} 
+      bgColor={bg || palleteColor.bg} 
+      {...props} 
+    />
   )
 }
 

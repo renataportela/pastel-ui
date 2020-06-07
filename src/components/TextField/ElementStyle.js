@@ -23,11 +23,11 @@ const RightSlot = styled.div`
 `;
 
 const border = props => {
-  let color = props.colors.light;
+  let color = props.colors.sub.bg;
 
-  if (props.error) color = props.colors.danger;
-  else if (props.disabled) color = props.colors.disabledTint;
-  else if (props.isFocused) color = props.colors.primary + ' !important';
+  if (props.error) color = props.colors.danger.bg;
+  else if (props.disabled) color = props.colors.disabled.border;
+  else if (props.isFocused) color = props.colors.primary.bg + ' !important';
 
   return css`border: 1px solid ${color};`;
 }
@@ -44,7 +44,7 @@ const InputStyle = styled.div`
   ${border}
 
   ${({ colors, disabled, error, isFocused }) => css`
-    background-color: ${disabled ? colors.disabled : colors.bgColor};
+    background-color: ${disabled ? colors.disabled.bg : colors.bgColor};
     box-shadow: ${isFocused ? shadowMd : shadowSm };
 
     &::placeholder {
@@ -53,7 +53,7 @@ const InputStyle = styled.div`
 
     ${!error && !disabled && css`
     &:hover {    
-      border-color: ${colors.lightTint};      
+      border-color: ${colors.sub.hover};      
     }
     `}
   `}

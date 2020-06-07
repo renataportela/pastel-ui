@@ -12,8 +12,8 @@ function Svg({ children, color, fill, height, viewBox, width, ...props }) {
       width={width}
       height={height}
       viewBox={viewBox}
-      fill={colors[fill] || fill}
-      stroke={colors[color] || color}
+      fill={colors[fill] ? colors[fill].bg : fill}
+      stroke={colors[color] ? colors[color].bg : color}
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"

@@ -1,4 +1,5 @@
 export { default as Alert } from './Alert'
+export { default as AppBar } from './AppBar'
 export { default as Avatar } from './Avatar'
 export { default as BackTop } from './BackTop'
 export { default as Badge } from './Badge'

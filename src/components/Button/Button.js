@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import useTheme from '~/components/Theme/useTheme'
+import { AVAILABLE_SIZES } from '~/styles/params'
 import Icon from '~/components/Icon'
 import ButtonStyle from './ButtonStyle'
 
@@ -22,22 +23,20 @@ function Button({ disabled, icon, label, loading, ...props }) {
 }
 
 Button.defaultProps = {
-  color: 'primary',
-  kind: 'default',
+  kind: 'primary',
   size: 'md',
-  textColor: 'text',
+  variant: 'default',
 }
 
 Button.propTypes = {
-  color: PropTypes.string,  
   disabled: PropTypes.bool,
   icon: PropTypes.string,
-  kind: PropTypes.oneOf(['default', 'outline']),
   label: PropTypes.string,
   loading: PropTypes.bool,
-  round: PropTypes.bool,
-  size: PropTypes.oneOf(['sm', 'md', 'lg', 'xl']),
-  textColor: PropTypes.string,
+  kind: PropTypes.oneOf(['primary', 'secondary', 'success', 'warning', 'danger', 'info', 'neutral']),
+  round: PropTypes.bool,  
+  size: PropTypes.oneOf(AVAILABLE_SIZES),
+  variant: PropTypes.oneOf(['default', 'outline', 'ghost']),
 }
 
 export default Button

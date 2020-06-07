@@ -39,6 +39,7 @@ const Label = styled.label`
   color: ${props => props.textColor};
   font-weight: bold;
   margin-bottom: 0.5rem;
+  padding-left: 0.2rem;
 `
 
 const ErrorMessage = styled.p`

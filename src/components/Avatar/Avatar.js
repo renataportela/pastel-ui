@@ -3,16 +3,17 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 import { roundShape } from '~/styles/mixins'
-import { fontSizes } from '~/styles/params'
+import { AVAILABLE_KINDS, AVAILABLE_SIZES, FONT_SIZES } from '~/styles/params'
 import { Icon } from '~/components'
 import { BaseColors } from '~/components/Theme'
 
-function Avatar({ icon, image, text, title, ...props }) {
+function Avatar({ icon, image, kind, text, title, ...props }) {
   const avatarText = text ? (text.length > 2 ? text.substr(0, 2) : text) : null;
 
   return (
     <Round 
       title={title || text}
+      pallete={kind}
       {...props}
     >
       {image && <Image src={image} />}
@@ -34,7 +35,7 @@ const Round = styled(BaseColors).attrs(props => ({
   forwardedAs: 'span',
 }))`
   ${roundShape}
-  font-size: ${props => fontSizes[props.size]};
+  font-size: ${props => FONT_SIZES[props.size]};
   position: relative;
 `;
 
@@ -50,9 +51,10 @@ const Text = styled.span`
 `;
 
 Avatar.defaultProps = {
-  bgColor: 'primary',
+  bgColor: null,
   icon: null,
   image: null,
+  kind: 'primary',
   size: 'medium',
   text: null,
   textColor: null,
@@ -63,7 +65,8 @@ Avatar.propTypes = {
   bgColor: PropTypes.string,
   icon: PropTypes.string,
   image: PropTypes.string,
-  size: PropTypes.oneOf(['sm', 'md', 'lg', 'xl']),
+  kind: PropTypes.oneOf(AVAILABLE_KINDS),
+  size: PropTypes.oneOf(AVAILABLE_SIZES),
   text: PropTypes.string,
   textColor: PropTypes.string,
   title: PropTypes.string,

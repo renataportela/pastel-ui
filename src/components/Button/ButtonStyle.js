@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 
 import { shadowBase, shadowLg, shadowOutline } from '~/styles/shadows'
 import { roundShape, roundedBorders } from '~/styles/mixins'
-import { fontSizes, padding } from '~/styles/params'
+import { FONT_SIZES, PADDING } from '~/styles/params'
 import { allEase } from '~/styles/transitions'
 
 const roundSizes = {
@@ -13,15 +13,26 @@ const roundSizes = {
 }
 
 const buttonVariant = props => {
+  const chosenColor = props.colors[props.kind]
+  let bgColor = props.colors.primary.bg
+  let hoverColor = props.colors.primary.hover
+  let textColor = props.colors.primary.text
+
+  if (chosenColor){
+    bgColor = chosenColor.bg;
+    hoverColor = chosenColor.hover;
+    textColor = chosenColor.text;
+  }
+
   let styles = {
-    backgroundColor: props.chosenColor,
-    color: props.textColor,
-    borderColor: props.chosenColor,
+    backgroundColor: bgColor,
+    color: textColor,
+    borderColor: bgColor,
     boxShadow: props.flat ? null : shadowBase,
     '&:hover:enabled': {
       boxShadow: props.flat ? null : shadowLg,
-      backgroundColor: props.tintColor,
-      borderColor: props.tintColor,
+      backgroundColor: hoverColor,
+      borderColor: hoverColor,
     },
     '&:focus': {
       boxShadow: shadowOutline,
@@ -32,40 +43,55 @@ const buttonVariant = props => {
     '&:disabled': {
       cursor: 'not-allowed',
       boxShadow: 'none',
-      borderColor: props.colors.disabled,
-      backgroundColor: props.colors.disabled,
-      color: props.colors.disabledTint,
+      borderColor: props.colors.disabled.bg,
+      backgroundColor: props.colors.disabled.bg,
+      color: props.colors.disabled.text,
     },
   };
 
-  if (props.kind === 'outline') {
-    const outlineColor = props.color === 'neutral' ? props.colors.neutralTint : props.chosenColor;
-
-    styles = {
-      ...styles, 
-      backgroundColor: 'transparent',
-      borderColor: outlineColor,
-      boxShadow: 'none',
-      '&:hover:enabled': {
-        ...styles['&:hover:enabled'],
-        backgroundColor: outlineColor,
-        borderColor: outlineColor,
-      },
-    };
-
+  if (props.variant === 'outline' || props.variant === 'ghost') {
     styles['&:disabled'].backgroundColor = 'transparent'
+    styles.backgroundColor = 'transparent'
+    styles.boxShadow = 'none'
+
+    if (props.variant === 'outline') {
+      const outlineColor = props.kind === 'neutral' ? hoverColor : bgColor;
+
+      styles = {
+        ...styles, 
+        borderColor: outlineColor,
+        '&:hover:enabled': {
+          ...styles['&:hover:enabled'],
+          backgroundColor: outlineColor,
+          borderColor: outlineColor,
+        },
+      };
+    }
+    else {
+      styles = {
+        ...styles,
+        borderColor: 'transparent',
+        '&:hover:enabled': {
+          ...styles['&:hover:enabled'],
+          backgroundColor: props.colors.transparentDark,
+          borderColor: 'transparent',
+          boxShadow: 'none'
+        },
+      };
+      
+      styles['&:disabled'].borderColor = 'transparent'
+    }
   }
 
   return styles
 }
 
-const ButtonStyle = styled.button.attrs(props => ({
-  chosenColor: props.colors[props.color] || props.color,
-  textColor: props.colors[props.color + 'Contrast'] || props.colors.text,
-  tintColor: props.colors[props.color + 'Tint'] || props.color,
-  diameter: roundSizes[props.size],
-  padding: padding[props.size].y+' '+padding[props.size].x,
-}))`
+const ButtonStyle = styled.button.attrs(props => {
+  return {
+    diameter: roundSizes[props.size],
+    padding: PADDING[props.size].y+' '+PADDING[props.size].x,
+  }
+})`
   position: relative;
   cursor: pointer;
   outline: 0;
@@ -87,7 +113,7 @@ const ButtonStyle = styled.button.attrs(props => ({
   }
 
   ${props => css`
-    font-size: ${fontSizes[props.size]};
+    font-size: ${FONT_SIZES[props.size]};
     transition: ${allEase};
     ${props.round ? roundShape : [`padding: ${props.padding};`, roundedBorders]}
     ${buttonVariant}

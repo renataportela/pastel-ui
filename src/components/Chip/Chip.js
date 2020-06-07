@@ -2,15 +2,16 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
+import { AVAILABLE_KINDS } from '~/styles/params'
 import { BaseColors } from '~/components/Theme'
 import { Avatar, Close } from '~/components'
 
-function Chip({ avatar, children, onDelete, ...props}) {
+function Chip({ avatar, children, kind, onDelete, ...props}) {
   return (
-    <ChipStyle contrast={true} {...props}>
+    <ChipStyle pallete={kind} {...props}>
       {avatar && <Avatar size="sm" {...avatar} />}
       <Content>{children}</Content>
-      {onDelete && <Close size="sm" />}
+      {onDelete && <Close size="sm" kind={kind} />}
     </ChipStyle>
   )
 }
@@ -30,7 +31,7 @@ const Content = styled.span`
 `;
 
 Chip.defaultProps = {
-  bgColor: 'light',
+  kind: 'sub',
 }
 
 Chip.propTypes = {
@@ -43,6 +44,7 @@ Chip.propTypes = {
   }),
   bgColor: PropTypes.string,
   children: PropTypes.node.isRequired,
+  kind: PropTypes.oneOf(AVAILABLE_KINDS),
   onDelete: PropTypes.func,
   textColor: PropTypes.string,
 }
