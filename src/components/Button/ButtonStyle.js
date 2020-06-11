@@ -13,7 +13,8 @@ const roundSizes = {
 }
 
 const buttonVariant = props => {
-  const chosenColor = props.colors[props.kind]
+  const chosenColor = props.colors[props.inverse ? props.kind + 'Inverse' : props.kind]
+  
   let bgColor = props.colors.primary.bg
   let hoverColor = props.colors.primary.hover
   let textColor = props.colors.primary.text
@@ -53,17 +54,19 @@ const buttonVariant = props => {
     styles['&:disabled'].backgroundColor = 'transparent'
     styles.backgroundColor = 'transparent'
     styles.boxShadow = 'none'
+    styles.color = props.kind === 'neutral' ? textColor : bgColor;
 
     if (props.variant === 'outline') {
       const outlineColor = props.kind === 'neutral' ? hoverColor : bgColor;
 
       styles = {
         ...styles, 
-        borderColor: outlineColor,
+        borderColor: outlineColor,        
         '&:hover:enabled': {
           ...styles['&:hover:enabled'],
           backgroundColor: outlineColor,
           borderColor: outlineColor,
+          color: textColor,
         },
       };
     }

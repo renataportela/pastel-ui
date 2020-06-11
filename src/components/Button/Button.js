@@ -31,6 +31,7 @@ Button.defaultProps = {
 Button.propTypes = {
   disabled: PropTypes.bool,
   icon: PropTypes.string,
+  inverse: PropTypes.bool,
   label: PropTypes.string,
   loading: PropTypes.bool,
   kind: PropTypes.oneOf(['primary', 'secondary', 'success', 'warning', 'danger', 'info', 'neutral']),

@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 import { BaseColors } from '~/components/Theme'
@@ -6,12 +7,12 @@ import { Button } from '~/components'
 // import Button from './Button'
 // import Menu from './Menu'
 
-function AppBar({ brand, left, right, onToggleMenu, ...props }) {
+function AppBar({ brand, kind, left, right, onToggleMenu, ...props }) {
   return (
-    <ColorBar {...props}>
+    <ColorBar pallete={kind} inverse {...props}>
       {onToggleMenu && (
         <MenuIconSlot>
-          <Button icon="menu" kind="ghost" textColor="currentColor" size="lg" round onClick={onToggleMenu} />
+          <Button icon="menu" kind={kind} textColor="currentColor" size="lg" round flat onClick={onToggleMenu} />
         </MenuIconSlot>
       )}
       {brand && <BrandSlot>{brand}</BrandSlot>}
@@ -58,8 +59,15 @@ const MenuIconSlot = styled(Slot)`
 // AppBar.Menu = Menu
 
 AppBar.defaultProps = {
-  bgColor: 'primaryContrast',
-  textColor: 'white',
+  kind: 'primary',
+}
+
+AppBar.propTypes = {
+  brand: PropTypes.node.isRequired, 
+  left: PropTypes.node, 
+  kind: PropTypes.string, 
+  right: PropTypes.node, 
+  onToggleMenu: PropTypes.func,
 }
 
 export default AppBar

@@ -14,6 +14,7 @@ function Badge({ bgColor, children, content, dot, kind, textColor, round, ...pro
       <BadgeIcon 
         pallete={kind}
         bgColor={bgColor} 
+        tint="light"
         textColor={textColor}
         round={round}
         dot={dot}

@@ -1,6 +1,8 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
+import { PALLETE_COLORS } from '~/constants'
 import useTheme from './useTheme'
 
 const BaseStyle = styled.div(({ bgColor, textColor }) => {
@@ -10,12 +12,16 @@ const BaseStyle = styled.div(({ bgColor, textColor }) => {
   }
 })
 
-function BaseColors({ bgColor, pallete, textColor, ...props }) {
+function BaseColors({ bgColor, tint, pallete, textColor, ...props }) {
   const { colors } = useTheme()
-  const palleteColor = pallete && colors[pallete] ? colors[pallete] : { text: 'currentColor', bg: null };
-
-  const color = colors[textColor] ? colors[textColor].bg : textColor;
-  const bg = colors[bgColor] ? colors[bgColor].bg : bgColor;
+  const getColor = (chosen, attr) => {
+    if (!chosen) return null
+    const color = tint ? colors[chosen+'_'+tint] : colors[chosen];
+    return color && attr ? color[attr] : color;
+  }
+  const palleteColor = getColor(pallete) || { text: 'currentColor', bg: null };
+  const color = getColor(textColor, 'text') || textColor;
+  const bg = getColor(bgColor, 'bg') || bgColor;
   
   return (
     <BaseStyle 
@@ -24,6 +30,13 @@ function BaseColors({ bgColor, pallete, textColor, ...props }) {
       {...props} 
     />
   )
+}
+
+BaseColors.propTypes = {
+  bgColor: PropTypes.string,
+  alternative: PropTypes.bool,
+  pallete: PropTypes.oneOf(PALLETE_COLORS),
+  textColor: PropTypes.string,
 }
 
 export default BaseColors

@@ -27,7 +27,7 @@ const border = props => {
 
   if (props.error) color = props.colors.danger.bg;
   else if (props.disabled) color = props.colors.disabled.border;
-  else if (props.isFocused) color = props.colors.primary.bg + ' !important';
+  else if (props.isFocused) color = props.colors.primary_light.bg + ' !important';
 
   return css`border: 1px solid ${color};`;
 }

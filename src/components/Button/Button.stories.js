@@ -43,6 +43,7 @@ export const buttons = () => {
         <Button label="Danger" kind="danger" />
         <Button label="Info" kind="info" />
         <Button label="Neutral" kind="neutral" />
+        <Button label="Dark" kind="dark" />
         <Button round icon="menu" />
         <Button label="Loading" loading />
       </div>
@@ -60,6 +61,7 @@ export const buttons = () => {
         <Button label="Danger" kind="danger" variant="outline" />
         <Button label="Info" kind="info" variant="outline" />
         <Button label="Neutral" kind="neutral" variant="outline" />
+        <Button label="Dark" kind="dark" variant="outline" />
         <Button round icon="menu" variant="outline" />
         <Button label="Loading" loading variant="outline" />
       </div>
@@ -77,6 +79,7 @@ export const buttons = () => {
         <Button label="Danger" kind="danger" variant="ghost" />
         <Button label="Info" kind="info" variant="ghost" />
         <Button label="Neutral" kind="neutral" variant="ghost" />
+        <Button label="Dark" kind="dark" variant="ghost" />
         <Button round icon="menu" variant="ghost" />
         <Button label="Loading" loading variant="ghost" />
       </div>
