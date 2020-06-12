@@ -90,7 +90,6 @@ const buttonVariant = props => {
 }
 
 const ButtonStyle = styled.button.attrs(props => {
-  console.log('props.size', props.size);
   return {
     diameter: roundSizes[props.size],
     padding: PADDING[props.size].y+' '+PADDING[props.size].x,
@@ -101,7 +100,6 @@ const ButtonStyle = styled.button.attrs(props => {
   outline: 0;
   whiteSpace: nowrap;
   userSelect: none;
-  margin: 0 auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

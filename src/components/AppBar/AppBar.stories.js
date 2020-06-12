@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 
 import { AppBar } from '~/components'
+import Menu from '../Menu/Menu'
 
 export default {
   title: 'AppBar',
@@ -16,15 +17,26 @@ export const appBar = () => {
       <AppBar 
         brand={<span>Brand</span>}
         onToggleMenu={onToggleMenu}
-        left={<div>left</div>}
-        right={<div>right</div>}
+        left="left"
+        right={(
+          <>
+            <AppBar.Menu label="Login" />
+            <AppBar.Menu label="Register" />
+          </>
+        )}
       />
       <AppBar 
         brand={<span>Brand</span>}
         onToggleMenu={onToggleMenu}
-        left={<div>left</div>}
-        right={<div>right</div>}
         kind="secondary"
+        left={<div>left</div>}
+        right={
+          <AppBar.Menu label="Options">
+            <Menu.Item onClick={() => {}}>Option 1</Menu.Item>
+            <Menu.Item onClick={() => {}}>Option 2</Menu.Item>
+            <Menu.Item onClick={() => {}}>Option 3</Menu.Item>
+          </AppBar.Menu>
+        }        
       />
       <AppBar 
         brand={<span>Brand</span>}

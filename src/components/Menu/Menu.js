@@ -47,9 +47,7 @@ function Menu({ activator, children, cover }) {
 
   useLayoutEffect(() => {
     if (isOpen && activatorSize) {
-      console.log('activatorSize', activatorSize);
       const menuWidth = menuRef.current.getBoundingClientRect().width;
-      console.log('menuWidth', menuWidth);
       setPosition(calculatePosition(activatorSize, menuWidth, cover));
     }
   }, [isOpen, activatorSize])
