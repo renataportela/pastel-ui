@@ -23,17 +23,17 @@ function TextField({
 
   return (
     <ElementStyle
-      colors={colors}
+      $colors={colors}
       error={error}
       disabled={disabled}
-      isFocused={isFocused}
+      $isFocused={isFocused}
       left={left}
       right={right}
     >
       <InputStyle
-        error={error}
+        $error={error}
         disabled={disabled}
-        colors={colors}
+        $colors={colors}
         as={!!rows ? 'textarea' : null}
         onFocus={handleFocus}
         onBlur={handleBlur}
@@ -50,7 +50,7 @@ const InputStyle = styled.input`
   background-color: transparent;
   padding: .7rem .8rem;
   font-size: 1.02rem;
-  color: ${props => props.error ? props.colors.danger : (props.disabled ? props.colors.disabledContrast : props.colors.text)};
+  color: ${props => props.$error ? props.$colors.danger : (props.disabled ? props.$colors.disabledContrast : props.$colors.text)};
 `
 
 TextField.defaultProps = {

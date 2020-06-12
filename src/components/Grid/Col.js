@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 
+import { GUTTER } from '~/styles/params'
 import Flex from './Flex'
 
 function Col({ children, ...props }) {
@@ -61,8 +62,8 @@ const xl = props => mediaQuery('xl', props)
 const ColStyle = styled(Flex)`
   position: relative;
   min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: ${GUTTER};
+  padding-left: ${GUTTER};
   width: auto;
   ${({ col, xs }) =>col
     ? css`
@@ -109,8 +110,8 @@ Col.propTypes = {
   lg: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   xl: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   alignItems: PropTypes.string,
-  hiddenDown: PropTypes.oneOfType('xs', 'sm', 'md', 'lg', 'xl'),
-  hiddenUp: PropTypes.oneOfType('xs', 'sm', 'md', 'lg', 'xl'),
+  hiddenDown: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
+  hiddenUp: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
 }
 
 export default Col

@@ -8,7 +8,9 @@ export const roundShape = props => css`
   overflow: hidden;  
   padding: 0;
   width: ${props.diameter};
-  height: ${props.diameter};  
+  height: ${props.diameter};
+  min-width: ${props.diameter};
+  min-height: ${props.diameter};
 `;
 
 export const roundedBorders = `

@@ -1,11 +1,13 @@
 import React, { forwardRef } from 'react'
-import PropTypes from 'prop-types'
 
 import useTheme from '~/components/Theme/useTheme'
-import { SIZES } from '~/styles/params'
 import Icon from '~/components/Icon'
 import ButtonStyle from './ButtonStyle'
 
+/*
+ * Loading is controlled by the user
+ * Submitting is controlled by the Form component
+ */
 function Button(
   {
     disabled,
@@ -13,7 +15,9 @@ function Button(
     kind = 'primary',
     label,
     loading,
+    loaderColor = 'primary',
     size = 'md',
+    submitting,
     variant = 'default',
     ...props
   },
@@ -23,7 +27,7 @@ function Button(
 
   return (
     <ButtonStyle
-      disabled={disabled || loading}
+      disabled={disabled || loading || submitting}
       hasLabel={!!label}
       colors={colors}
       kind={kind}
@@ -33,7 +37,7 @@ function Button(
       {...props}
     >
       {icon && !loading && <Icon name={icon} />}
-      {loading && <Icon name="loader" color="primary" />}
+      {(loading || submitting) && <Icon name="loader" color={loaderColor} />}
       {label}
     </ButtonStyle>
   )

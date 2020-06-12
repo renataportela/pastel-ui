@@ -4,7 +4,7 @@ import { Svg, useTheme } from '~/components'
 
 function LoaderIcon({ children, ...props }) {
   const { colors } = useTheme();
-  
+
   return (
     <Svg enableBackground="new 0 0 0 0" xmlSpace="preserve" {...props}>
       {children}

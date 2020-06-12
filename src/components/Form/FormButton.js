@@ -1,20 +1,22 @@
 import React from 'react'
-import styled from '@emotion/styled'
+import styled from 'styled-components'
 
-import { Button } from '~/pastel-ui';
+import { Button } from '~/components'
+
+function FormButton(props) {
+  return (
+    <Outer>
+      <Button type="submit" {...props} />
+    </Outer>
+  );
+}
 
 const Outer = styled.div`
   margin: 1.2rem auto 1.2rem;
   text-align: center;
   width: 100%;
-`;
+`
 
-function FormButton(props){
-  return (
-    <Outer>
-      <Button type="submit" loading={props.loading}>{props.label}</Button>
-    </Outer>
-  );
-}
+FormButton.displayName = 'Form.Button'
 
-export default FormButton;
+export default FormButton

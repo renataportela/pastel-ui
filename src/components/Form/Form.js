@@ -1,38 +1,59 @@
-import React from 'react';
+import React, { useState } from 'react'
 
-import FormField from './FormField';
-import FormButton from './FormButton';
+import useCloneInput from './useCloneInput'
+import FormField from '~/components/FormField'
+import FormFields from './FormFields'
+import FormButton from './FormButton'
 
-function Form(props) {
-  const { errors, onChangeField, values } = props;
+function Form({ errors, onChangeField, values, onSubmit, ...props }) {
+  const [submitting, setSubmitting] = useState(false)
+  const cloneChild = useCloneInput({ values, errors, onChangeField, submitting })
 
   const formFields = React.Children.map(props.children, child => {
-    if (!child) return null;
-    if (child.type.displayName !== 'Form.Field') return child;
+    if (!child) return null
 
-    const fieldName = child.props.field.props.name;
+    switch (child.type.displayName) {
+      case 'Form.Button': return React.cloneElement(child, { submitting })
 
-    // Clona Form.Field e injeta props extras vindas do Form
-    return React.cloneElement(child, {
-      error: errors[fieldName] || '',
-      value: values[fieldName] || '',
-      onChange: onChangeField,
-    });
-  });
+      case 'FormField': return cloneChild(child, child.props.inputField.props.name)
+        
+      case 'Form.Fields': 
+        return React.cloneElement(child, {
+          errors,
+          values,
+          onChangeField,
+          submitting
+        })
+
+      default: {
+        return (child.props.name) ? cloneChild(child, child.props.name) : child;
+      }
+    }
+  })
+
+  const handleSubmit = event => {
+    event.preventDefault()
+    setSubmitting(true)
+    onSubmit(values)
+      .then(() => setSubmitting(false))
+      .catch(error => {
+        setSubmitting(false)
+        throw error
+      })
+  }
 
   return (
-    <form onSubmit={props.onSubmit} style={props.style}>
-      {formFields}
-    </form>
-  );
+    <form onSubmit={handleSubmit} {...props}>{formFields}</form>
+  )
 }
 
 Form.defaultProps = {
   errors: {},
   values: {},
-};
+}
 
-Form.Button = FormButton;
-Form.Field = FormField;
+Form.Button = FormButton
+Form.Field = FormField
+Form.Fields = FormFields
 
-export default Form;
+export default Form

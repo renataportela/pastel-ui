@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
+import { GUTTER } from '~/styles/params'
 import Flex from './Flex'
 
 function Row({ children, noGutter, ...props }) {
@@ -15,8 +16,8 @@ function Row({ children, noGutter, ...props }) {
 const RowStyles = styled(Flex)`
   display: flex;
   flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
+  margin-right: -${GUTTER};
+  margin-left: -${GUTTER};
 
   &.no-gutter {
     margin-right: 0;

@@ -1,12 +1,21 @@
+import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
-const Flex = styled.div(props => ({
+function Flex({ className, children, style }) {
+  return (
+    <div className={className} style={style}>
+      {children}
+    </div>
+  )
+}
+
+const FlexStyle = styled(Flex)(props => ({
   alignContent: flexDisposition(props.alignContent),
   alignItems: props.centered ? 'center' : flexDisposition(props.alignItems),
   alignSelf: flexDisposition(props.alignSelf),
   display: props.inline ? 'flex-inline' : 'flex',
-  flex: props.fill ? '1 1 auto' : null,
+  flex: props.$fill ? '1 1 auto' : null,
   flexDirection: props.direction,
   flexWrap: props.wrap,
   height: props.height,
@@ -58,7 +67,7 @@ Flex.propTypes = {
   centered: PropTypes.bool,
   direction: PropTypes.oneOf(['column', 'column-reverse', 'row', 'row-reverse']),
   display: PropTypes.string,
-  fill: PropTypes.string,
+  $fill: PropTypes.string,
   height: PropTypes.string,
   inline: PropTypes.bool,
   justify: PropTypes.oneOf(['around', 'between', 'center', 'end', 'evenly', 'start']),
@@ -66,4 +75,4 @@ Flex.propTypes = {
   wrap: PropTypes.oneOf(['wrap', 'nowrap', 'wrap-reverse']),
 }
 
-export default Flex
+export default FlexStyle

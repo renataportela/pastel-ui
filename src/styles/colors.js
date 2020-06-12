@@ -1,6 +1,7 @@
 
 export default {
   text: '#4a1660',
+  label: '#a661e2',
   textContrast: '#FFF',
   bgColor: '#FFF',
   primary: {
@@ -79,8 +80,8 @@ export default {
     text: '#444',
   },
   disabled: {
-    bg: '#f9f9f9',
-    border: '#e0e0e0',
+    bg: '#f0f0f0',
+    hover: '#e0e0e0',
     text: '#666',
   },
   transparentLight: 'rgba(255, 255, 255, 0.08)',
