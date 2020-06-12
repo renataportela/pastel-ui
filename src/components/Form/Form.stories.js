@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import { Form, TextField } from '~/components'
+import { Form, RadioButton, TextField } from '~/components'
 
 export default {
   title: 'Form',
@@ -11,12 +11,13 @@ export const form = () => {
     firstName: 'John',
     lastName: 'Doe',
     email: '',
+    radio: null,
   })
 
-  const handleChangeField = fieldName => e => {
+  const handleChangeField = fieldName => value => {
     setValues({
       ...values,
-      [fieldName]: e.target.value,
+      [fieldName]: value,
     })
   }
 
@@ -52,6 +53,15 @@ export const form = () => {
         inputField={
           <TextField name="email" type="email" placeholder="Email" />
         }
+      />
+
+      <Form.Field
+        label="Radio"
+        inputField={<RadioButton name="radio" optionValue="1" label="Option 1" />}
+      />
+
+      <Form.Field
+        inputField={<RadioButton name="radio" optionValue="2" label="Option 2" />}
       />
 
       <Form.Button label="Submit" />

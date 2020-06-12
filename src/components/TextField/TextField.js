@@ -13,6 +13,7 @@ function TextField({
   right,
   rows,
   type,
+  onChange,
   ...props
 }) {
   const { colors } = useTheme()
@@ -20,11 +21,12 @@ function TextField({
 
   const handleFocus = () => setIsFocused(true)
   const handleBlur = () => setIsFocused(false)
+  const handleChange = e => onChange(e.target.value)
 
   return (
     <ElementStyle
       $colors={colors}
-      error={error}
+      $error={error}
       disabled={disabled}
       $isFocused={isFocused}
       left={left}
@@ -37,6 +39,7 @@ function TextField({
         as={!!rows ? 'textarea' : null}
         onFocus={handleFocus}
         onBlur={handleBlur}
+        onChange={handleChange}
         {...props}
       />
     </ElementStyle>

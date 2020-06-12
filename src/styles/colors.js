@@ -80,9 +80,10 @@ export default {
     text: '#444',
   },
   disabled: {
-    bg: '#f0f0f0',
+    bg: '#f5f5f5',
     hover: '#e0e0e0',
-    text: '#666',
+    text: '#888',
+    border: '#ccc',
   },
   transparentLight: 'rgba(255, 255, 255, 0.08)',
   transparentDark: 'rgba(0, 0, 0, 0.08)',

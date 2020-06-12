@@ -20,7 +20,7 @@ function FormField({
 }) {
   const { colors } = useTheme()
   const hasError = !!error
-  const labelColor = hasError ? colors.danger.text : disabled ? colors.disabled.text : colors.label
+  const labelColor = hasError ? colors.danger.bg : disabled ? colors.disabled.text : colors.label
   const cloneInput = React.cloneElement(inputField, {
     name,
     error: hasError,

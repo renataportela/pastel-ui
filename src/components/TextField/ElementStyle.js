@@ -22,17 +22,17 @@ const RightSlot = styled.div`
   margin-left: 8px;
 `;
 
-const border = props => {
+const borderColor = props => {
   let color = props.$colors.sub.bg;
 
-  if (props.error) color = props.$colors.danger.bg;
+  if (props.$error) color = props.$colors.danger_light.bg;
   else if (props.disabled) color = props.$colors.disabled.border;
   else if (props.$isFocused) color = props.$colors.primary_light.bg + ' !important';
 
-  return css`border: 1px solid ${color};`;
+  return css`border-color: ${color};`;
 }
 
-const InputStyle = styled.div`
+export const InputStyle = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -41,17 +41,18 @@ const InputStyle = styled.div`
   border-radius: 4px;
   transition: border-color .2s ease-in-out, box-shadow .2s ease;
   outline: 0;  
-  ${border}
+  border: 1px solid;
+  ${borderColor}
 
-  ${({ $colors, disabled, error, $isFocused }) => css`
+  ${({ $colors, disabled, $error, $isFocused }) => css`
     background-color: ${disabled ? $colors.disabled.bg : $colors.bgColor};
     box-shadow: ${$isFocused ? shadowMd : shadowSm };
 
     &::placeholder {
-      color: ${error ? $colors.danger : (disabled ? $colors.disabledContrast : $colors.primaryTint)};
+      color: ${$error ? $colors.danger : (disabled ? $colors.disabledContrast : $colors.primaryTint)};
     }
 
-    ${!error && !disabled && css`
+    ${!$error && !disabled && css`
     &:hover {    
       border-color: ${$colors.sub.hover};      
     }
