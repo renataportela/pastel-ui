@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 import { roundShape } from '~/styles/mixins'
-import { AVAILABLE_KINDS, AVAILABLE_SIZES, FONT_SIZES } from '~/styles/params'
+import { PALLETES, SIZES, FONT_SIZES } from '~/styles/params'
 import { Icon } from '~/components'
 import { BaseColors } from '~/components/Theme'
 
@@ -65,8 +65,8 @@ Avatar.propTypes = {
   bgColor: PropTypes.string,
   icon: PropTypes.string,
   image: PropTypes.string,
-  kind: PropTypes.oneOf(AVAILABLE_KINDS),
-  size: PropTypes.oneOf(AVAILABLE_SIZES),
+  kind: PropTypes.oneOf(SIZES),
+  size: PropTypes.oneOf(PALLETES),
   text: PropTypes.string,
   textColor: PropTypes.string,
   title: PropTypes.string,

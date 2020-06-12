@@ -1,23 +1,10 @@
-import React, { forwardRef } from 'react';
-import styled from '@emotion/styled';
+import React, { forwardRef } from 'react'
+import styled from 'styled-components'
 
-import { scale, shadowLg } from '~/pastel-ui/theming';
+import { scale } from '~/styles/transitions'
+import { shadowLg } from '~/styles/shadows'
 
-const Outer = styled.div`
-  position: absolute;
-`;
-
-const MenuBoxStyle = styled.div`
-  z-index: 100;
-  animation: ${scale} .1s;
-  box-shadow: ${shadowLg};
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-`;
-
-const MenuBox = forwardRef(function (props, ref){
+function MenuBox(props, ref) {
   const menuItems = React.Children.map(props.children, (child => React.cloneElement(child, { close: props.close })));
 
   return (
@@ -29,6 +16,20 @@ const MenuBox = forwardRef(function (props, ref){
       )}
     </Outer>
   );
-});
+}
 
-export default MenuBox;
+const Outer = styled.div`
+  position: absolute;
+`
+
+const MenuBoxStyle = styled.div`
+  z-index: 100;
+  animation: ${scale} .1s;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: ${shadowLg};
+`
+
+export default forwardRef(MenuBox)

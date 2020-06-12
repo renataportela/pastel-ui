@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import { AVAILABLE_KINDS } from '~/styles/params'
+import { PALLETES } from '~/styles/params'
 import { BaseColors } from '~/components/Theme'
 import { Avatar, Close } from '~/components'
 
@@ -44,7 +44,7 @@ Chip.propTypes = {
   }),
   bgColor: PropTypes.string,
   children: PropTypes.node.isRequired,
-  kind: PropTypes.oneOf(AVAILABLE_KINDS),
+  kind: PropTypes.oneOf(PALLETES),
   onDelete: PropTypes.func,
   textColor: PropTypes.string,
 }

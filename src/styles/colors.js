@@ -83,6 +83,6 @@ export default {
     border: '#e0e0e0',
     text: '#666',
   },
-  transparent_light: 'rgba(255, 255, 255, 0.08)',
+  transparentLight: 'rgba(255, 255, 255, 0.08)',
   transparentDark: 'rgba(0, 0, 0, 0.08)',
 }

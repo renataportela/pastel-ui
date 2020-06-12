@@ -12,5 +12,5 @@ export const PADDING = {
   xl: { y: '1.1em', x: '2.4em' },
 };
 
-export const AVAILABLE_SIZES = ['sm', 'md', 'lg', 'xl'];
-export const AVAILABLE_KINDS = ['primary', 'secondary', 'success', 'warning', 'danger', 'info', 'sub', 'neutral'];
+export const SIZES = ['sm', 'md', 'lg', 'xl'];
+export const PALLETES = ['primary', 'secondary', 'success', 'warning', 'danger', 'info', 'sub', 'neutral', 'dark'];

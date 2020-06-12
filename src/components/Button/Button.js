@@ -1,18 +1,35 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import PropTypes from 'prop-types'
 
 import useTheme from '~/components/Theme/useTheme'
-import { AVAILABLE_SIZES } from '~/styles/params'
+import { SIZES } from '~/styles/params'
 import Icon from '~/components/Icon'
 import ButtonStyle from './ButtonStyle'
 
-function Button({ disabled, icon, label, loading, ...props }) {
+function Button(
+  {
+    disabled,
+    icon,
+    kind = 'primary',
+    label,
+    loading,
+    size = 'md',
+    variant = 'default',
+    ...props
+  },
+  ref
+) {
   const { colors } = useTheme()
+
   return (
-    <ButtonStyle 
-      disabled={disabled || loading} 
+    <ButtonStyle
+      disabled={disabled || loading}
       hasLabel={!!label}
       colors={colors}
+      kind={kind}
+      size={size}
+      variant={variant}
+      ref={ref}
       {...props}
     >
       {icon && !loading && <Icon name={icon} />}
@@ -22,22 +39,16 @@ function Button({ disabled, icon, label, loading, ...props }) {
   )
 }
 
-Button.defaultProps = {
-  kind: 'primary',
-  size: 'md',
-  variant: 'default',
-}
+// Button.propTypes = {
+//   disabled: PropTypes.bool,
+//   icon: PropTypes.string,
+//   inverse: PropTypes.bool,
+//   label: PropTypes.string,
+//   loading: PropTypes.bool,
+//   kind: PropTypes.oneOf(['primary', 'secondary', 'success', 'warning', 'danger', 'info', 'neutral', 'dark']),
+//   round: PropTypes.bool,
+//   size: PropTypes.oneOf(SIZES),
+//   variant: PropTypes.oneOf(['default', 'outline', 'ghost']),
+// }
 
-Button.propTypes = {
-  disabled: PropTypes.bool,
-  icon: PropTypes.string,
-  inverse: PropTypes.bool,
-  label: PropTypes.string,
-  loading: PropTypes.bool,
-  kind: PropTypes.oneOf(['primary', 'secondary', 'success', 'warning', 'danger', 'info', 'neutral']),
-  round: PropTypes.bool,  
-  size: PropTypes.oneOf(AVAILABLE_SIZES),
-  variant: PropTypes.oneOf(['default', 'outline', 'ghost']),
-}
-
-export default Button
+export default forwardRef(Button)

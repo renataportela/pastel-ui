@@ -1,39 +1,25 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
-import ReactDOM from 'react-dom';
+import React, { useLayoutEffect, useRef, useState } from 'react'
+import ReactDOM from 'react-dom'
 
-import useOutsideCloser from '~/pastel-ui/hooks/useOutsideCloser';
-import MenuBox from './MenuBox';
-import MenuItem from './MenuItem';
-
-function calculatePosition({ left, top, height }, menuWidth, cover) {
-  const positionStyle = { top: cover ? top : top + height };
-
-  if (left + menuWidth + 20 <= window.innerWidth) {
-    positionStyle.left = left;
-  } 
-  else {
-    positionStyle.right = 0;
-  }
-
-  return positionStyle;
-}
+import useOutsideClose from '~/hooks/useOutsideClose'
+import MenuBox from './MenuBox'
+import MenuItem from './MenuItem'
 
 function Menu({ activator, children, cover }) {
-  const [isOpen, setIsOpen] = useState(false);
-  const [activatorSize, setActivatorSize] = useState(null);
+  const [isOpen, setIsOpen] = useState(false)
+  const [activatorSize, setActivatorSize] = useState(null)
   const [position, setPosition] = useState({
     top: null,
     left: null,
-  });
-  const open = () => setIsOpen(true);
-  const close = () => setIsOpen(false);
+  })
 
-  const activatorRef = useRef();
-  const menuRef = useRef();
+  const open = () => setIsOpen(true)
+  const close = () => setIsOpen(false)
 
-  let menuContent = null;
+  const activatorRef = useRef()
+  const menuRef = useRef()
 
-  useOutsideCloser(menuRef, close);
+  let menuContent = null
 
   if (isOpen) {
     menuContent = ReactDOM.createPortal(
@@ -41,38 +27,58 @@ function Menu({ activator, children, cover }) {
         {children}
       </MenuBox>,
       document.body
-    );
+    )
   }
 
   const clonnedButton = React.cloneElement(activator, {
     ref: activatorRef,
     onClick: open,
     className: isOpen ? 'opened' : null,
-  });
+  })
 
-  useEffect(() => {
-    if (isOpen) {
-      const menuWidth = menuRef.current.getBoundingClientRect().width;
-      setPosition(calculatePosition(activatorSize, menuWidth, cover));
-    }
-  }, [isOpen]);
+  useOutsideClose(menuRef, close)
 
   useLayoutEffect(() => {
     if (activatorRef.current) {
       const rect = activatorRef.current.getBoundingClientRect();
-      setActivatorSize(rect);
+      setActivatorSize(rect)
     }
-  }, [activatorRef]);
+  }, [activatorRef])
+
+  useLayoutEffect(() => {
+    if (isOpen && activatorSize) {
+      console.log('activatorSize', activatorSize);
+      const menuWidth = menuRef.current.getBoundingClientRect().width;
+      console.log('menuWidth', menuWidth);
+      setPosition(calculatePosition(activatorSize, menuWidth, cover));
+    }
+  }, [isOpen, activatorSize])
 
   return (
     <>
       {clonnedButton}
       {menuContent}
     </>
-  );
+  )
 }
 
-Menu.Box = MenuBox;
-Menu.Item = MenuItem;
+const PADDING = 5;
 
-export default Menu;
+function calculatePosition({ left, top, height }, menuWidth, cover) {
+  const positionStyle = { top: cover ? top : top + height + PADDING }
+
+  // Activator left position on screen + menuWidth + some padding space
+  if (left + menuWidth + 20 <= window.innerWidth) {
+    positionStyle.left = left
+  } 
+  else {
+    positionStyle.right = 0
+  }
+
+  return positionStyle
+}
+
+Menu.Box = MenuBox
+Menu.Item = MenuItem
+
+export default Menu

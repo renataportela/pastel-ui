@@ -1,7 +1,7 @@
 import React from 'react'
 import { text, withKnobs, select } from '@storybook/addon-knobs'
 
-import { AVAILABLE_KINDS } from '~/styles/params'
+import { PALLETES } from '~/styles/params'
 import { Chip } from '~/components'
 
 export default {
@@ -41,7 +41,7 @@ export const colors = () => {
   return (
     <Chip 
       onDelete={() => {}} 
-      kind={select('Kind', AVAILABLE_KINDS, null)} 
+      kind={select('Kind', PALLETES, null)} 
       bgColor={text('BgColor', '#ad0')} 
       textColor={text('textColor', 'purple')} 
     >

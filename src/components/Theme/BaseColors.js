@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import { PALLETE_COLORS } from '~/constants'
+import { PALLETES } from '~/styles/params'
 import useTheme from './useTheme'
 
 const BaseStyle = styled.div(({ bgColor, textColor }) => {
@@ -35,7 +35,7 @@ function BaseColors({ bgColor, tint, pallete, textColor, ...props }) {
 BaseColors.propTypes = {
   bgColor: PropTypes.string,
   alternative: PropTypes.bool,
-  pallete: PropTypes.oneOf(PALLETE_COLORS),
+  pallete: PropTypes.oneOf(PALLETES),
   textColor: PropTypes.string,
 }
 

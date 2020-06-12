@@ -1,11 +1,25 @@
-import React from 'react';
-import styled from '@emotion/styled';
+import React from 'react'
+import PropTypes from 'prop-types'
+import styled from 'styled-components'
 
-import { colors, shadowOutline } from '~/pastel-ui/theming';
+import { shadowOutline } from '~/styles/shadows'
+import { BaseColors } from '~/components/Theme'
 
-const MenuItemStyle = styled.button`
+function MenuItem({ children, close, onClick, ...props }) {
+  const handleClick = () => {    
+    close();
+    onClick();
+  };
+
+  return (
+    <MenuItemStyle onClick={handleClick} {...props}>{children}</MenuItemStyle>
+  )
+}
+
+const MenuItemStyle = styled(BaseColors).attrs(() => ({
+  forwardedAs: 'button',
+}))`
   border: 0;
-  color: ${colors.textColor};
   display: flex;
   padding: .8rem 1.2rem;
   text-transform: uppercase;
@@ -15,24 +29,22 @@ const MenuItemStyle = styled.button`
   background-color: white;
 
   &:hover {
-    background-color: ${colors.hightlight_100};
-    color: ${colors.blue_900};
+    background-color: rgba(0, 0, 0, 0.08);
   }
 
   &:focus {
     box-shadow: inset ${shadowOutline};
   }
-`;
+`
 
-function MenuItem({ children, close, onClick, ...rest }){
-  const handleClick = () => {    
-    close();
-    onClick();
-  };
+MenuItem.defaultProps = {
+  textColor: 'currentColor',
+}
 
-  return (
-    <MenuItemStyle onClick={handleClick} {...rest}>{children}</MenuItemStyle>
-  );
+MenuItem.propTypes = {
+  children: PropTypes.node.isRequired,
+  onClick: PropTypes.func.isRequired,
+  textColor: PropTypes.string,
 }
 
 export default MenuItem;

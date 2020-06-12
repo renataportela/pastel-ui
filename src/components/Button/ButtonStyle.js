@@ -90,6 +90,7 @@ const buttonVariant = props => {
 }
 
 const ButtonStyle = styled.button.attrs(props => {
+  console.log('props.size', props.size);
   return {
     diameter: roundSizes[props.size],
     padding: PADDING[props.size].y+' '+PADDING[props.size].x,
@@ -105,7 +106,6 @@ const ButtonStyle = styled.button.attrs(props => {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  border: 0;
   text-transform: uppercase;
   border: 2px solid;
 

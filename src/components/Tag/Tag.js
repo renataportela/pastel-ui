@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import { AVAILABLE_KINDS } from '~/styles/params'
+import { PALLETES } from '~/styles/params'
 import { BaseColors } from '~/components/Theme'
 
 function Tag({ children, kind, ...props}) {
@@ -26,7 +26,7 @@ Tag.defaultProps = {
 
 Tag.propTypes = {
   content: PropTypes.node,
-  kind: PropTypes.oneOf(AVAILABLE_KINDS),
+  kind: PropTypes.oneOf(PALLETES),
   title: PropTypes.string,
 }
 

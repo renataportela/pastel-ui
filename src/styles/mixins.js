@@ -12,5 +12,5 @@ export const roundShape = props => css`
 `;
 
 export const roundedBorders = `
-  border-radius: 8px;
+  border-radius: 6px;
 `;

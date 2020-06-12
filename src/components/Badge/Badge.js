@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { css, keyframes } from 'styled-components'
 
-import { AVAILABLE_KINDS } from '~/styles/params'
+import { PALLETES } from '~/styles/params'
 import { roundShape } from '~/styles/mixins'
 import { BaseColors } from '~/components/Theme'
 
@@ -88,7 +88,7 @@ Badge.propTypes = {
   children: PropTypes.node.isRequired,
   content: PropTypes.node,
   dot: PropTypes.bool,
-  kind: PropTypes.oneOf(AVAILABLE_KINDS),
+  kind: PropTypes.oneOf(PALLETES),
   round: PropTypes.bool,
   textColor: PropTypes.string,
 }
