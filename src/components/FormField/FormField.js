@@ -7,24 +7,21 @@ import { GUTTER_FORM } from '~/styles/params'
 import Flex from '~/components/Grid/Flex'
 
 function FormField({
-  disabled,
   error,
   help,
   fill,
   inputField,
   label,
-  name,
   value,
   onChange,
   ...props
 }) {
   const { colors } = useTheme()
   const hasError = !!error
+  const disabled = inputField.props.disabled
   const labelColor = hasError ? colors.danger.bg : disabled ? colors.disabled.text : colors.label
   const cloneInput = React.cloneElement(inputField, {
-    name,
     error: hasError,
-    disabled,
     value,
     onChange
   })

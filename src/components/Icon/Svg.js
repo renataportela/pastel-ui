@@ -14,7 +14,6 @@ function Svg({ children, color, fill, height, viewBox, width, ...props }) {
       viewBox={viewBox}
       fill={colors[fill] ? colors[fill].bg : fill}
       stroke={colors[color] ? colors[color].bg : color}
-      strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
       {...props}
@@ -35,6 +34,7 @@ Svg.defaultProps = {
   fill: 'none',
   height: '24px',
   size: null,
+  strokeWidth: 2,
   width: '24px',
 }
 
@@ -42,6 +42,7 @@ Svg.propTypes = {
   color: PropTypes.string,
   fill: PropTypes.string,
   height: PropTypes.string,
+  strokeWidth: PropTypes.number,
   viewBox: PropTypes.string.isRequired,
   width: PropTypes.string,
 }

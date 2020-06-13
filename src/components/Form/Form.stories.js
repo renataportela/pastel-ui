@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import { Form, RadioButton, TextField } from '~/components'
+import { Checkbox, Form, Radio, TextField } from '~/components'
 
 export default {
   title: 'Form',
@@ -12,6 +12,7 @@ export const form = () => {
     lastName: 'Doe',
     email: '',
     radio: null,
+    'checkbox[]': []
   })
 
   const handleChangeField = fieldName => value => {
@@ -57,11 +58,23 @@ export const form = () => {
 
       <Form.Field
         label="Radio"
-        inputField={<RadioButton name="radio" optionValue="1" label="Option 1" />}
+        inputField={<Radio name="radio" optionValue="1" label="Option 1" />}
       />
 
       <Form.Field
-        inputField={<RadioButton name="radio" optionValue="2" label="Option 2" />}
+        inputField={<Radio name="radio" optionValue="2" label="Option 2" />}
+      />
+
+      <Form.Field
+        inputField={<Checkbox name="checkbox[]" optionValue="A" label="Option A" />}
+      />
+
+      <Form.Field
+        inputField={<Checkbox name="checkbox[]" optionValue="B" label="Option B" />}
+      />
+
+      <Form.Field
+        inputField={<Checkbox name="checkbox[]" optionValue="C" label="Option C" />}
       />
 
       <Form.Button label="Submit" />

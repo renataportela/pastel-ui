@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 
 import { Icon } from '~/components'
-import { shadowOutline } from '~/styles/shadows'
 
 function CheckedIcon({ inputType, ...props }) {
   return (
@@ -37,7 +36,6 @@ const Box = styled.div`
   align-items: center;
   transition: border-color 0.2s;
   ${borderColor}
-  box-shadow: ${props => props.$isFocused ? shadowOutline : '' };
 `
 
 const resolveColor = props => {
@@ -56,11 +54,11 @@ const RadioIcon = styled.span`
 `;
 
 const CheckboxIcon = (props) => {
-  if (!props.checked) return null
+  if (!props.isChecked) return null
 
   const color = resolveColor(props)
 
-  return <Icon name="check" color={color} />
+  return <Icon name="check" color={color} strokeWidth={3} />
 }
 
 CheckedIcon.propTypes = {

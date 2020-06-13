@@ -14,7 +14,7 @@ const FlexStyle = styled(Flex)(props => ({
   alignContent: flexDisposition(props.alignContent),
   alignItems: props.centered ? 'center' : flexDisposition(props.alignItems),
   alignSelf: flexDisposition(props.alignSelf),
-  display: props.inline ? 'flex-inline' : 'flex',
+  display: props.inline ? 'inline-flex' : 'flex',
   flex: props.$fill ? '1 1 auto' : null,
   flexDirection: props.direction,
   flexWrap: props.wrap,
