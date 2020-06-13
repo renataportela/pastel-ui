@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 
 import { Icon } from '~/components'
+import { inputStyles } from '~/components/TextField/ElementStyle'
 
 function CheckedIcon({ inputType, ...props }) {
   return (
@@ -13,29 +14,14 @@ function CheckedIcon({ inputType, ...props }) {
   )
 }
 
-const borderColor = props => {
-  let color = props.$colors.sub.bg;
-
-  if (props.$error) color = props.$colors.danger_light.bg;
-  else if (props.disabled) color = props.$colors.disabled.border;
-  else if (props.$isFocused) color = props.$colors.primary_light.bg;
-  else if (props.isChecked) color = props.$colors.primary.bg;
-
-  return css`border-color: ${color};`;
-}
-
 const Box = styled.div`
+  ${inputStyles}
+  justify-content: center;
   width: 24px;
   min-width: 24px;
   height: 24px;
   min-height: 24px;
-  border: 2px solid;
   border-radius: ${props => props.inputType === 'radio' ? '50%' : '4px'};
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: border-color 0.2s;
-  ${borderColor}
 `
 
 const resolveColor = props => {

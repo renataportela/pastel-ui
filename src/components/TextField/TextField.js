@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import useTheme from '~/components/Theme/useTheme'
 import ElementStyle from './ElementStyle'
@@ -53,7 +53,14 @@ const InputStyle = styled.input`
   background-color: transparent;
   padding: .7rem .8rem;
   font-size: 1.02rem;
-  color: ${props => props.$error ? props.$colors.danger : (props.disabled ? props.$colors.disabledContrast : props.$colors.text)};
+  color: currentColor;
+  cursor: inherit;
+
+  ${({ $colors, disabled, $error }) => css`
+    &::placeholder {
+      color: ${$error ? $colors.danger.bg : (disabled ? $colors.disabled.text : $colors.primary_light.hover)};
+    }
+  `}
 `
 
 TextField.defaultProps = {
@@ -63,6 +70,7 @@ TextField.defaultProps = {
 }
 
 TextField.propTypes = {
+  disabled: PropTypes.bool,
   error: PropTypes.bool,
   flat: PropTypes.bool,
   rows: PropTypes.number,

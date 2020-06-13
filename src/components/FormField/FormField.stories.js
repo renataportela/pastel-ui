@@ -20,13 +20,13 @@ export const formField = () => {
       value={value} 
       onChange={handleChange}
       error={text('Error', '')}
-      disabled={boolean('Disabled', false)} 
       inputField={(
         <TextField 
           placeholder={text('Placeholder', 'Input')}           
           rows={number('Rows', null)}
           left={text('Left', '')} 
           right={text('Right', '')} 
+          disabled={boolean('Disabled', false)} 
         />
       )}
     />

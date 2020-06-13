@@ -11,6 +11,7 @@ export const form = () => {
     firstName: 'John',
     lastName: 'Doe',
     email: '',
+    description: 'Disabled',
     radio: null,
     'checkbox[]': []
   })
@@ -53,6 +54,13 @@ export const form = () => {
         label="Email"
         inputField={
           <TextField name="email" type="email" placeholder="Email" />
+        }
+      />
+
+      <Form.Field 
+        label="Description"
+        inputField={
+          <TextField name="description" disabled />
         }
       />
 

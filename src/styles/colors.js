@@ -4,6 +4,14 @@ export default {
   label: '#a661e2',
   textContrast: '#FFF',
   bgColor: '#FFF',
+  input: {
+    bg: '#fcfcfc',
+    border: '#e9e9e9',
+    text: '#4a1660',
+    borderHover: '#e8d4f9',
+    borderFocused: '#d9aaff',
+    disabledBorder: '#f0f0f0',
+  },
   primary: {
     bg: '#8849bc',
     hover: '#7b40aa',
@@ -82,7 +90,7 @@ export default {
   disabled: {
     bg: '#f5f5f5',
     hover: '#e0e0e0',
-    text: '#888',
+    text: '#999',
     border: '#ccc',
   },
   transparentLight: 'rgba(255, 255, 255, 0.08)',
