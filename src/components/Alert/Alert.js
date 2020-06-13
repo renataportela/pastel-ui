@@ -8,7 +8,7 @@ import Icon from '~/components/Icon'
 
 function Alert({ children, icon, kind, onClose, ...props}) {
   return (
-    <Outer pallete={kind} tint="light" {...props}>
+    <Outer pallete={kind} light {...props}>
       {icon && <AlertIcon name={icons[kind]} />}
       {children}        
       {onClose && <CloseButton kind={kind} size="sm" onClick={onClose} />}

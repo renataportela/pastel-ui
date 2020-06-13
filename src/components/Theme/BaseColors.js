@@ -5,18 +5,11 @@ import styled from 'styled-components'
 import { PALLETES } from '~/styles/params'
 import useTheme from './useTheme'
 
-const BaseStyle = styled.div(({ bgColor, textColor }) => {
-  return {
-    backgroundColor: bgColor,
-    color: textColor,
-  }
-})
-
-function BaseColors({ bgColor, tint, pallete, textColor, ...props }) {
+function BaseColors({ bgColor, light, pallete, textColor, ...props }) {
   const { colors } = useTheme()
   const getColor = (chosen, attr) => {
     if (!chosen) return null
-    const color = tint ? colors[chosen+'_'+tint] : colors[chosen];
+    const color = light ? colors[chosen+'Light'] : colors[chosen];
     return color && attr ? color[attr] : color;
   }
   const palleteColor = getColor(pallete) || { text: 'currentColor', bg: null };
@@ -25,12 +18,19 @@ function BaseColors({ bgColor, tint, pallete, textColor, ...props }) {
   
   return (
     <BaseStyle 
-      textColor={color || palleteColor.text} 
-      bgColor={bg || palleteColor.bg} 
+      $textColor={color || palleteColor.text} 
+      $bgColor={bg || palleteColor.bg} 
       {...props} 
     />
   )
 }
+
+const BaseStyle = styled.div(({ $bgColor, $textColor }) => {
+  return {
+    backgroundColor: $bgColor,
+    color: $textColor,
+  }
+})
 
 BaseColors.propTypes = {
   bgColor: PropTypes.string,

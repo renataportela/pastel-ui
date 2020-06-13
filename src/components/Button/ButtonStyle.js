@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 
-import { shadowBase, shadowLg, shadowOutline } from '~/styles/shadows'
+import { shadowSm, shadowLg, shadowOutline } from '~/styles/shadows'
 import { roundShape, roundedBorders } from '~/styles/mixins'
 import { FONT_SIZES, PADDING } from '~/styles/params'
 import { allEase } from '~/styles/transitions'
@@ -29,7 +29,7 @@ const buttonVariant = props => {
     backgroundColor: bgColor,
     color: textColor,
     borderColor: bgColor,
-    boxShadow: props.flat ? null : shadowBase,
+    boxShadow: props.flat ? null : shadowSm,
     '&:hover:enabled': {
       boxShadow: props.flat ? null : shadowLg,
       backgroundColor: hoverColor,

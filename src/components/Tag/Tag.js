@@ -7,7 +7,7 @@ import { BaseColors } from '~/components/Theme'
 
 function Tag({ children, kind, ...props}) {
   return (
-    <TagStyle pallete={kind} tint="light" {...props}>{children}</TagStyle>
+    <TagStyle pallete={kind} light {...props}>{children}</TagStyle>
   )
 }
 

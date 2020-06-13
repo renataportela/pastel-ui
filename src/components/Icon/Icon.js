@@ -9,6 +9,7 @@ export const iconNames = {
   check: 'Check',
   info: 'Info',
   loader: 'Loader',
+  loading: 'Loader',
   menu: 'Menu',
   user: 'User',
   x: 'X',

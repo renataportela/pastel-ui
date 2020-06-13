@@ -17,7 +17,7 @@ export default {
     hover: '#7b40aa',
     text: '#fff',
   },
-  primary_light: {
+  primaryLight: {
     bg: '#d9aaff',
     hover: '#cc8eff',
     text: '#4a1660',
@@ -27,7 +27,7 @@ export default {
     hover: '#e83ece',
     text: '#fff',
   },
-  secondary_light: {
+  secondaryLight: {
     bg: '#ff72ee',
     hover: '#fc53e5',
     text: '#961284',
@@ -37,7 +37,7 @@ export default {
     hover: '#db332e',
     text: '#fff',
   },
-  danger_light: {
+  dangerLight: {
     bg: '#ff7772',
     hover: '#fc5f5f',
     text: '#aa1e3a',
@@ -47,7 +47,7 @@ export default {
     hover: '#1bd3c1',
     text: '#fff',
   },
-  info_light: {
+  infoLight: {
     bg: '#35ffee',
     hover: '#2fefdc',
     text: '#187067',
@@ -57,7 +57,7 @@ export default {
     hover: '#85b53f', 
     text: '#fff',
   },
-  success_light: {
+  successLight: {
     bg: '#c9ff7a', 
     hover: '#affc41', 
     text: '#465b24',
@@ -67,7 +67,7 @@ export default {
     hover: '#ffc700',
     text: '#fff',
   },
-  warning_light: {
+  warningLight: {
     bg: '#fff94f', 
     hover: '#fff04f',
     text: '#ff6e00',

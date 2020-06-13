@@ -5,6 +5,7 @@ import { Container, Theme } from '../src/components'
 
 addDecorator(story => (
   <Theme>
+    <div id="modal-root"></div>
     <Container style={{ marginTop: 30 }}>
       {story()}
     </Container>
