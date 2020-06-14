@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const Overlay = styled.div`
-  background-color: rgba(0,0,0,0.6);
+  background-color: rgba(0,0,0,0.4);
   position: fixed;
   height: 100%;
   width: 100%;

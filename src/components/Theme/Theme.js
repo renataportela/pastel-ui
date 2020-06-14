@@ -22,6 +22,8 @@ const GlobalStyle = createGlobalStyle`
   *::before,
   *::after {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
   }
 
   html {
@@ -29,10 +31,13 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    margin: 0;
-    padding: 0;
     font-weight: 400;
     line-height: 1.5;
+    height: 100vh; 
+    width: 100vw;
+    top: 0;
+    margin: 0;
+
     ${({ theme }) => css`
       font-family: ${theme.fontFamily};
       font-size: ${theme.fontSize}px;

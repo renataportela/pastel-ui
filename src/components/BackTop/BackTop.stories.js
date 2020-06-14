@@ -15,7 +15,7 @@ const SIZES = ['sm', 'md', 'lg', 'xl'];
 export const backTop = () => {
   return (
     <>
-    <Paragraph>
+      <Paragraph>
         Mussum Ipsum, cacilds vidis litro abertis. Não sou faixa preta
         cumpadi, sou preto inteiris, inteiris. Quem num gosta di mé, boa
         gentis num é. Delegadis gente finis, bibendum egestas augue arcu ut

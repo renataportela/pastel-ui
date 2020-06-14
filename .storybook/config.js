@@ -4,8 +4,7 @@ import { addDecorator } from '@storybook/react'
 import { Container, Theme } from '../src/components'
 
 addDecorator(story => (
-  <Theme>
-    <div id="modal-root"></div>
+  <Theme>      
     <Container style={{ marginTop: 30 }}>
       {story()}
     </Container>

@@ -14,6 +14,7 @@ export {
   FormField,
   Heading,
   Icon,
+  Modal,
   Overlay,
   PageLoading,
   Paper,
