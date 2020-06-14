@@ -27,7 +27,7 @@ function FormField({
   })
 
   return (
-    <Outer $fill={fill} {...props}>
+    <Outer fill={fill} {...props}>
       {label && <Label textColor={labelColor}>{label}</Label>}
       {cloneInput}
       {hasError && <Message textColor={colors.danger.text}>{error}</Message>}

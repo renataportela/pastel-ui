@@ -74,7 +74,8 @@ export default {
   },
   neutral: {
     bg: '#FFF',
-    hover: '#f0f0f0',
+    border: '#f0f0f0',
+    hover: '#e8e8e8',
     text: '#5f5f5f',
   },
   dark: {

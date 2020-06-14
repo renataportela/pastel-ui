@@ -6,29 +6,28 @@ import Text from './Text'
 
 function Heading({ children, size, ...props }) {
   return (
-    <HeadingStyle as={size} fontSize={size} {...props}>
+    <HeadingStyle as={'h'+size} fontSize={size} {...props}>
       {children}
     </HeadingStyle>
   )
 }
 
-
 const fontSizes = {
-  h1: '2.2rem',
-  h2: '1.7rem',
-  h3: '1.45rem',
-  h4: '1.2rem',
-  h5: '1.1rem',
-  h6: '1rem',
+  '1': '2.2rem',
+  '2': '1.7rem',
+  '3': '1.45rem',
+  '4': '1.2rem',
+  '5': '1.1rem',
+  '6': '1rem',
 }
 
 const fontSizesMd = {
-  h1: '2.5rem',
-  h2: '2rem',
-  h3: '1.75rem',
-  h4: '1.5rem',
-  h5: '1.25rem',
-  h6: '1rem',
+  '1': '2.5rem',
+  '2': '2rem',
+  '3': '1.75rem',
+  '4': '1.5rem',
+  '5': '1.25rem',
+  '6': '1rem',
 }
 
 const HeadingStyle = styled(Text)`
@@ -42,12 +41,12 @@ const HeadingStyle = styled(Text)`
 `;
 
 Heading.defaultProps = {
-  size: 'h1',
+  size: '3',
   weight: 'bolder',
 }
 
 Heading.propTypes = {
-  size: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6']),
+  size: PropTypes.oneOf(['1', '2', '3', '4', '5', '6']),
 }
 
 export default Heading

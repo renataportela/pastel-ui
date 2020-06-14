@@ -28,7 +28,7 @@ const buttonVariant = props => {
   let styles = {
     backgroundColor: bgColor,
     color: textColor,
-    borderColor: bgColor,
+    border: props.kind === 'neutral' ? '1px solid '+chosenColor.border : '0',
     boxShadow: props.flat ? null : shadowSm,
     '&:hover:enabled': {
       boxShadow: props.flat ? null : shadowLg,
@@ -61,6 +61,7 @@ const buttonVariant = props => {
 
       styles = {
         ...styles, 
+        border: '2px solid',
         borderColor: outlineColor,        
         '&:hover:enabled': {
           ...styles['&:hover:enabled'],
@@ -104,8 +105,7 @@ const ButtonStyle = styled.button.attrs(props => {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  text-transform: uppercase;
-  border: 2px solid;
+  text-transform: uppercase;  
 
   & > svg {
     width: 1.1em;

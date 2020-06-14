@@ -10,18 +10,33 @@ function Flex({ className, children, style }) {
   )
 }
 
-const FlexStyle = styled(Flex)(props => ({
-  alignContent: flexDisposition(props.alignContent),
-  alignItems: props.centered ? 'center' : flexDisposition(props.alignItems),
-  alignSelf: flexDisposition(props.alignSelf),
-  display: props.inline ? 'inline-flex' : 'flex',
-  flex: props.$fill ? '1 1 auto' : null,
-  flexDirection: props.direction,
-  flexWrap: props.wrap,
-  height: props.height,
-  justifyContent: props.centered ? 'center' : flexDisposition(props.justify),
-  textAlign: props.textAlign,
-}))
+const FlexStyle = styled(Flex).withConfig({
+  shouldForwardProp: (prop, defaultValidatorFn) =>
+    !['fill'].includes(prop)
+    && defaultValidatorFn(prop),
+  })(props => {
+    const gapStyle = props.gap ? {
+      '& > *:not(:first-child)': {
+        marginLeft: props.gap
+      }
+    } : {};
+
+    return {
+      alignContent: flexDisposition(props.alignContent),
+      alignItems: props.centered ? 'center' : flexDisposition(props.alignItems),
+      alignSelf: flexDisposition(props.alignSelf),
+      display: props.inline ? 'inline-flex' : 'flex',
+      flex: props.fill ? '1 1 auto' : null,
+      flexDirection: props.direction,
+      flexWrap: props.wrap,
+      height: props.height,
+      justifyContent: props.centered ? 'center' : flexDisposition(props.justify),
+      textAlign: props.textAlign,
+      margin: props.margin,
+      padding: props.padding,
+      ...gapStyle
+    }
+  })
 
 const flexDisposition = option => {
   switch (option) {
@@ -54,8 +69,11 @@ Flex.defaultProps = {
   alignSelf: null,
   direction: null,
   display: null,
+  gap: null,
   height: null,
   justify: null,
+  margin: null,
+  padding: null,
   textAlign: null,
   wrap: null,
 }
@@ -67,10 +85,13 @@ Flex.propTypes = {
   centered: PropTypes.bool,
   direction: PropTypes.oneOf(['column', 'column-reverse', 'row', 'row-reverse']),
   display: PropTypes.string,
-  $fill: PropTypes.string,
+  fill: PropTypes.string,
+  gap: PropTypes.string,
   height: PropTypes.string,
   inline: PropTypes.bool,
   justify: PropTypes.oneOf(['around', 'between', 'center', 'end', 'evenly', 'start']),
+  margin: PropTypes.string,
+  padding: PropTypes.string,
   textAlign: PropTypes.oneOf(['center', 'left', 'right']),
   wrap: PropTypes.oneOf(['wrap', 'nowrap', 'wrap-reverse']),
 }

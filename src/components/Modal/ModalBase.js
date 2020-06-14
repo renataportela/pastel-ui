@@ -2,6 +2,7 @@ import React, { useRef } from 'react'
 import styled from 'styled-components'
 
 import { Paper } from '~/components'
+import { scale } from '~/styles/transitions'
 import Overlay from '~/components/Overlay'
 import useOutsideClose from '~/hooks/useOutsideClose'
 
@@ -23,6 +24,9 @@ const OverlayStyle = styled(Overlay)`
   & > div {
     z-index: 300;
     max-width: 90%;
+    min-width: 300px;
+    min-height: 60px;
+    animation: ${scale} 0.1s;
   }
 `
 

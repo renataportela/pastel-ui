@@ -9,6 +9,7 @@ export {
   Close,
   Col,
   Container,
+  Dialog,
   Flex,
   Form,
   FormField,

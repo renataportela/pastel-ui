@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import { scale } from '~/styles/transitions'
 import usePortal from '~/hooks/usePortal'
 import Close from '~/components/Button/Close'
 import ModalBase from './ModalBase'
@@ -36,15 +35,7 @@ const ModalStyle = styled(ModalBase)`
   }
 
   & > div {
-    min-width: 300px;
-    animation: ${scale} 0.1s;
     overflow: auto;
-  }
-
-  @media (min-width: 778px) {
-    & > div {
-      min-width: 600px;
-    }
   }
 `
 
