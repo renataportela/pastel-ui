@@ -34,7 +34,7 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 400;
     line-height: 1.5;
     height: 100vh; 
-    width: 100vw;
+    width: 100%;
     top: 0;
     margin: 0;
 

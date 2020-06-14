@@ -98,7 +98,7 @@ const Inner = styled.div`
   align-items: center;
   ${props => !props.$disabled && css`
     &:hover > .box {
-      border-color: ${props.$error ? 'currentColor' : props.$colors.primary_light.bg};
+      border-color: ${props.$error ? 'currentColor' : props.$colors.primaryLight.bg};
     }
   `}
 `

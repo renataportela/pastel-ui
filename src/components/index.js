@@ -20,6 +20,7 @@ export { default as Radio } from './Radio'
 export { default as Tag } from './Tag'
 export { default as TextField } from './TextField'
 export { default as Theme, BaseColors, useTheme } from './Theme'
+export { default as Toast, useToast, withToastProvider } from './Toast'
 export { default as Ripple } from './Ripple'
 
 export * from './Grid'

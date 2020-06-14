@@ -28,5 +28,8 @@ export {
   Text,
   TextField,
   Theme,
-  useTheme
+  Toast,
+  useTheme,
+  useToast,
+  withToastProvider
 } from '~/components'

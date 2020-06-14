@@ -8,21 +8,23 @@ import Icon from '~/components/Icon'
 
 function Alert({ children, icon, kind, onClose, ...props}) {
   return (
-    <Outer pallete={kind} light {...props}>
+    <Outer pallete={kind} light={kind !== 'darker'} {...props}>
       {icon && <AlertIcon name={icons[kind]} />}
-      {children}        
+      {children}
       {onClose && <CloseButton kind={kind} size="sm" onClick={onClose} />}
     </Outer>
   )
 }
 
 const Outer = styled(BaseColors)`
-  padding: .7rem .9rem;
+  padding: .7em .9em;
   border-radius: 4px;
   margin-bottom: 20px;
   position: relative;
   display: flex;
-  justify-content: baseline;
+  flex-direction: row;
+  text-align: left;
+  align-items: center;  
 `;
 
 const CloseButton = styled(Close)`
@@ -41,12 +43,15 @@ const icons = {
   info: 'info',
   success: 'check',
   warning: 'warning',
+  darker: 'info',
 };
+
+export const ALERT_KINDS = ['success', 'warning', 'danger', 'info', 'darker']
 
 Alert.propTypes = {
   children: PropTypes.node.isRequired,
   icon: PropTypes.bool,
-  kind: PropTypes.oneOf(['success', 'warning', 'danger', 'info']).isRequired,
+  kind: PropTypes.oneOf(ALERT_KINDS).isRequired,
   onClose: PropTypes.func,
 }
 

@@ -1,1 +1,1 @@
-export { default } from './Alert'
+export { default, ALERT_KINDS } from './Alert'

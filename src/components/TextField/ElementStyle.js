@@ -33,7 +33,7 @@ export const inputStyles = css`
   ${({ $colors, disabled, $error, $isFocused }) => css`
     cursor: ${disabled ? 'not-allowed' : 'default'};
     border-color: ${$error 
-      ? $colors.danger_light.bg 
+      ? $colors.dangerLight.bg 
       : (disabled ? $colors.input.disabledBorder : 
         ($isFocused ? $colors.input.borderFocused : $colors.input.border))
       };

@@ -58,7 +58,7 @@ const InputStyle = styled.input`
 
   ${({ $colors, disabled, $error }) => css`
     &::placeholder {
-      color: ${$error ? $colors.danger.bg : (disabled ? $colors.disabled.text : $colors.primary_light.hover)};
+      color: ${$error ? $colors.danger.bg : (disabled ? $colors.disabled.text : $colors.primaryLight.hover)};
     }
   `}
 `

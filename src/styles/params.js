@@ -13,7 +13,7 @@ export const PADDING = {
 };
 
 export const SIZES = ['sm', 'md', 'lg', 'xl'];
-export const PALLETES = ['primary', 'secondary', 'success', 'warning', 'danger', 'info', 'sub', 'neutral', 'dark'];
+export const PALLETES = ['primary', 'secondary', 'success', 'warning', 'danger', 'info', 'sub', 'neutral', 'dark', 'darker'];
 
 export const GUTTER = '15px';
 export const GUTTER_FORM = '8px';

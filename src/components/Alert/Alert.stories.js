@@ -8,7 +8,7 @@ export default {
   decorators: [withKnobs],
 }
 
-const KINDS = ['success', 'warning', 'danger', 'info'];
+const KINDS = ['success', 'warning', 'danger', 'info', 'darker'];
 
 export const closeable = () => {
   const [show, setShow] = useState({ success: true, warning: true, danger: true, info: true })

@@ -34,6 +34,7 @@ const FlexStyle = styled(Flex).withConfig({
       textAlign: props.textAlign,
       margin: props.margin,
       padding: props.padding,
+      position: props.position,
       ...gapStyle
     }
   })
@@ -74,6 +75,7 @@ Flex.defaultProps = {
   justify: null,
   margin: null,
   padding: null,
+  position: null,
   textAlign: null,
   wrap: null,
 }
@@ -92,6 +94,7 @@ Flex.propTypes = {
   justify: PropTypes.oneOf(['around', 'between', 'center', 'end', 'evenly', 'start']),
   margin: PropTypes.string,
   padding: PropTypes.string,
+  position: PropTypes.string,
   textAlign: PropTypes.oneOf(['center', 'left', 'right']),
   wrap: PropTypes.oneOf(['wrap', 'nowrap', 'wrap-reverse']),
 }

@@ -13,17 +13,17 @@ const roundSizes = {
 }
 
 const buttonVariant = props => {
-  const chosenColor = props.colors[props.inverse ? props.kind + 'Inverse' : props.kind]
+  const chosenColor = props.colors[props.kind]
   
   let bgColor = props.colors.primary.bg
   let hoverColor = props.colors.primary.hover
   let textColor = props.colors.primary.text
 
   if (chosenColor){
-    bgColor = chosenColor.bg;
-    hoverColor = chosenColor.hover;
-    textColor = chosenColor.text;
-  }
+    bgColor = chosenColor.bg
+    hoverColor = chosenColor.hover
+    textColor = chosenColor.text
+  } 
 
   let styles = {
     backgroundColor: bgColor,
@@ -99,7 +99,7 @@ const ButtonStyle = styled.button.attrs(props => {
   position: relative;
   cursor: pointer;
   outline: 0;
-  whiteSpace: nowrap;
+  white-space: nowrap;
   userSelect: none;
   display: flex;
   flex-direction: row;

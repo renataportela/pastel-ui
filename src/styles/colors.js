@@ -83,6 +83,11 @@ export default {
     hover: '#393939',
     text: '#fff',
   },
+  darker: {
+    bg: '#222',
+    hover: '#202020',
+    text: '#fff',
+  },
   sub: {
     bg: '#f0f0f0',
     hover: '#e0e0e0',

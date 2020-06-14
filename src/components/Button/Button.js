@@ -43,16 +43,4 @@ function Button(
   )
 }
 
-// Button.propTypes = {
-//   disabled: PropTypes.bool,
-//   icon: PropTypes.string,
-//   inverse: PropTypes.bool,
-//   label: PropTypes.string,
-//   loading: PropTypes.bool,
-//   kind: PropTypes.oneOf(['primary', 'secondary', 'success', 'warning', 'danger', 'info', 'neutral', 'dark']),
-//   round: PropTypes.bool,
-//   size: PropTypes.oneOf(SIZES),
-//   variant: PropTypes.oneOf(['default', 'outline', 'ghost']),
-// }
-
 export default forwardRef(Button)
