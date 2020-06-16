@@ -9,9 +9,11 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src/ -d lib/",
     "storybook": "start-storybook",
     "prepublishOnly": "rm -rf dist && npm run build",
-    "postbuild": "npm pack"
+    "postbuild": "npm pack",
+    "flow": "flow"
   },
   "keywords": [],
   "author": "",

@@ -32,7 +32,7 @@ const fontSizesMd = {
 
 const HeadingStyle = styled(Text)`
   margin-top: 0;
-  margin-bottom: 0.5rem;
+  margin-bottom: ${props => props.noMargin ? '0' : '0.5rem'};
   font-size: ${props => fontSizes[props.fontSize]};
 
   @media (min-width: 768px) {
@@ -47,6 +47,7 @@ Heading.defaultProps = {
 
 Heading.propTypes = {
   size: PropTypes.oneOf(['1', '2', '3', '4', '5', '6']),
+  noMargin: PropTypes.bool,
 }
 
 export default Heading

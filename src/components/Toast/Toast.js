@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
 import { Button, Flex } from '~/components'
-import Alert, { ALERT_KINDS } from '~/components/Alert'
+import Alert from '~/components/Alert'
 
 function Toast({ actions, closeButton, kind, message, position, remove, ...props }) {
   return (
@@ -39,7 +39,7 @@ Toast.defaultProps = {
 
 Toast.propTypes = {
   closeButton: PropTypes.object,
-  kind: PropTypes.oneOf(ALERT_KINDS).isRequired,
+  kind: Alert.propTypes.kind,
   message: PropTypes.node.isRequired,  
 }
 

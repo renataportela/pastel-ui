@@ -46,12 +46,10 @@ const icons = {
   darker: 'info',
 };
 
-export const ALERT_KINDS = ['success', 'warning', 'danger', 'info', 'darker']
-
 Alert.propTypes = {
   children: PropTypes.node.isRequired,
   icon: PropTypes.bool,
-  kind: PropTypes.oneOf(ALERT_KINDS).isRequired,
+  kind: PropTypes.oneOf(['success', 'warning', 'danger', 'info', 'darker']).isRequired,
   onClose: PropTypes.func,
 }
 
