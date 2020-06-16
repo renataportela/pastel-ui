@@ -9,14 +9,17 @@ export default {
 export const modal = () => {
   const [open, setOpen] = useState(false)
   const [open2, setOpen2] = useState(false)
+  const handleClose = () => setOpen(false)
+  const handleClose2 = () => setOpen2(false)
+
   return (
     <>
       <Button label="Open" onClick={() => setOpen(true)} />
-      <Modal open={open} setOpen={setOpen}>
+      <Modal open={open} close={handleClose}>
         <p>Hello!</p>
         <Button label="Open" onClick={() => setOpen2(true)} />
 
-        <Modal open={open2} setOpen={setOpen2}>
+        <Modal open={open2} close={handleClose2}>
           <p>Hello again!</p>
         </Modal>
       </Modal>

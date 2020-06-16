@@ -6,13 +6,13 @@ import { scale } from '~/styles/transitions'
 import Overlay from '~/components/Overlay'
 import useOutsideClose from '~/hooks/useOutsideClose'
 
-function ModalBase({ children, close, ...props }) {
+function ModalBase({ children, close, open, ...props }) {
   const modalBoxRef = useRef()
 
-  useOutsideClose(modalBoxRef, close)
+  useOutsideClose(modalBoxRef, open, close)
 
   return (
-    <OverlayStyle {...props}>
+    <OverlayStyle show={open} {...props}>
       <Paper shadow="xl" ref={modalBoxRef}>        
         {children}
       </Paper>

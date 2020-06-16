@@ -13,7 +13,7 @@ export const dialog = () => {
     <>
       <Button label="Open" onClick={() => setOpen(true)} />
       <Dialog 
-        isOpen={open} 
+        open={open} 
         close={handleClose} 
         title={<p>Hi</p>}
         message={<p>Hello!</p>}

@@ -20,3 +20,20 @@ export const scale = keyframes`
     transform: scale(1);
   }
 `
+
+export const fadeInFromNone = keyframes`
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  1% {
+    visibility: visible;
+    opacity: 0;
+  }
+
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+`

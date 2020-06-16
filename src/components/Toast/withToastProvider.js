@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import { createPortal } from 'react-dom'
 import styled from 'styled-components'
 
-import usePortal from '~/hooks/usePortal'
+import { Portal } from '~/components'
 import ToastContext from './context'
 import Toaster from './Toaster'
 
@@ -15,20 +14,18 @@ function withToastProvider(Component, position = 'topRight') {
       setToasts([...toasts, { id, ...toastProps }])
     }
     const removeToast = id => setToasts(toasts.filter(t => t.id !== id))
-    const el = usePortal()
 
     return (
       <ToastContext.Provider value={{ addToast, removeToast }}>
         <Component {...props} />
 
-        {createPortal(
+        <Portal selector="#portal-root">
           <Toasts $position={position}>
             {toasts.map(({ id, ...toastProps }) => (
               <Toaster key={id} remove={() => removeToast(id)} {...toastProps} />
             ))}
-          </Toasts>,
-          el
-        )}
+          </Toasts>
+        </Portal>
       </ToastContext.Provider>
     )
   }

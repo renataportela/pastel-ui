@@ -1,17 +1,13 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import usePortal from '~/hooks/usePortal'
 import { ModalBase } from '~/components/Modal'
-import { Button, Flex, Heading } from '~/components'
+import { Button, Flex, Heading, Portal } from '~/components'
 
 function Dialog({
   actions,
   children,
-  isOpen,
-  close,
   closeLabel,
   closeKind,
   closeVariant,
@@ -19,29 +15,29 @@ function Dialog({
   title,
   ...props
 }) {
-  const el = usePortal()
+  console.log('props', props);
+  if (!props.open) return null
 
-  if (!isOpen) return null
-
-  return ReactDOM.createPortal(
-    <Modal close={close} {...props}>
-      {title && <Heading size="4">{title}</Heading>}
-      {message}
-      <Flex justify="end" alignItems="center" gap="8px" margin="15px 0 0">
-        <Button
-          label={closeLabel}
-          kind={closeKind}
-          variant={closeVariant}
-          onClick={close}
-        />
-        {children}
-      </Flex>
-    </Modal>,
-    el
+  return (
+    <Portal selector="#portal-root">
+      <DialogStyle {...props}>
+        {title && <Heading size="4">{title}</Heading>}
+        {message}
+        <Flex justify="end" alignItems="center" gap="8px" margin="15px 0 0">
+          <Button
+            label={closeLabel}
+            kind={closeKind}
+            variant={closeVariant}
+            onClick={props.close}
+          />
+          {children}
+        </Flex>
+      </DialogStyle>
+    </Portal>
   )
 }
 
-const Modal = styled(ModalBase)`
+const DialogStyle = styled(ModalBase)`
   & > div {
     overflow: ${props => (props.scrollable ? 'auto' : 'hidden')};
     max-height: 90%;
@@ -62,6 +58,7 @@ Dialog.defaultProps = {
 
 Dialog.propTypes = {
   children: PropTypes.node,
+  close: PropTypes.func.isRequired,
   closeLabel: PropTypes.string,
   closeVariant: PropTypes.string,
   closeKind: PropTypes.string,
@@ -69,7 +66,6 @@ Dialog.propTypes = {
   open: PropTypes.bool.isRequired,
   title: PropTypes.node,
   scrollable: PropTypes.bool,
-  setOpen: PropTypes.func.isRequired,
 }
 
 export default Dialog

@@ -36,7 +36,7 @@ function Menu({ activator, children, cover }) {
     className: isOpen ? 'opened' : null,
   })
 
-  useOutsideClose(menuRef, close)
+  useOutsideClose(menuRef, isOpen, close)
 
   useLayoutEffect(() => {
     if (activatorRef.current) {

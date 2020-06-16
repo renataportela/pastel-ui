@@ -1,8 +1,9 @@
 import { useLayoutEffect } from 'react';
 
-function useOutsideClose(elementRef, close){
+function useOutsideClose(elementRef, isOpen, close){
   useLayoutEffect(() => {
     if (!elementRef.current) return;
+    if (!isOpen) return;
 
     const handleClick = e => {
       elementRef.current && !elementRef.current.contains(e.target) && close();
@@ -23,7 +24,7 @@ function useOutsideClose(elementRef, close){
       document.removeEventListener('touchstart', handleClick);
       document.removeEventListener('keyup', handleEsc);
     }
-  }, [close, elementRef]);
+  }, [isOpen, close, elementRef]);
 }
 
 export default useOutsideClose;

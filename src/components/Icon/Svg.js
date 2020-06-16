@@ -41,10 +41,10 @@ Svg.defaultProps = {
 Svg.propTypes = {
   color: PropTypes.string,
   fill: PropTypes.string,
-  height: PropTypes.string,
+  height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   strokeWidth: PropTypes.number,
-  viewBox: PropTypes.string.isRequired,
-  width: PropTypes.string,
+  viewBox: PropTypes.string,
+  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 }
 
 export default Svg
