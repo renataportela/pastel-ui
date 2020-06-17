@@ -20,6 +20,7 @@ export {
   Modal,
   Overlay,
   PageLoading,
+  Pagination,
   Paper,
   Paragraph,
   Portal,

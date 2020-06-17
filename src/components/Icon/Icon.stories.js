@@ -24,7 +24,7 @@ export const icons = () => {
           }}
         >
           <Icon color="primary" name={iconName} />
-          <p>{iconName}</p>
+          <small>{iconName}</small>
         </div>
       ))}
     </div>
