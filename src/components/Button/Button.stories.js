@@ -124,6 +124,9 @@ export const closeButton = () => {
       <Close size="md" />
       <Close size="lg" />
       <Close size="xl" />
+      <div style={{ color: 'red' }}>
+        <Close size="xl" />
+      </div>
     </div>
   );
 }

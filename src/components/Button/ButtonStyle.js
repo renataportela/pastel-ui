@@ -8,6 +8,7 @@ import { allEase } from '~/styles/transitions'
 const buttonVariant = props => {
   const chosenColor = props.colors[props.color]
   const isNeutral = props.color === 'neutral'
+  const hasTextColor = !!props.textColor
   
   let bgColor = props.colors.primary.bg
   let hoverColor = props.colors.primary.hover
@@ -16,8 +17,8 @@ const buttonVariant = props => {
   if (chosenColor){
     bgColor = chosenColor.bg
     hoverColor = chosenColor.hover
-    textColor = chosenColor.text
-  } 
+    textColor = props.textColor || chosenColor.text
+  }  
 
   let styles = {
     backgroundColor: bgColor,
@@ -48,7 +49,7 @@ const buttonVariant = props => {
     styles['&:disabled'].backgroundColor = 'transparent'
     styles.backgroundColor = 'transparent'
     styles.boxShadow = 'none'
-    styles.color = isNeutral ? textColor : bgColor;
+    styles.color = isNeutral || hasTextColor ? textColor : bgColor;
 
     if (props.kind === 'outline') {
       const outlineColor = isNeutral ? hoverColor : bgColor;

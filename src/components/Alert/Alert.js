@@ -5,13 +5,15 @@ import styled from 'styled-components'
 import { BaseColors } from '~/components/Theme'
 import { Close } from '~/components/Button'
 import Icon from '~/components/Icon'
+import { ALERT_KINDS } from '~/constants'
 
 function Alert({ children, icon, kind, onClose, ...props}) {
+  const color = kind === 'dark' ? 'darker' : kind + 'Alt'
   return (
-    <Outer pallete={kind} light={kind !== 'darker'} {...props}>
+    <Outer color={color} {...props}>
       {icon && <AlertIcon name={icons[kind]} />}
       {children}
-      {onClose && <CloseButton kind={kind} size="sm" onClick={onClose} />}
+      {onClose && <CloseButton size="sm" onClick={onClose} />}
     </Outer>
   )
 }
@@ -43,13 +45,13 @@ const icons = {
   info: 'info',
   success: 'check',
   warning: 'warning',
-  darker: 'info',
+  dark: 'info',
 };
 
 Alert.propTypes = {
   children: PropTypes.node.isRequired,
   icon: PropTypes.bool,
-  kind: PropTypes.oneOf(['success', 'warning', 'danger', 'info', 'darker']).isRequired,
+  kind: PropTypes.oneOf(ALERT_KINDS).isRequired,
   onClose: PropTypes.func,
 }
 

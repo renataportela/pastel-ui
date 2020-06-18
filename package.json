@@ -21,7 +21,6 @@
   "peerDependencies": {
     "react": "^16.x",
     "react-dom": "^16.x",
-    "prop-types": "^15.x",
     "styled-components": "^5.x"
   },
   "devDependencies": {
@@ -32,8 +31,9 @@
     "@storybook/react": "^5.3.19",
     "babel-loader": "^8.1.0",
     "babel-plugin-module-resolver": "^4.0.0",
-    "babel-plugin-styled-components": "^1.10.7",    
+    "babel-plugin-styled-components": "^1.10.7",
     "jest": "^26.0.1",
+    "prop-types": "^15.7.2",
     "react-test-renderer": "^16.13.1",
     "rollup": "^2.11.2",
     "rollup-plugin-babel": "^4.4.0",

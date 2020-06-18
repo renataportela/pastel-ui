@@ -2,16 +2,15 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import { BaseColors } from '~/components/Theme'
-import { Button } from '~/components'
-import Menu from './AppBarMenu'
+import { BaseColors, BASE_COLORS_PROPS } from '~/components/Theme'
+import Button, { GhostButton } from './AppBarButton'
 
-function AppBar({ brand, children, kind, left, right, onToggleMenu, ...props }) {
+function AppBar({ brand, children, left, right, onToggleMenu, ...props }) {
   return (
-    <ColorBar pallete={kind} {...props}>
+    <ColorBar {...props}>
       {onToggleMenu && (
         <MenuIconSlot>
-          <Button icon="menu" kind={kind} textColor="currentColor" size="lg" round flat onClick={onToggleMenu} />
+          <GhostButton icon="menu" color={props.color} size="lg" round onClick={onToggleMenu} />
         </MenuIconSlot>
       )}
       {brand && <BrandSlot>{brand}</BrandSlot>}
@@ -22,6 +21,7 @@ function AppBar({ brand, children, kind, left, right, onToggleMenu, ...props }) 
 }
 
 const ColorBar = styled(BaseColors)`
+  position: relative;
   display: flex;
   justify-content: flex-start;
   align-items: stretch;
@@ -30,6 +30,7 @@ const ColorBar = styled(BaseColors)`
 `
 
 const Slot = styled.div`
+  position: relative;
   display: flex;
   flex-direction: row;  
   align-items: center;
@@ -37,7 +38,7 @@ const Slot = styled.div`
   color: inherit;
 `
 
-const LeftSlot = styled(Slot)`
+const LeftSlot = styled(Slot)`  
   justify-content: flex-start;
 `
 
@@ -55,15 +56,15 @@ const MenuIconSlot = styled(Slot)`
   padding-left: 0.8rem;
 `
 
-AppBar.Menu = Menu
+AppBar.Button = Button
 
 AppBar.defaultProps = {
-  kind: 'primary',
+  color: 'primary',
 }
 
 AppBar.propTypes = {
+  ...BASE_COLORS_PROPS,
   brand: PropTypes.node.isRequired, 
-  kind: PropTypes.string, 
   onToggleMenu: PropTypes.func,
 }
 

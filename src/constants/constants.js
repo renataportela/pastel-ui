@@ -1,7 +1,9 @@
+export const ALERT_KINDS = ['success', 'warning', 'danger', 'info', 'dark', ]
+
 export const PALLETE = [
-  'primary', 'secondary', 'success', 'warning', 'danger', 'info', 'sub', 'neutral', 'dark', 'darker',
+  ...ALERT_KINDS, 'primary', 'secondary', 'sub', 'neutral', 'darker',
   'primaryAlt', 'secondaryAlt', 'successAlt', 'warningAlt', 'dangerAlt', 'infoAlt',
-];
+]
 
 export const BUTTON_FONT_SIZES = {
   sm: '.7rem',

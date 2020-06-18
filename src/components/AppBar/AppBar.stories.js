@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-import { AppBar } from '~/components'
-import Menu from '../Menu/Menu'
+import { AppBar, Menu } from '~/components'
 
 export default {
   title: 'AppBar',
@@ -20,22 +19,22 @@ export const appBar = () => {
         left="left"
         right={(
           <>
-            <AppBar.Menu label="Login" />
-            <AppBar.Menu label="Register" />
+            <AppBar.Button label="Login" />
+            <AppBar.Button label="Register" />
           </>
         )}
       />
       <AppBar 
         brand={<span>Brand</span>}
         onToggleMenu={onToggleMenu}
-        kind="secondary"
+        color="secondary"
         left={<div>left</div>}
         right={
-          <AppBar.Menu label="Options">
+          <Menu activator={<AppBar.Button label="Options" />}>
             <Menu.Item onClick={() => {}}>Option 1</Menu.Item>
             <Menu.Item onClick={() => {}}>Option 2</Menu.Item>
             <Menu.Item onClick={() => {}}>Option 3</Menu.Item>
-          </AppBar.Menu>
+          </Menu>
         }        
       />
       <AppBar 
@@ -43,42 +42,42 @@ export const appBar = () => {
         onToggleMenu={onToggleMenu}
         left={<div>left</div>}
         right={<div>right</div>}
-        kind="success"
+        color="success"
       />
       <AppBar 
         brand={<span>Brand</span>}
         onToggleMenu={onToggleMenu}
         left={<div>left</div>}
         right={<div>right</div>}
-        kind="warning"
+        color="warning"
       />
       <AppBar 
         brand={<span>Brand</span>}
         onToggleMenu={onToggleMenu}
         left={<div>left</div>}
         right={<div>right</div>}
-        kind="danger"
+        color="danger"
       />
       <AppBar 
         brand={<span>Brand</span>}
         onToggleMenu={onToggleMenu}
         left={<div>left</div>}
         right={<div>right</div>}
-        kind="info"
+        color="info"
       />
       <AppBar 
         brand={<span>Brand</span>}
         onToggleMenu={onToggleMenu}
         left={<div>left</div>}
         right={<div>right</div>}
-        kind="neutral"
+        color="neutral"
       />
       <AppBar 
         brand={<span>Brand</span>}
         onToggleMenu={onToggleMenu}
         left={<div>left</div>}
         right={<div>right</div>}
-        kind="dark"
+        color="dark"
       />
     </Container>
   )

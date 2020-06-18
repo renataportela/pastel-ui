@@ -10,14 +10,14 @@ import ButtonStyle from './ButtonStyle'
  */
 function Button(
   {
-    disabled,
-    icon,
+    disabled = false,
+    icon = null,
     color = 'primary',
-    label,
-    loading,
+    label = null,
+    loading = false,
     loaderColor = 'primary',
     size = 'md',
-    submitting,
+    submitting = false,
     kind = 'default',
     ...props
   },

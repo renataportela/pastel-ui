@@ -2,8 +2,9 @@
 
 exports[`Close component renders a close button with large size 1`] = `
 <button
-  className="ButtonStyle-sc-120zjl4-0 wdmuf"
+  className="ButtonStyle-sc-120zjl4-0 bnXTHk"
   color="primary"
+  disabled={false}
   kind="ghost"
   size="lg"
 >

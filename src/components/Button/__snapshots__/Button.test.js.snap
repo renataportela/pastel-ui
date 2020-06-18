@@ -4,6 +4,7 @@ exports[`Button component renders a danger button 1`] = `
 <button
   className="ButtonStyle-sc-120zjl4-0 kIbNBe"
   color="danger"
+  disabled={false}
   kind="default"
   size="md"
 >
@@ -15,6 +16,7 @@ exports[`Button component renders a default button 1`] = `
 <button
   className="ButtonStyle-sc-120zjl4-0 iJAzjI"
   color="primary"
+  disabled={false}
   kind="default"
   size="md"
 >
@@ -26,6 +28,7 @@ exports[`Button component renders a extra large button 1`] = `
 <button
   className="ButtonStyle-sc-120zjl4-0 jJTQxI"
   color="primary"
+  disabled={false}
   kind="default"
   size="xl"
 >
@@ -37,6 +40,7 @@ exports[`Button component renders a ghost button 1`] = `
 <button
   className="ButtonStyle-sc-120zjl4-0 kVStQG"
   color="info"
+  disabled={false}
   kind="ghost"
   size="md"
 >
@@ -48,6 +52,7 @@ exports[`Button component renders a large button 1`] = `
 <button
   className="ButtonStyle-sc-120zjl4-0 kjIRiB"
   color="primary"
+  disabled={false}
   kind="default"
   size="lg"
 >
@@ -101,6 +106,7 @@ exports[`Button component renders a outline button 1`] = `
 <button
   className="ButtonStyle-sc-120zjl4-0 ipGwoh"
   color="secondary"
+  disabled={false}
   kind="outline"
   size="md"
 >
@@ -112,6 +118,7 @@ exports[`Button component renders a round button with menu icon 1`] = `
 <button
   className="ButtonStyle-sc-120zjl4-0 dTtWyq"
   color="primary"
+  disabled={false}
   kind="default"
   size="md"
 >
@@ -154,6 +161,7 @@ exports[`Button component renders a small button 1`] = `
 <button
   className="ButtonStyle-sc-120zjl4-0 bkToAt"
   color="primary"
+  disabled={false}
   kind="default"
   size="sm"
 >
