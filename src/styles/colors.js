@@ -17,7 +17,7 @@ export default {
     hover: '#7b40aa',
     text: '#fff',
   },
-  primaryLight: {
+  primaryAlt: {
     bg: '#d9aaff',
     hover: '#cc8eff',
     text: '#4a1660',
@@ -27,7 +27,7 @@ export default {
     hover: '#e83ece',
     text: '#fff',
   },
-  secondaryLight: {
+  secondaryAlt: {
     bg: '#ff72ee',
     hover: '#fc53e5',
     text: '#961284',
@@ -37,7 +37,7 @@ export default {
     hover: '#db332e',
     text: '#fff',
   },
-  dangerLight: {
+  dangerAlt: {
     bg: '#ff7772',
     hover: '#fc5f5f',
     text: '#aa1e3a',
@@ -47,7 +47,7 @@ export default {
     hover: '#1bd3c1',
     text: '#fff',
   },
-  infoLight: {
+  infoAlt: {
     bg: '#35ffee',
     hover: '#2fefdc',
     text: '#187067',
@@ -57,7 +57,7 @@ export default {
     hover: '#85b53f', 
     text: '#fff',
   },
-  successLight: {
+  successAlt: {
     bg: '#c9ff7a', 
     hover: '#affc41', 
     text: '#465b24',
@@ -67,7 +67,7 @@ export default {
     hover: '#ffc700',
     text: '#fff',
   },
-  warningLight: {
+  warningAlt: {
     bg: '#fff94f', 
     hover: '#fff04f',
     text: '#ff6e00',
@@ -99,6 +99,6 @@ export default {
     text: '#999',
     border: '#ccc',
   },
-  transparentLight: 'rgba(255, 255, 255, 0.08)',
+  transparentAlt: 'rgba(255, 255, 255, 0.08)',
   transparentDark: 'rgba(0, 0, 0, 0.08)',
 }

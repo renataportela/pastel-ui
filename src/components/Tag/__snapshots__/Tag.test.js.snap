@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tag component renders a tag with default background and text colors and text Hello 1`] = `
+<span
+  className="BaseColors__BaseStyle-s1fbie-0 cKbdWp Tag__TagStyle-vuuk4k-0 eWrrcG"
+>
+  Hello
+</span>
+`;

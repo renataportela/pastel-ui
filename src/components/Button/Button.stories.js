@@ -20,7 +20,7 @@ export const button = () => {
       loading={boolean('Loading', false)}
       round={boolean('Round', false)}
       icon={text('Icon', '')}
-      kind={select('Kind', KINDS, 'default') } 
+      color={select('color', KINDS, 'default') } 
       size={select('Size', SIZES, 'md') } 
     />
   );
@@ -37,13 +37,13 @@ export const buttons = () => {
         }}
       >
         <Button label="Primary" />
-        <Button label="Secondary" kind="secondary" />
-        <Button label="Success" kind="success" />
-        <Button label="Warning" kind="warning" />
-        <Button label="Danger" kind="danger" />
-        <Button label="Info" kind="info" />
-        <Button label="Neutral" kind="neutral" />
-        <Button label="Dark" kind="dark" />
+        <Button label="Secondary" color="secondary" />
+        <Button label="Success" color="success" />
+        <Button label="Warning" color="warning" />
+        <Button label="Danger" color="danger" />
+        <Button label="Info" color="info" />
+        <Button label="Neutral" color="neutral" />
+        <Button label="Dark" color="dark" />
         <Button round icon="menu" />
         <Button label="Loading" loading />
       </div>
@@ -54,16 +54,16 @@ export const buttons = () => {
           marginBottom: '30px',
         }}
       >
-        <Button label="Primary" variant="outline" />
-        <Button label="Secondary" kind="secondary" variant="outline" />
-        <Button label="Success" kind="success" variant="outline" />
-        <Button label="Warning" kind="warning" variant="outline" />
-        <Button label="Danger" kind="danger" variant="outline" />
-        <Button label="Info" kind="info" variant="outline" />
-        <Button label="Neutral" kind="neutral" variant="outline" />
-        <Button label="Dark" kind="dark" variant="outline" />
-        <Button round icon="menu" variant="outline" />
-        <Button label="Loading" loading variant="outline" />
+        <Button label="Primary" kind="outline" />
+        <Button label="Secondary" color="secondary" kind="outline" />
+        <Button label="Success" color="success" kind="outline" />
+        <Button label="Warning" color="warning" kind="outline" />
+        <Button label="Danger" color="danger" kind="outline" />
+        <Button label="Info" color="info" kind="outline" />
+        <Button label="Neutral" color="neutral" kind="outline" />
+        <Button label="Dark" color="dark" kind="outline" />
+        <Button round icon="menu" kind="outline" />
+        <Button label="Loading" loading kind="outline" />
       </div>
       <div
         style={{
@@ -72,16 +72,16 @@ export const buttons = () => {
           marginBottom: '30px',
         }}
       >
-        <Button label="Primary" variant="ghost" />
-        <Button label="Secondary" kind="secondary" variant="ghost" />
-        <Button label="Success" kind="success" variant="ghost" />
-        <Button label="Warning" kind="warning" variant="ghost" />
-        <Button label="Danger" kind="danger" variant="ghost" />
-        <Button label="Info" kind="info" variant="ghost" />
-        <Button label="Neutral" kind="neutral" variant="ghost" />
-        <Button label="Dark" kind="dark" variant="ghost" />
-        <Button round icon="menu" variant="ghost" />
-        <Button label="Loading" loading variant="ghost" />
+        <Button label="Primary" kind="ghost" />
+        <Button label="Secondary" color="secondary" kind="ghost" />
+        <Button label="Success" color="success" kind="ghost" />
+        <Button label="Warning" color="warning" kind="ghost" />
+        <Button label="Danger" color="danger" kind="ghost" />
+        <Button label="Info" color="info" kind="ghost" />
+        <Button label="Neutral" color="neutral" kind="ghost" />
+        <Button label="Dark" color="dark" kind="ghost" />
+        <Button round icon="menu" kind="ghost" />
+        <Button label="Loading" loading kind="ghost" />
       </div>
     </>
   )

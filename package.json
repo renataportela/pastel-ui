@@ -8,7 +8,7 @@
     "/dist"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "build": "babel src/ -d lib/",
     "storybook": "start-storybook",
     "prepublishOnly": "rm -rf dist && npm run build",
@@ -32,7 +32,9 @@
     "@storybook/react": "^5.3.19",
     "babel-loader": "^8.1.0",
     "babel-plugin-module-resolver": "^4.0.0",
-    "babel-plugin-styled-components": "^1.10.7",
+    "babel-plugin-styled-components": "^1.10.7",    
+    "jest": "^26.0.1",
+    "react-test-renderer": "^16.13.1",
     "rollup": "^2.11.2",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",

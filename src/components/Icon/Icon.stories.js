@@ -1,6 +1,7 @@
 import React from 'react'
 
-import { Icon, iconNames } from '~/components'
+import { Icon } from '~/components'
+import { AVAILABLE_ICONS } from '~/constants'
 
 export default {
   title: 'Icon',
@@ -9,7 +10,7 @@ export default {
 export const icons = () => {
   return (
     <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-      {Object.keys(iconNames).map(iconName => (
+      {AVAILABLE_ICONS.map(iconName => (
         <div
           key={iconName}
           style={{
@@ -29,4 +30,14 @@ export const icons = () => {
       ))}
     </div>
   )
+}
+
+export const test = () => {
+  return (
+    <>
+      <Icon name="activity" />
+      <Icon name="loader" color="info" width="48" height="48" />
+      <Icon name="arrow-up" fill="#c00" stroke="#0f9" strokeWidth="4" />
+    </>
+  );
 }

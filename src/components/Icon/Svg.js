@@ -42,7 +42,7 @@ Svg.propTypes = {
   color: PropTypes.string,
   fill: PropTypes.string,
   height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  strokeWidth: PropTypes.number,
+  strokeWidth: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   viewBox: PropTypes.string,
   width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 }

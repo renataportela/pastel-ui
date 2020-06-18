@@ -2,18 +2,12 @@ import styled, { css } from 'styled-components'
 
 import { shadowSm, shadowLg, shadowOutline } from '~/styles/shadows'
 import { roundShape, roundedBorders } from '~/styles/mixins'
-import { FONT_SIZES, PADDING } from '~/styles/params'
+import { BUTTON_FONT_SIZES, BUTTON_PADDINGS, BUTTON_ROUND_SIZES } from '~/constants'
 import { allEase } from '~/styles/transitions'
 
-const roundSizes = {
-  sm: '1.55rem',
-  md: '2.075rem',
-  lg: '2.4rem',
-  xl: '3rem',
-}
-
 const buttonVariant = props => {
-  const chosenColor = props.colors[props.kind]
+  const chosenColor = props.colors[props.color]
+  const isNeutral = props.color === 'neutral'
   
   let bgColor = props.colors.primary.bg
   let hoverColor = props.colors.primary.hover
@@ -28,7 +22,7 @@ const buttonVariant = props => {
   let styles = {
     backgroundColor: bgColor,
     color: textColor,
-    border: props.kind === 'neutral' ? '1px solid '+chosenColor.border : '0',
+    border: isNeutral ? '1px solid '+chosenColor.border : '0',
     boxShadow: props.flat ? null : shadowSm,
     '&:hover:enabled': {
       boxShadow: props.flat ? null : shadowLg,
@@ -50,14 +44,14 @@ const buttonVariant = props => {
     },
   };
 
-  if (props.variant === 'outline' || props.variant === 'ghost') {
+  if (props.kind === 'outline' || props.kind === 'ghost') {
     styles['&:disabled'].backgroundColor = 'transparent'
     styles.backgroundColor = 'transparent'
     styles.boxShadow = 'none'
-    styles.color = props.kind === 'neutral' ? textColor : bgColor;
+    styles.color = isNeutral ? textColor : bgColor;
 
-    if (props.variant === 'outline') {
-      const outlineColor = props.kind === 'neutral' ? hoverColor : bgColor;
+    if (props.kind === 'outline') {
+      const outlineColor = isNeutral ? hoverColor : bgColor;
 
       styles = {
         ...styles, 
@@ -92,8 +86,8 @@ const buttonVariant = props => {
 
 const ButtonStyle = styled.button.attrs(props => {
   return {
-    diameter: roundSizes[props.size],
-    padding: PADDING[props.size].y+' '+PADDING[props.size].x,
+    diameter: BUTTON_ROUND_SIZES[props.size],
+    padding: BUTTON_PADDINGS[props.size].y+' '+BUTTON_PADDINGS[props.size].x,
   }
 })`
   position: relative;
@@ -114,7 +108,7 @@ const ButtonStyle = styled.button.attrs(props => {
   }
 
   ${props => css`
-    font-size: ${FONT_SIZES[props.size]};
+    font-size: ${BUTTON_FONT_SIZES[props.size]};
     transition: ${allEase};
     ${props.round ? roundShape : [`padding: ${props.padding};`, roundedBorders]}
     ${buttonVariant}

@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Close component renders a close button with large size 1`] = `
+<button
+  className="ButtonStyle-sc-120zjl4-0 wdmuf"
+  color="primary"
+  kind="ghost"
+  size="lg"
+>
+  <svg
+    className="Svg__SvgStyle-pyey0i-0 gYARyh"
+    fill="none"
+    height="24px"
+    size={null}
+    stroke="currentColor"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    strokeWidth={2}
+    viewBox="0 0 24 24"
+    width="24px"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <line
+      x1="18"
+      x2="6"
+      y1="6"
+      y2="18"
+    />
+    <line
+      x1="6"
+      x2="18"
+      y1="6"
+      y2="18"
+    />
+  </svg>
+</button>
+`;

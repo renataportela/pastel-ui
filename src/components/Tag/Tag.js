@@ -2,12 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import { PALLETES } from '~/styles/params'
-import { BaseColors } from '~/components/Theme'
+import { BaseColors, BASE_COLORS_PROPS } from '~/components/Theme'
 
-function Tag({ children, kind, ...props}) {
+function Tag({ children, ...props}) {
   return (
-    <TagStyle pallete={kind} light {...props}>{children}</TagStyle>
+    <TagStyle {...props}>{children}</TagStyle>
   )
 }
 
@@ -21,13 +20,12 @@ const TagStyle = styled(BaseColors).attrs(() => ({
 `;
 
 Tag.defaultProps = {
-  kind: 'primary',
+  color: 'primary',
 }
 
 Tag.propTypes = {
-  content: PropTypes.node,
-  kind: PropTypes.oneOf(PALLETES),
-  title: PropTypes.string,
+  children: PropTypes.node.isRequired,
+  ...BASE_COLORS_PROPS,
 }
 
 export default Tag

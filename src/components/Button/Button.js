@@ -12,13 +12,13 @@ function Button(
   {
     disabled,
     icon,
-    kind = 'primary',
+    color = 'primary',
     label,
     loading,
     loaderColor = 'primary',
     size = 'md',
     submitting,
-    variant = 'default',
+    kind = 'default',
     ...props
   },
   ref
@@ -30,9 +30,9 @@ function Button(
       disabled={disabled || loading || submitting}
       hasLabel={!!label}
       colors={colors}
-      kind={kind}
+      color={color}
       size={size}
-      variant={variant}
+      kind={kind}
       ref={ref}
       {...props}
     >

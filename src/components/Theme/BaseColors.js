@@ -2,27 +2,28 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import { PALLETES } from '~/styles/params'
+import { PALLETE } from '~/constants'
 import useTheme from './useTheme'
 
-function BaseColors({ bgColor, light, pallete, textColor, ...props }) {
+function BaseColors({ bgColor, color, textColor, ...props }) {
   const { colors } = useTheme()
-  const getColor = (chosen, attr) => {
-    if (!chosen) return null
-    const color = light ? colors[chosen+'Light'] : colors[chosen];
-    return color && attr ? color[attr] : color;
-  }
-  const palleteColor = getColor(pallete) || { text: 'currentColor', bg: null };
-  const color = getColor(textColor, 'text') || textColor;
-  const bg = getColor(bgColor, 'bg') || bgColor;
+  const palleteColor = getColor(colors, color) || { text: 'currentColor', bg: null };
+  const fontColor = getColor(colors, textColor, 'text') || textColor;
+  const bg = getColor(colors, bgColor, 'bg') || bgColor;
   
   return (
     <BaseStyle 
-      $textColor={color || palleteColor.text} 
+      $textColor={fontColor || palleteColor.text} 
       $bgColor={bg || palleteColor.bg} 
       {...props} 
     />
   )
+}
+
+const getColor = (colors, chosen, attr) => {
+  if (!chosen) return null
+  const color = colors[chosen];
+  return color && attr ? color[attr] : color;
 }
 
 const BaseStyle = styled.div(({ $bgColor, $textColor }) => {
@@ -32,11 +33,12 @@ const BaseStyle = styled.div(({ $bgColor, $textColor }) => {
   }
 })
 
-BaseColors.propTypes = {
+export const BASE_COLORS_PROPS = {
   bgColor: PropTypes.string,
-  alternative: PropTypes.bool,
-  pallete: PropTypes.oneOf(PALLETES),
+  color: PropTypes.oneOf(PALLETE),
   textColor: PropTypes.string,
 }
+
+BaseColors.propTypes = BASE_COLORS_PROPS
 
 export default BaseColors

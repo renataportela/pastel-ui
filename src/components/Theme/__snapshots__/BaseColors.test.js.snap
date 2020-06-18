@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Div with background and text colors renders colors by hexadecimal number 1`] = `
+<div
+  className="BaseColors__BaseStyle-s1fbie-0 kNLDZe"
+/>
+`;
+
+exports[`Div with background and text colors renders colors by pallete name 1`] = `
+<div
+  className="BaseColors__BaseStyle-s1fbie-0 jTDUIl"
+/>
+`;
+
+exports[`Div with background and text colors renders colors by pallete name separately 1`] = `
+<div
+  className="BaseColors__BaseStyle-s1fbie-0 cKbdWp"
+/>
+`;
