@@ -1,6 +1,7 @@
 import React from 'react'
 import { number , withKnobs } from '@storybook/addon-knobs'
 
+import { PALLETE } from '~/constants'
 import { CircularProgress, Heading, Progress } from '~/components'
 
 export default {
@@ -8,28 +9,10 @@ export default {
   decorators: [withKnobs],
 }
 
-const KINDS = [
-  'primary',
-  'secondary',
-  'success',
-  'warning',
-  'danger',
-  'info',
-  'neutral', 
-  'primaryLight',
-  'secondaryLight',
-  'successLight',
-  'warningLight',
-  'dangerLight',
-  'infoLight',
-  'dark',
-  'darker',
-]
-
 export const progress = () => {
   return (
     <>
-      {KINDS.map((kind, index) => {
+      {PALLETE.map((kind, index) => {
         return (
           <Progress
             key={kind}

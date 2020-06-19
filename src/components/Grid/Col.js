@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 
-import { GUTTER } from '~/styles/params'
+import { GUTTER } from '~/styles/tokens'
 import Flex from './Flex'
 
 function Col({ children, ...props }) {

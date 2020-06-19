@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import { withKnobs, text, boolean } from '@storybook/addon-knobs'
 
-import { Alert } from '~/components'
-import { ALERT_KINDS } from '~/constants'
+import Alert, { ALERT_COLORS } from '~/components/Alert'
 
 export default {
   title: 'Alert',
@@ -20,7 +19,7 @@ export const closeable = () => {
 
   return (
     <>
-      {ALERT_KINDS.map(kind => {
+      {ALERT_COLORS.map(kind => {
         return (
           <Alert 
             key={kind} 
@@ -40,7 +39,7 @@ export const closeable = () => {
 export const alerts = () => {
   return (
     <>
-      {ALERT_KINDS.map(kind => (
+      {ALERT_COLORS.map(kind => (
         <Alert key={kind} kind={kind} icon={boolean('Icon', true)}>
           {text('Content', 'This an alert.')}
         </Alert>

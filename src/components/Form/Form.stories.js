@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import { Checkbox, Form, Radio, TextField } from '~/components'
+import { Checkbox, Form, Radio, Input } from '~/components'
 
 export default {
   title: 'Form',
@@ -41,11 +41,11 @@ export const form = () => {
       <Form.Fields justify="start">
         <Form.Field 
           label="First Name"
-          inputField={<TextField name="firstName" />}
+          inputField={<Input name="firstName" />}
         />
         <Form.Field 
           label="Last Name"
-          inputField={<TextField name="lastName" />}
+          inputField={<Input name="lastName" />}
           fill
         />
       </Form.Fields>
@@ -53,14 +53,14 @@ export const form = () => {
       <Form.Field 
         label="Email"
         inputField={
-          <TextField name="email" type="email" placeholder="Email" />
+          <Input name="email" type="email" placeholder="Email" />
         }
       />
 
       <Form.Field 
         label="Description"
         inputField={
-          <TextField name="description" disabled />
+          <Input name="description" disabled />
         }
       />
 

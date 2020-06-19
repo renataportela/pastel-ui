@@ -30,7 +30,8 @@ const DrawerPaper = styled(Paper).attrs(props => ({
   `}
   z-index: 200;
   visibility: hidden;
-  transition: all 350ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: transform 350ms cubic-bezier(0.23, 1, 0.32, 1);
+  will-change: transform;
 
   &.open {
     transform: ${props => (props.vertical ? 'translateX(0)' : 'translateZ(0)')};

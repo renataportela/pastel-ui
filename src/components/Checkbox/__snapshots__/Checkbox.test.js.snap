@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox component renders a checked checkbox with label "Option A" 1`] = `
+<div
+  className="sc-AxjAm jDtVgx"
+>
+  <div
+    className="CheckInput__Inner-gntg3z-1 Ckljx selected"
+    onClick={[Function]}
+  >
+    <div
+      className="CheckInput__HiddenInputContainer-gntg3z-2 cildDt"
+    >
+      <input
+        name="checkbox[]"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        type="checkbox"
+        value="A"
+      />
+    </div>
+    <div
+      className="CheckedIcon__Box-sc-6ampc6-0 ggntMq box"
+    >
+      <svg
+        className="Svg__SvgStyle-pyey0i-0 gYARyh"
+        fill="none"
+        height="24px"
+        size={null}
+        stroke="#8849bc"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={3}
+        viewBox="0 0 24 24"
+        width="24px"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <polyline
+          points="20 6 9 17 4 12"
+        />
+      </svg>
+    </div>
+    <span
+      className="CheckInput__Label-gntg3z-0 hZkJZf"
+    >
+      Option A
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Checkbox component renders a unchecked checkbox with label "Option A" 1`] = `
+<div
+  className="sc-AxjAm jDtVgx"
+>
+  <div
+    className="CheckInput__Inner-gntg3z-1 Ckljx"
+    onClick={[Function]}
+  >
+    <div
+      className="CheckInput__HiddenInputContainer-gntg3z-2 cildDt"
+    >
+      <input
+        name="checkbox[]"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        type="checkbox"
+        value="A"
+      />
+    </div>
+    <div
+      className="CheckedIcon__Box-sc-6ampc6-0 ggntMq box"
+    />
+    <span
+      className="CheckInput__Label-gntg3z-0 hZkJZf"
+    >
+      Option A
+    </span>
+  </div>
+</div>
+`;

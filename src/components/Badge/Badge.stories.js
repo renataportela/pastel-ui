@@ -18,20 +18,20 @@ export const badges = () => {
       }}
     >
       <Badge content="12">badge</Badge>
-      <Badge content="12" round kind="info">
+      <Badge content="12" round color="info">
         round
       </Badge>
       <Badge
-        content={<Icon name="activity" size={16} />}
+        content={<Icon name="activity" size={16} color="red" />}
         bgColor="transparent"
       >
         icon
       </Badge>
       <Badge content="1234">BADGE</Badge>
-      <Badge content="1234" kind="warning" textColor="info">
+      <Badge content="1234" color="warning" textColor="info">
         badge
       </Badge>
-      <Badge dot kind="danger">
+      <Badge dot color="danger">
         <Button label="Button" />
       </Badge>
     </div>
@@ -47,28 +47,28 @@ export const colors = () => {
         marginBottom: 15,
       }}
     >
-      <Badge content="12" round kind="primary">
+      <Badge content="12" round color="primary">
         primary
       </Badge>
-      <Badge content="12" round kind="secondary">
+      <Badge content="12" round color="secondary">
         secondary
       </Badge>
-      <Badge content="12" round kind="success">
+      <Badge content="12" round color="success">
         success
       </Badge>
-      <Badge content="12" round kind="warning">
+      <Badge content="12" round color="warning">
         warning
       </Badge>
-      <Badge content="12" round kind="danger">
+      <Badge content="12" round color="danger">
         danger
       </Badge>
-      <Badge content="12" round kind="info">
+      <Badge content="12" round color="info">
         info
       </Badge>
-      <Badge content="12" round kind="sub">
+      <Badge content="12" round color="sub">
         sub
       </Badge>
-      <Badge content="12" round kind="neutral">
+      <Badge content="12" round color="neutral">
         neutral
       </Badge>  
     </div>

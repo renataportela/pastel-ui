@@ -9,13 +9,13 @@ function Pagination({
   totalResults,
   perPage,
   currentPage,
-  kindCurrent,
-  kindButtons,
+  currentColor,
+  buttonsColor,
   nPages,
   onChange,
   style,
-  variantCurrent,
-  variantButtons,
+  currentKind,
+  buttonsKind,
   ...props
 }) {
   const totalPages = Math.ceil(totalResults / perPage)
@@ -26,8 +26,8 @@ function Pagination({
   if (totalResults <= perPage) return null
 
   const navProps = { 
-    kind: kindButtons, 
-    variant: variantButtons, 
+    color: buttonsColor, 
+    kind: buttonsKind, 
     ...props 
   }
 
@@ -47,8 +47,8 @@ function Pagination({
               key={page}
               label={page}
               onClick={handleClick(page)}
-              kind={kindCurrent}
-              variant={variantCurrent}
+              color={currentColor}
+              kind={currentKind}
               {...props}
             />
           : <Button key={page} label={page} onClick={handleClick(page)} {...navProps} />
@@ -94,26 +94,26 @@ const SpaceButtons = styled.div`
 `;
 
 Pagination.defaultProps = {
-  kindCurrent: 'primary',
-  kindButtons: 'primary',
+  currentColor: 'primary',
+  buttonsColor: 'primary',
   perPage: 20,
   nPages: 5,
   round: true,
-  variantCurrent: 'default',
-  variantButtons: 'ghost',
+  currentKind: 'default',
+  buttonsKind: 'ghost',
 }
 
 Pagination.propTypes = {
-  kindCurrent: PropTypes.string,
-  kindButtons: PropTypes.string,
+  currentColor: PropTypes.string,
+  buttonsColor: PropTypes.string,
   totalResults: PropTypes.number.isRequired,
   currentPage: PropTypes.number.isRequired,
   perPage: PropTypes.number,
   nPages: PropTypes.number,
   round: PropTypes.bool,
   onChange: PropTypes.func.isRequired,
-  variantCurrent: PropTypes.string,
-  variantButtons: PropTypes.string,
+  currentKind: PropTypes.string,
+  buttonsKind: PropTypes.string,
 }
 
 export default Pagination

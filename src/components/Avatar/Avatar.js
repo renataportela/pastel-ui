@@ -3,19 +3,15 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 import { roundShape } from '~/styles/mixins'
-import { PALLETES, SIZES, FONT_SIZES } from '~/styles/params'
+import { FONT_SIZES } from '~/styles/tokens'
 import { Icon } from '~/components'
-import { BaseColors } from '~/components/Theme'
+import { BaseColors, BASE_COLORS_PROPS } from '~/components/Theme'
 
-function Avatar({ icon, image, kind, text, title, ...props }) {
+function Avatar({ icon, image, text, title, ...props }) {
   const avatarText = text ? (text.length > 2 ? text.substr(0, 2) : text) : null;
 
   return (
-    <Round 
-      title={title || text}
-      pallete={kind}
-      {...props}
-    >
+    <Round title={title || text} {...props}>
       {image && <Image src={image} />}
       {icon && !image && <Icon name={icon} />}
       {!icon && <Text>{avatarText}</Text>}
@@ -23,7 +19,7 @@ function Avatar({ icon, image, kind, text, title, ...props }) {
   )
 }
 
-const roundSizes = {
+const ROUND_SIZES = {
   sm: '1.55rem',
   md: '2.55rem',
   lg: '3.6rem',
@@ -31,7 +27,7 @@ const roundSizes = {
 }
 
 const Round = styled(BaseColors).attrs(props => ({
-  diameter: roundSizes[props.size],
+  diameter: ROUND_SIZES[props.size],
   forwardedAs: 'span',
 }))`
   ${roundShape}
@@ -51,24 +47,16 @@ const Text = styled.span`
 `;
 
 Avatar.defaultProps = {
-  bgColor: null,
-  icon: null,
-  image: null,
-  kind: 'primary',
-  size: 'medium',
-  text: null,
-  textColor: null,
-  title: null,
+  color: 'primary',
+  size: 'md',
 }
 
 Avatar.propTypes = {
-  bgColor: PropTypes.string,
+  ...BASE_COLORS_PROPS,
   icon: PropTypes.string,
   image: PropTypes.string,
-  kind: PropTypes.oneOf(PALLETES),
-  size: PropTypes.oneOf(SIZES),
+  size: PropTypes.oneOf(Object.keys(ROUND_SIZES)),
   text: PropTypes.string,
-  textColor: PropTypes.string,
   title: PropTypes.string,
 }
 

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 
 import useTheme from '~/components/Theme/useTheme'
-import { GUTTER_FORM } from '~/styles/params'
+import { GUTTER_FORM } from '~/styles/tokens'
 import Flex from '~/components/Grid/Flex'
 
 function FormField({

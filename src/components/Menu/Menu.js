@@ -1,5 +1,5 @@
 import React, { useLayoutEffect, useRef, useState } from 'react'
-import ReactDOM from 'react-dom'
+import { createPortal } from 'react-dom'
 
 import useOutsideClose from '~/hooks/useOutsideClose'
 import MenuBox from './MenuBox'
@@ -19,17 +19,6 @@ function Menu({ activator, children, cover }) {
   const activatorRef = useRef()
   const menuRef = useRef()
 
-  let menuContent = null
-
-  if (isOpen) {
-    menuContent = ReactDOM.createPortal(
-      <MenuBox ref={menuRef} style={position} close={close}>
-        {children}
-      </MenuBox>,
-      document.body
-    )
-  }
-
   const clonnedButton = React.cloneElement(activator, {
     ref: activatorRef,
     onClick: open,
@@ -38,24 +27,31 @@ function Menu({ activator, children, cover }) {
 
   useOutsideClose(menuRef, isOpen, close)
 
-  useLayoutEffect(() => {
-    if (activatorRef.current) {
-      const rect = activatorRef.current.getBoundingClientRect();
-      setActivatorSize(rect)
-    }
-  }, [activatorRef])
+  const menuEl = menuRef.current
+  const activatorEl = activatorRef.current
 
   useLayoutEffect(() => {
-    if (isOpen && activatorSize) {
-      const menuWidth = menuRef.current.getBoundingClientRect().width;
-      setPosition(calculatePosition(activatorSize, menuWidth, cover));
+    if (activatorEl) {
+      setActivatorSize(activatorEl.getBoundingClientRect())
     }
-  }, [isOpen, activatorSize])
+  }, [activatorEl])
+
+  useLayoutEffect(() => {
+    if (activatorSize && menuEl) {
+      const menuWidth = menuEl.getBoundingClientRect().width
+      setPosition(calculatePosition(activatorSize, menuWidth, cover))
+    }
+  }, [activatorSize, menuEl, cover])
 
   return (
     <>
       {clonnedButton}
-      {menuContent}
+      {isOpen && (createPortal(
+        <MenuBox ref={menuRef} style={position} close={close}>
+          {children}
+        </MenuBox>,
+        document.body
+      ))}
     </>
   )
 }

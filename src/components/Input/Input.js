@@ -5,7 +5,7 @@ import styled, { css } from 'styled-components'
 import useTheme from '~/components/Theme/useTheme'
 import ElementStyle from './ElementStyle'
 
-function TextField({
+function Input({
   disabled,
   error,
   flat,
@@ -58,23 +58,31 @@ const InputStyle = styled.input`
 
   ${({ $colors, disabled, $error }) => css`
     &::placeholder {
-      color: ${$error ? $colors.danger.bg : (disabled ? $colors.disabled.text : $colors.primaryLight.hover)};
+      color: ${$error ? $colors.danger.bg : (disabled ? $colors.disabled.text : $colors.primaryAlt.hover)};
     }
   `}
 `
 
-TextField.defaultProps = {
+Input.defaultProps = {
   kind: 'default',
   type: 'text',
   value: '',
 }
 
-TextField.propTypes = {
+export const INPUT_PROPS = {
   disabled: PropTypes.bool,
   error: PropTypes.bool,
+  label: PropTypes.node,
+  name: PropTypes.string,
+  onChange: PropTypes.func,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.array, PropTypes.object]),
+}
+
+Input.propTypes = {
+  ...INPUT_PROPS,
   flat: PropTypes.bool,
   rows: PropTypes.number,
   type: PropTypes.string,
 }
 
-export default TextField
+export default Input

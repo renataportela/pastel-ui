@@ -1,7 +1,7 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 
-import { GUTTER_FORM } from '~/styles/params'
+import { GUTTER_FORM } from '~/styles/tokens'
 import useCloneInput from './useCloneInput'
 import Flex from '~/components/Grid/Flex'
 

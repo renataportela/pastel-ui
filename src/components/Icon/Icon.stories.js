@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Icon } from '~/components'
-import { AVAILABLE_ICONS } from '~/constants'
+import { ICON_NAMES } from '~/constants'
 
 export default {
   title: 'Icon',
@@ -10,7 +10,7 @@ export default {
 export const icons = () => {
   return (
     <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-      {AVAILABLE_ICONS.map(iconName => (
+      {ICON_NAMES.map(iconName => (
         <div
           key={iconName}
           style={{

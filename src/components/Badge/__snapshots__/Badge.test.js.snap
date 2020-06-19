@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Badge component renders a button with a dot badge with danger color 1`] = `
+<div
+  className="Badge__Outer-dtpaqd-0 dJHSsV"
+>
+  <span
+    className="BaseColors__BaseStyle-s1fbie-0 dtECaj Badge__BadgeIcon-dtpaqd-1 dBFPpa"
+  >
+    
+  </span>
+  <button
+    className="ButtonStyle-sc-120zjl4-0 iJAzjI"
+    color="primary"
+    disabled={false}
+    kind="default"
+    size="md"
+  >
+    Button
+  </button>
+</div>
+`;
+
+exports[`Badge component renders text "badge" with badge "1562" and default color 1`] = `
+<div
+  className="Badge__Outer-dtpaqd-0 dJHSsV"
+>
+  <span
+    className="BaseColors__BaseStyle-s1fbie-0 cKbdWp Badge__BadgeIcon-dtpaqd-1 ikspmk"
+  >
+    
+    1562
+  </span>
+  badge
+</div>
+`;
+
+exports[`Badge component renders text "icon" with Activity icon in a transparent badge 1`] = `
+<div
+  className="Badge__Outer-dtpaqd-0 dJHSsV"
+>
+  <span
+    className="BaseColors__BaseStyle-s1fbie-0 jqiDqM Badge__BadgeIcon-dtpaqd-1 ikspmk"
+  >
+    
+    <svg
+      className="Svg__SvgStyle-pyey0i-0 gYARyh"
+      fill="none"
+      height="24px"
+      size={16}
+      stroke="red"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      viewBox="0 0 24 24"
+      width="24px"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <polyline
+        points="22 12 18 12 15 21 9 3 6 12 2 12"
+      />
+    </svg>
+  </span>
+  icon
+</div>
+`;
+
+exports[`Badge component renders text "round" with round badge "12" and info color 1`] = `
+<div
+  className="Badge__Outer-dtpaqd-0 dJHSsV"
+>
+  <span
+    className="BaseColors__BaseStyle-s1fbie-0 dZhYCv Badge__BadgeIcon-dtpaqd-1 fCeXHk"
+  >
+    
+    12
+  </span>
+  round
+</div>
+`;

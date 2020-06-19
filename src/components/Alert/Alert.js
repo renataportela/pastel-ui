@@ -5,13 +5,12 @@ import styled from 'styled-components'
 import { BaseColors } from '~/components/Theme'
 import { Close } from '~/components/Button'
 import Icon from '~/components/Icon'
-import { ALERT_KINDS } from '~/constants'
 
 function Alert({ children, icon, kind, onClose, ...props}) {
   const color = kind === 'dark' ? 'darker' : kind + 'Alt'
   return (
     <Outer color={color} {...props}>
-      {icon && <AlertIcon name={icons[kind]} />}
+      {icon && <AlertIcon name={ALERT_ICONS[kind]} />}
       {children}
       {onClose && <CloseButton size="sm" onClick={onClose} />}
     </Outer>
@@ -38,20 +37,22 @@ const CloseButton = styled(Close)`
 
 const AlertIcon = styled(Icon)`
   margin-right: .9rem;
-`;
+`
 
-const icons = {
+const ALERT_ICONS = {
   danger: 'warning',
   info: 'info',
   success: 'check',
   warning: 'warning',
   dark: 'info',
-};
+}
+
+export const ALERT_COLORS = ['success', 'warning', 'danger', 'info', 'dark']
 
 Alert.propTypes = {
   children: PropTypes.node.isRequired,
   icon: PropTypes.bool,
-  kind: PropTypes.oneOf(ALERT_KINDS).isRequired,
+  kind: PropTypes.oneOf(ALERT_COLORS).isRequired,
   onClose: PropTypes.func,
 }
 

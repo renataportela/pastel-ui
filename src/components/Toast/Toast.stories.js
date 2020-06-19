@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import { Button, TextField, useToast, withToastProvider } from '~/components'
+import { Button, Input, useToast, withToastProvider } from '~/components'
 
 export default {
   title: 'Toast',
@@ -14,7 +14,7 @@ export const toast = withToastProvider(() => {
   
   return (
     <>
-      <TextField value={toastConfig} onChange={handleChangeToast} />
+      <Input value={toastConfig} onChange={handleChangeToast} />
       <Button label="Toast" onClick={showToast} />      
     </>
   )

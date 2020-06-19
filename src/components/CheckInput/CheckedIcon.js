@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
 import { Icon } from '~/components'
-import { inputStyles } from '~/components/TextField/ElementStyle'
+import { inputStyles } from '~/components/Input'
 
 function CheckedIcon({ inputType, ...props }) {
   return (

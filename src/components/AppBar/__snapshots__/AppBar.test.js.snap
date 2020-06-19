@@ -1,0 +1,158 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppBar component renders an AppBar with brand Brand, text "left" and a Login button on the right 1`] = `
+<div
+  className="BaseColors__BaseStyle-s1fbie-0 cKbdWp AppBar__ColorBar-sc-1dfcr7j-0 cHsMAO"
+>
+  <div
+    className="AppBar__Slot-sc-1dfcr7j-1 AppBar__MenuIconSlot-sc-1dfcr7j-5 hJFspI"
+  >
+    <button
+      className="ButtonStyle-sc-120zjl4-0 bnXTHk"
+      color="primary"
+      disabled={false}
+      kind="ghost"
+      onClick={[Function]}
+      size="lg"
+    >
+      <svg
+        className="Svg__SvgStyle-pyey0i-0 gYARyh"
+        fill="none"
+        height="24px"
+        size={null}
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        viewBox="0 0 24 24"
+        width="24px"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <line
+          x1="3"
+          x2="21"
+          y1="12"
+          y2="12"
+        />
+        <line
+          x1="3"
+          x2="21"
+          y1="6"
+          y2="6"
+        />
+        <line
+          x1="3"
+          x2="21"
+          y1="18"
+          y2="18"
+        />
+      </svg>
+    </button>
+  </div>
+  <div
+    className="AppBar__Slot-sc-1dfcr7j-1 AppBar__BrandSlot-sc-1dfcr7j-4 jYGbRM"
+  >
+    <span>
+      Brand
+    </span>
+  </div>
+  <div
+    className="AppBar__Slot-sc-1dfcr7j-1 AppBar__LeftSlot-sc-1dfcr7j-2 jDKneH"
+  >
+    left
+  </div>
+  <div
+    className="AppBar__Slot-sc-1dfcr7j-1 AppBar__RightSlot-sc-1dfcr7j-3 jAbhgh"
+  >
+    <button
+      className="ButtonStyle-sc-120zjl4-0 fElFDL AppBarButton-sc-642fva-0 dFEtZr"
+      color="primary"
+      disabled={false}
+      kind="ghost"
+      size="md"
+    >
+      Login
+    </button>
+  </div>
+</div>
+`;
+
+exports[`AppBar component renders an AppBar with brand Brand, text "left" and a menu on the right 1`] = `
+<div
+  className="BaseColors__BaseStyle-s1fbie-0 dqdQsy AppBar__ColorBar-sc-1dfcr7j-0 cHsMAO"
+>
+  <div
+    className="AppBar__Slot-sc-1dfcr7j-1 AppBar__MenuIconSlot-sc-1dfcr7j-5 hJFspI"
+  >
+    <button
+      className="ButtonStyle-sc-120zjl4-0 bnXTHk"
+      color="secondary"
+      disabled={false}
+      kind="ghost"
+      onClick={[Function]}
+      size="lg"
+    >
+      <svg
+        className="Svg__SvgStyle-pyey0i-0 gYARyh"
+        fill="none"
+        height="24px"
+        size={null}
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        viewBox="0 0 24 24"
+        width="24px"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <line
+          x1="3"
+          x2="21"
+          y1="12"
+          y2="12"
+        />
+        <line
+          x1="3"
+          x2="21"
+          y1="6"
+          y2="6"
+        />
+        <line
+          x1="3"
+          x2="21"
+          y1="18"
+          y2="18"
+        />
+      </svg>
+    </button>
+  </div>
+  <div
+    className="AppBar__Slot-sc-1dfcr7j-1 AppBar__BrandSlot-sc-1dfcr7j-4 jYGbRM"
+  >
+    <span>
+      Brand
+    </span>
+  </div>
+  <div
+    className="AppBar__Slot-sc-1dfcr7j-1 AppBar__LeftSlot-sc-1dfcr7j-2 jDKneH"
+  >
+    <div>
+      left
+    </div>
+  </div>
+  <div
+    className="AppBar__Slot-sc-1dfcr7j-1 AppBar__RightSlot-sc-1dfcr7j-3 jAbhgh"
+  >
+    <button
+      className="ButtonStyle-sc-120zjl4-0 fElFDL AppBarButton-sc-642fva-0 dFEtZr"
+      color="primary"
+      disabled={false}
+      kind="ghost"
+      onClick={[Function]}
+      size="md"
+    >
+      Options
+    </button>
+  </div>
+</div>
+`;

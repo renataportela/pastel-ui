@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Avatar component renders a large Avatar with user icon and info color 1`] = `
+<span
+  className="BaseColors__BaseStyle-s1fbie-0 dZhYCv Avatar__Round-sc-17gj85m-0 koRsku"
+  size="lg"
+>
+  <svg
+    className="Svg__SvgStyle-pyey0i-0 gYARyh"
+    fill="none"
+    height="24px"
+    size={null}
+    stroke="currentColor"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    strokeWidth={2}
+    viewBox="0 0 24 24"
+    width="24px"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
+    />
+    <circle
+      cx="12"
+      cy="7"
+      r="4"
+    />
+  </svg>
+</span>
+`;
+
+exports[`Avatar component renders a medium Avatar with RE initials and warning color 1`] = `
+<span
+  className="BaseColors__BaseStyle-s1fbie-0 jTDUIl Avatar__Round-sc-17gj85m-0 dfehan"
+  size="md"
+  title="Renata"
+>
+  <span
+    className="Avatar__Text-sc-17gj85m-2 cFsSmv"
+  >
+    Re
+  </span>
+</span>
+`;
+
+exports[`Avatar component renders a small Avatar with AL initials and secondary color 1`] = `
+<span
+  className="BaseColors__BaseStyle-s1fbie-0 dqdQsy Avatar__Round-sc-17gj85m-0 bjPCmA"
+  size="sm"
+  title="Aleks"
+>
+  <span
+    className="Avatar__Text-sc-17gj85m-2 cFsSmv"
+  >
+    Al
+  </span>
+</span>
+`;
+
+exports[`Avatar component renders an xLarge Avatar with an image 1`] = `
+<span
+  className="BaseColors__BaseStyle-s1fbie-0 cKbdWp Avatar__Round-sc-17gj85m-0 gTkBpa"
+  size="xl"
+  title="Alternative"
+>
+  <img
+    className="Avatar__Image-sc-17gj85m-1 ftoiXU"
+    src="https://image.freepik.com/free-vector/cute-panda-waving-hand-icon-illustration-panda-mascot-cartoon-character-animal-icon-concept-isolated_138676-843.jpg"
+  />
+  <span
+    className="Avatar__Text-sc-17gj85m-2 cFsSmv"
+  >
+    Al
+  </span>
+</span>
+`;

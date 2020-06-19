@@ -5,11 +5,11 @@ import styled from 'styled-components'
 import { Button, Flex } from '~/components'
 import Alert from '~/components/Alert'
 
-function Toast({ actions, closeButton, kind, message, position, remove, ...props }) {
+function Toast({ actions, closeButton, color, message, position, remove, ...props }) {
   return (
     <ToastStyle
-      kind={kind}
-      icon={kind !== 'dark'}
+      color={color}
+      icon={color !== 'dark'}
       $position={position}
       {...props}
     >
@@ -31,15 +31,15 @@ const ToastStyle = styled(Alert)`
 Toast.defaultProps = {
   closeButton: {
     label: 'Close',
-    kind: 'secondary',
-    variant: 'ghost',
+    color: 'secondary',
+    kind: 'ghost',
   },
-  kind: 'darker',
+  color: 'darker',
 }
 
 Toast.propTypes = {
   closeButton: PropTypes.object,
-  kind: Alert.propTypes.kind,
+  color: Alert.propTypes.color,
   message: PropTypes.node.isRequired,  
 }
 

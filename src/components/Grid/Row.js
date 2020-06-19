@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
-import { GUTTER } from '~/styles/params'
+import { GUTTER } from '~/styles/tokens'
 import Flex from './Flex'
 
 function Row({ children, noGutter, ...props }) {

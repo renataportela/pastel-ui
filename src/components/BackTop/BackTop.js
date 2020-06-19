@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
+import { ICON_NAMES, PALLETE } from '~/constants'
 import { opacityInOut } from '~/styles/transitions'
 import Button from '~/components/Button'
 
@@ -45,15 +46,15 @@ const BackTopButton = styled(Button)`
 
 BackTop.defaultProps = {
   color: 'info',
-  icon: 'arrowUp',
+  icon: 'arrow-up',
   title: 'Back to top',
   topPosition: 0,
   visibilityHeight: 100,
 }
 
 BackTop.propTypes = {
-  color: PropTypes.string,
-  icon: PropTypes.string,
+  color: PropTypes.oneOf(PALLETE),
+  icon: PropTypes.oneOf(ICON_NAMES),
   title: PropTypes.string,
   topPosition: PropTypes.number,
   visibilityHeight: PropTypes.number,

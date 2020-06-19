@@ -2,17 +2,16 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { css, keyframes } from 'styled-components'
 
-import { PALLETES } from '~/styles/params'
 import { roundShape } from '~/styles/mixins'
-import { BaseColors } from '~/components/Theme'
+import { BaseColors, BASE_COLORS_PROPS } from '~/components/Theme'
 
-function Badge({ bgColor, children, content, dot, kind, textColor, round, ...props}) {
+function Badge({ bgColor, children, content, dot, color, textColor, round, ...props}) {
   if (!content && !dot) return children;
 
   return (
     <Outer {...props}>
       <BadgeIcon 
-        pallete={kind}
+        color={color}
         bgColor={bgColor} 
         light
         textColor={textColor}
@@ -80,17 +79,15 @@ const BadgeIcon = styled(BaseColors).attrs(props => ({
 `;
 
 Badge.defaultProps = {
-  kind: 'primary',
+  color: 'primary',
 }
 
 Badge.propTypes = {
-  bgColor: PropTypes.string,
+  ...BASE_COLORS_PROPS,
   children: PropTypes.node.isRequired,
   content: PropTypes.node,
   dot: PropTypes.bool,
-  kind: PropTypes.oneOf(PALLETES),
   round: PropTypes.bool,
-  textColor: PropTypes.string,
 }
 
 export default Badge

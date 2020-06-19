@@ -3,9 +3,9 @@ import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 
 import { Flex, useTheme } from '~/components'
-import { CHECKS_INPUT_PROPS } from '~/constants/propTypes'
 import CheckedIcon from './CheckedIcon'
 import { shadowOutline } from '~/styles/shadows'
+import { INPUT_PROPS } from '~/components/Input'
 
 function CheckInput({
   children,
@@ -98,7 +98,7 @@ const Inner = styled.div`
   align-items: center;
   ${props => !props.$disabled && css`
     &:hover > .box {
-      border-color: ${props.$error ? 'currentColor' : props.$colors.primaryLight.bg};
+      border-color: ${props.$error ? 'currentColor' : props.$colors.primaryAlt.bg};
     }
   `}
 `
@@ -113,9 +113,9 @@ export const HiddenInputContainer = styled.div`
 `
 
 CheckInput.propTypes = {
-  ...CHECKS_INPUT_PROPS,
+  ...INPUT_PROPS,
   inputType: PropTypes.oneOf(['radio', 'checkbox']).isRequired,
-  isChecked: PropTypes.bool.isRequired,
+  isChecked: PropTypes.bool.isRequired,  
 }
 
 export default CheckInput

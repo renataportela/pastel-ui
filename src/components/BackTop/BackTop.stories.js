@@ -1,16 +1,10 @@
 import React from 'react'
-import { withKnobs, select } from '@storybook/addon-knobs'
 
 import { BackTop, Paragraph } from '~/components'
 
 export default {
   title: 'BackTop',
-  decorators: [withKnobs],
 }
-
-const VARIANTS = ['success', 'warning', 'danger', 'info', 'neutral'];
-const KINDS = ['default', 'outline'];
-const SIZES = ['sm', 'md', 'lg', 'xl'];
 
 export const backTop = () => {
   return (
@@ -31,11 +25,7 @@ export const backTop = () => {
         pinga aí cumpadi!
       </Paragraph>
 
-      <BackTop 
-        color={select('Color', VARIANTS) } 
-        kind={select('Kind', KINDS, 'default') } 
-        size={select('Size', SIZES, 'md') } 
-      />
+      <BackTop />
     </>
   );
 }

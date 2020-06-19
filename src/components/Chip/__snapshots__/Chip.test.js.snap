@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Chip component renders a chip with an Avatar image 1`] = `
+<div
+  className="BaseColors__BaseStyle-s1fbie-0 dWoZEV Chip__ChipStyle-sc-8ucx7t-0 fWpUtP"
+>
+  <span
+    className="BaseColors__BaseStyle-s1fbie-0 cKbdWp Avatar__Round-sc-17gj85m-0 bjPCmA"
+    size="sm"
+  >
+    <img
+      className="Avatar__Image-sc-17gj85m-1 ftoiXU"
+      src="https://ps.w.org/wp-avatar/assets/icon-256x256.png"
+    />
+    <span
+      className="Avatar__Text-sc-17gj85m-2 cFsSmv"
+    />
+  </span>
+  <span
+    className="Chip__Content-sc-8ucx7t-1 hGJwQy"
+  >
+    Avatar
+  </span>
+</div>
+`;
+
+exports[`Chip component renders a chip with default color and close button 1`] = `
+<div
+  className="BaseColors__BaseStyle-s1fbie-0 dWoZEV Chip__ChipStyle-sc-8ucx7t-0 fWpUtP"
+>
+  <span
+    className="Chip__Content-sc-8ucx7t-1 hGJwQy"
+  >
+    Default
+  </span>
+  <button
+    className="ButtonStyle-sc-120zjl4-0 anqYW"
+    color="sub"
+    disabled={false}
+    kind="ghost"
+    size="sm"
+  >
+    <svg
+      className="Svg__SvgStyle-pyey0i-0 gYARyh"
+      fill="none"
+      height="24px"
+      size={null}
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      viewBox="0 0 24 24"
+      width="24px"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <line
+        x1="18"
+        x2="6"
+        y1="6"
+        y2="18"
+      />
+      <line
+        x1="6"
+        x2="18"
+        y1="6"
+        y2="18"
+      />
+    </svg>
+  </button>
+</div>
+`;
+
+exports[`Chip component renders a chip with warning color 1`] = `
+<div
+  className="BaseColors__BaseStyle-s1fbie-0 jTDUIl Chip__ChipStyle-sc-8ucx7t-0 fWpUtP"
+>
+  <span
+    className="Chip__Content-sc-8ucx7t-1 hGJwQy"
+  >
+    Warning
+  </span>
+</div>
+`;

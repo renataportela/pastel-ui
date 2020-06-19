@@ -21,6 +21,7 @@ exports[`Alert component renders a success alert 1`] = `
       points="20 6 9 17 4 12"
     />
   </svg>
+  Alert text
   <button
     className="ButtonStyle-sc-120zjl4-0 anqYW Alert__CloseButton-txovbc-1 gknFni"
     color="primary"

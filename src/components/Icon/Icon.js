@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import * as Icons from './icons'
-import { ICON_COMPONENTS, AVAILABLE_ICONS } from '~/constants'
+import { ICON_COMPONENTS, ICON_NAMES } from '~/constants'
 
 function Icon({ children, name, ...props }) {
   const ChosenIcon = Icons[ICON_COMPONENTS[name]];
@@ -18,10 +18,10 @@ Icon.defaultProps = {
 
 Icon.propTypes = {
   children: PropTypes.node,
-  name: PropTypes.oneOf(AVAILABLE_ICONS).isRequired,
+  name: PropTypes.oneOf(ICON_NAMES).isRequired,
 }
 
-AVAILABLE_ICONS.forEach(name => {
+ICON_NAMES.forEach(name => {
   const compName = ICON_COMPONENTS[name]
   Icon[compName] = Icons[compName]
 })

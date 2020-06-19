@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { withKnobs, text, boolean, number } from '@storybook/addon-knobs'
 
-import { FormField, TextField } from '~/components'
+import { FormField, Input } from '~/components'
 
 export default {
   title: 'FormField',
@@ -21,7 +21,7 @@ export const formField = () => {
       onChange={handleChange}
       error={text('Error', '')}
       inputField={(
-        <TextField 
+        <Input 
           placeholder={text('Placeholder', 'Input')}           
           rows={number('Rows', null)}
           left={text('Left', '')} 

@@ -2,8 +2,22 @@ import styled, { css } from 'styled-components'
 
 import { shadowSm, shadowLg, shadowOutline } from '~/styles/shadows'
 import { roundShape, roundedBorders } from '~/styles/mixins'
-import { BUTTON_FONT_SIZES, BUTTON_PADDINGS, BUTTON_ROUND_SIZES } from '~/constants'
+import { FONT_SIZES } from '~/styles/tokens'
 import { allEase } from '~/styles/transitions'
+
+const PADDING = {
+  sm: { y: '0.5em', x: '1.1em' },
+  md: { y: '0.8em', x: '1.6em' },
+  lg: { y: '1em', x: '2em' },
+  xl: { y: '1.1em', x: '2.4em' },
+};
+
+const ROUND_SIZES = {
+  sm: '1.55rem',
+  md: '2.075rem',
+  lg: '2.4rem',
+  xl: '3rem',
+}
 
 const buttonVariant = props => {
   const chosenColor = props.colors[props.color]
@@ -87,8 +101,8 @@ const buttonVariant = props => {
 
 const ButtonStyle = styled.button.attrs(props => {
   return {
-    diameter: BUTTON_ROUND_SIZES[props.size],
-    padding: BUTTON_PADDINGS[props.size].y+' '+BUTTON_PADDINGS[props.size].x,
+    diameter: ROUND_SIZES[props.size],
+    padding: PADDING[props.size].y+' '+PADDING[props.size].x,
   }
 })`
   position: relative;
@@ -109,7 +123,7 @@ const ButtonStyle = styled.button.attrs(props => {
   }
 
   ${props => css`
-    font-size: ${BUTTON_FONT_SIZES[props.size]};
+    font-size: ${FONT_SIZES[props.size]};
     transition: ${allEase};
     ${props.round ? roundShape : [`padding: ${props.padding};`, roundedBorders]}
     ${buttonVariant}
