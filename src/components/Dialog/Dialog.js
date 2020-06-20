@@ -10,16 +10,15 @@ function Dialog({
   children,
   closeLabel,
   closeKind,
-  closeVariant,
+  closeColor,
   message,
   title,
   ...props
 }) {
-  console.log('props', props);
   if (!props.open) return null
 
   return (
-    <Portal selector="#portal-root">
+    <Portal>
       <DialogStyle {...props}>
         {title && <Heading size="4">{title}</Heading>}
         {message}
@@ -27,7 +26,7 @@ function Dialog({
           <Button
             label={closeLabel}
             kind={closeKind}
-            variant={closeVariant}
+            color={closeColor}
             onClick={props.close}
           />
           {children}
@@ -52,15 +51,15 @@ const DialogStyle = styled(ModalBase)`
 
 Dialog.defaultProps = {
   closeLabel: 'Close',
-  closeVariant: 'default',
-  closeKind: 'neutral',
+  closeColor: 'neutral',
+  closeKind: 'ghost',
 }
 
 Dialog.propTypes = {
   children: PropTypes.node,
   close: PropTypes.func.isRequired,
   closeLabel: PropTypes.string,
-  closeVariant: PropTypes.string,
+  closeColor: PropTypes.string,
   closeKind: PropTypes.string,
   message: PropTypes.node.isRequired,
   open: PropTypes.bool.isRequired,

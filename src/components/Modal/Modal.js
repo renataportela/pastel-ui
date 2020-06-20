@@ -15,7 +15,7 @@ function Modal({ children, open, close, ...props }) {
   }, [open])
 
   return (
-    <Portal selector="#portal-root">
+    <Portal selector="#modal-root">
       <ModalStyle open={open} close={close} {...props}>
         <CloseButton onClick={close} />
         {children}

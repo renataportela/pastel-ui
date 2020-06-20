@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dialog component renders a dialog with a Close and OK buttons 1`] = `
+<div
+  className="Overlay-sc-1udyqqi-0 ModalBase__OverlayStyle-sc-1ykmqu3-0 jaOPLJ Dialog__DialogStyle-el6lu1-0 bGrPHF"
+>
+  <div
+    className="Paper__PaperStyle-sc-5lofqf-0 dtOYAq"
+  >
+    <h4
+      as="span"
+      className="Text-sc-7nylk8-0 Heading__HeadingStyle-sc-3bryuh-0 hQqmUM"
+      fontSize="4"
+      size={null}
+      transform={null}
+    >
+      <p>
+        Hi
+      </p>
+    </h4>
+    <p>
+      Hello!
+    </p>
+    <div
+      className="sc-AxjAm dBzgwg"
+    >
+      <button
+        className="ButtonStyle-sc-120zjl4-0 jhXbjy"
+        color="neutral"
+        disabled={false}
+        kind="ghost"
+        onClick={[Function]}
+        size="md"
+      >
+        Close
+      </button>
+      <button
+        className="ButtonStyle-sc-120zjl4-0 iJAzjI"
+        color="primary"
+        disabled={false}
+        kind="default"
+        onClick={[Function]}
+        size="md"
+      >
+        OK
+      </button>
+    </div>
+  </div>
+</div>
+`;
