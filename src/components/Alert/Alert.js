@@ -10,9 +10,12 @@ function Alert({ children, icon, kind, onClose, ...props}) {
   const color = kind === 'dark' ? 'darker' : kind + 'Alt'
   return (
     <Outer color={color} {...props}>
-      {icon && <AlertIcon name={ALERT_ICONS[kind]} />}
-      {children}
-      {onClose && <CloseButton size="sm" onClick={onClose} />}
+      <Content>
+        {icon && <AlertIcon name={ALERT_ICONS[kind]} />}
+        {children}
+      </Content>
+      
+      {onClose && <CloseButton inverse={kind === 'dark'} size="sm" onClick={onClose} />}
     </Outer>
   )
 }
@@ -28,10 +31,13 @@ const Outer = styled(BaseColors)`
   align-items: center;  
 `;
 
+const Content = styled.div`
+  float: left;
+  flex: 1;
+`
+
 const CloseButton = styled(Close)`
-  position: absolute;
-  right: .5rem;
-  top: .7rem;
+  float: right;
   margin-left: .9rem;
 `;
 

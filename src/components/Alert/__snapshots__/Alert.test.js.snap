@@ -1,29 +1,115 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Alert component renders a dark alert 1`] = `
+<div
+  className="BaseColors__BaseStyle-s1fbie-0 dKuMyb Alert__Outer-txovbc-0 bYFRom"
+>
+  <div
+    className="Alert__Content-txovbc-1 dNAgLw"
+  >
+    <svg
+      className="Svg__SvgStyle-pyey0i-0 gYARyh Alert__AlertIcon-txovbc-3 cWjLs"
+      fill="none"
+      height="24px"
+      size={null}
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      viewBox="0 0 24 24"
+      width="24px"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle
+        cx="12"
+        cy="12"
+        r="10"
+      />
+      <line
+        x1="12"
+        x2="12"
+        y1="16"
+        y2="12"
+      />
+      <line
+        x1="12"
+        x2="12.01"
+        y1="8"
+        y2="8"
+      />
+    </svg>
+    Alert text
+  </div>
+  <button
+    className="ButtonStyle-sc-120zjl4-0 qUWHj Alert__CloseButton-txovbc-2 kXdEPu"
+    color="primary"
+    disabled={false}
+    kind="ghost"
+    onClick={[Function]}
+    size="sm"
+  >
+    <svg
+      className="Svg__SvgStyle-pyey0i-0 gYARyh"
+      fill="none"
+      height="24px"
+      size={null}
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      viewBox="0 0 24 24"
+      width="24px"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <line
+        x1="18"
+        x2="6"
+        y1="6"
+        y2="18"
+      />
+      <line
+        x1="6"
+        x2="18"
+        y1="6"
+        y2="18"
+      />
+    </svg>
+    <span
+      className="Ripple__RippleContainer-sc-1dqnp9a-0 URvnd"
+      onMouseDown={[Function]}
+    />
+  </button>
+</div>
+`;
+
 exports[`Alert component renders a success alert 1`] = `
 <div
-  className="BaseColors__BaseStyle-s1fbie-0 lbVfxU Alert__Outer-txovbc-0 bYFRom"
+  className="BaseColors__BaseStyle-s1fbie-0 KUetu Alert__Outer-txovbc-0 bYFRom"
 >
-  <svg
-    className="Svg__SvgStyle-pyey0i-0 gYARyh Alert__AlertIcon-txovbc-2 hsoKbZ"
-    fill="none"
-    height="24px"
-    size={null}
-    stroke="currentColor"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    strokeWidth={2}
-    viewBox="0 0 24 24"
-    width="24px"
-    xmlns="http://www.w3.org/2000/svg"
+  <div
+    className="Alert__Content-txovbc-1 dNAgLw"
   >
-    <polyline
-      points="20 6 9 17 4 12"
-    />
-  </svg>
-  Alert text
+    <svg
+      className="Svg__SvgStyle-pyey0i-0 gYARyh Alert__AlertIcon-txovbc-3 cWjLs"
+      fill="none"
+      height="24px"
+      size={null}
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      viewBox="0 0 24 24"
+      width="24px"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <polyline
+        points="20 6 9 17 4 12"
+      />
+    </svg>
+    Alert text
+  </div>
   <button
-    className="ButtonStyle-sc-120zjl4-0 iHcOpt Alert__CloseButton-txovbc-1 gknFni"
+    className="ButtonStyle-sc-120zjl4-0 iHcOpt Alert__CloseButton-txovbc-2 kXdEPu"
     color="primary"
     disabled={false}
     kind="ghost"

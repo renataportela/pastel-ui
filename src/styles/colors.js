@@ -58,8 +58,8 @@ export default {
     text: '#fff',
   },
   successAlt: {
-    bg: '#c9ff7a', 
-    hover: '#affc41', 
+    bg: '#c7f71b', 
+    hover: '#ad0', 
     text: '#465b24',
   },
   warning: {
@@ -99,6 +99,6 @@ export default {
     text: '#999',
     border: '#ccc',
   },
-  transparentAlt: 'rgba(255, 255, 255, 0.08)',
+  transparentLight: 'rgba(255, 255, 255, 0.08)',
   transparentDark: 'rgba(0, 0, 0, 0.08)',
 }

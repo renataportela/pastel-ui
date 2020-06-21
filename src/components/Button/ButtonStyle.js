@@ -87,7 +87,7 @@ const buttonVariant = props => {
         borderColor: 'transparent',
         '&:hover:enabled': {
           ...styles['&:hover:enabled'],
-          backgroundColor: props.colors.transparentDark,
+          backgroundColor: props.inverse ? props.colors.transparentLight : props.colors.transparentDark,
           borderColor: 'transparent',
           boxShadow: 'none',
         },

@@ -8,14 +8,13 @@ import Alert from '~/components/Alert'
 function Toast({ actions, closeButton, color, message, position, onRemove, ...props }) {
   return (
     <ToastStyle
-      color={color}
-      icon={color !== 'dark'}
+      kind={color}
       $position={position}
+      onClose={onRemove}
       {...props}
     >
       <Flex justify="between" alignItems="center" gap="30px">
         <div>{message}</div>
-        {closeButton && <Button {...closeButton} onClick={onRemove} />}
       </Flex>
     </ToastStyle>
   )
@@ -29,17 +28,11 @@ const ToastStyle = styled(Alert)`
 `
 
 Toast.defaultProps = {
-  closeButton: {
-    label: 'Close',
-    color: 'secondary',
-    kind: 'ghost',
-  },
-  color: 'darker',
+  color: 'dark',
 }
 
 Toast.propTypes = {
-  closeButton: PropTypes.object,
-  color: Alert.propTypes.color,
+  color: Alert.propTypes.kind,
   message: PropTypes.node.isRequired,  
   onRemove: PropTypes.func.isRequired,
 }
