@@ -1,33 +1,50 @@
-import React, { useRef } from 'react'
+import React, { useLayoutEffect } from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import { Paper } from '~/components'
-import { scale } from '~/styles/transitions'
-import Overlay from '~/components/Overlay'
-import useOutsideClose from '~/hooks/useOutsideClose'
+import { scaleDown, scaleUp } from '~/styles/transitions'
+import { Overlay } from '~/components'
+import Paper from '~/components/Paper'
 
-function ModalBase({ children, close, open, ...props }) {
-  const modalBoxRef = useRef()
+function ModalBase({ children, isOpen, shouldAnimate, onAnimateEnd, onClose, ...props }) {
+  const stopClick = e => e.stopPropagation();
 
-  useOutsideClose(modalBoxRef, open, close)
+  useLayoutEffect(() => {
+    const handleEsc = e => e.key === 'Escape' && onClose();
+    document.addEventListener('keyup', handleEsc);
+
+    return () => {
+      document.removeEventListener('keyup', handleEsc);
+    }
+  }, [onClose]);
 
   return (
-    <OverlayStyle show={open} {...props}>
-      <Paper shadow="xl" ref={modalBoxRef}>        
+    <Overlay onClick={onClose} onTransitionEnd={onAnimateEnd} className={shouldAnimate ? 'visible' : ''}>
+      <Box onClick={stopClick} className={isOpen && !shouldAnimate ? 'closing' : ''} shadow="xl">
         {children}
-      </Paper>
-    </OverlayStyle>
+      </Box>
+    </Overlay>
   )
 }
 
-const OverlayStyle = styled(Overlay)`
-  & > div {
-    z-index: 300;
-    max-width: 90%;
-    min-width: 300px;
-    min-height: 60px;
-    animation: ${scale} 0.1s;
+const Box = styled(Paper)`
+  z-index: 300;
+  max-width: 90%;
+  min-width: 300px;
+  min-height: 60px;
+  animation: ${scaleUp} 0.1s;
+
+  .closing {
+    animation: ${scaleDown} 0.1s;
   }
 `
+
+ModalBase.propTypes = {
+  children: PropTypes.node,
+  isOpen: PropTypes.bool.isRequired,
+  shouldAnimate: PropTypes.bool.isRequired,
+  onAnimateEnd: PropTypes.func.isRequired,
+  onClose: PropTypes.func.isRequired,
+}
 
 export default ModalBase

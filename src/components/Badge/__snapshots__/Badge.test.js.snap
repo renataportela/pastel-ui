@@ -10,13 +10,17 @@ exports[`Badge component renders a button with a dot badge with danger color 1`]
     
   </span>
   <button
-    className="ButtonStyle-sc-120zjl4-0 iJAzjI"
+    className="ButtonStyle-sc-120zjl4-0 fJHZAc"
     color="primary"
     disabled={false}
     kind="default"
     size="md"
   >
     Button
+    <span
+      className="Ripple__RippleContainer-sc-1dqnp9a-0 URvnd"
+      onMouseDown={[Function]}
+    />
   </button>
 </div>
 `;

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import styled, { css, keyframes } from 'styled-components'
 
 import { roundShape } from '~/styles/mixins'
+import { pulse } from '~/styles/transitions'
 import { BaseColors, BASE_COLORS_PROPS } from '~/components/Theme'
 
 function Badge({ bgColor, children, content, dot, color, textColor, round, ...props}) {
@@ -24,23 +25,6 @@ function Badge({ bgColor, children, content, dot, color, textColor, round, ...pr
     </Outer>
   )
 }
-
-const pulse = keyframes`
-  0% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 currentColor;
-  }
-
-  70% {
-    transform: scale(1);
-    box-shadow: 0 0 0 6px rgba(0, 0, 0, 0);
-  }
-
-  100% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-  }
-`;
 
 const Outer = styled.div`
   position: relative;

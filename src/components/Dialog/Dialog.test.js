@@ -20,7 +20,7 @@ describe('Dialog component', () => {
       <Theme>
         <Dialog 
           open
-          close={() => {}} 
+          onClose={() => {}} 
           title={<p>Hi</p>}
           message={<p>Hello!</p>}
         >        

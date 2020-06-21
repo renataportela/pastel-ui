@@ -1,7 +1,7 @@
 import React from 'react'
 import { withKnobs, text, boolean, select } from '@storybook/addon-knobs'
 
-import { Button, Close } from '~/components'
+import { Button, Close, Flex } from '~/components'
 
 export default {
   title: 'Button',
@@ -29,12 +29,10 @@ export const button = () => {
 export const buttons = () => {
   return (
     <>
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'space-evenly',
-          marginBottom: '30px',
-        }}
+      <Flex
+        justify="between"
+        gap="15px"
+        style={{ marginBottom: '30px' }}
       >
         <Button label="Primary" />
         <Button label="Secondary" color="secondary" />
@@ -46,13 +44,11 @@ export const buttons = () => {
         <Button label="Dark" color="dark" />
         <Button round icon="menu" />
         <Button label="Loading" loading />
-      </div>
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'space-evenly',
-          marginBottom: '30px',
-        }}
+      </Flex>
+      <Flex
+        justify="between"
+        gap="15px"
+        style={{ marginBottom: '30px' }}
       >
         <Button label="Primary" kind="outline" />
         <Button label="Secondary" color="secondary" kind="outline" />
@@ -64,13 +60,11 @@ export const buttons = () => {
         <Button label="Dark" color="dark" kind="outline" />
         <Button round icon="menu" kind="outline" />
         <Button label="Loading" loading kind="outline" />
-      </div>
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'space-evenly',
-          marginBottom: '30px',
-        }}
+      </Flex>
+      <Flex
+        justify="between"
+        gap="15px"
+        style={{ marginBottom: '30px' }}
       >
         <Button label="Primary" kind="ghost" />
         <Button label="Secondary" color="secondary" kind="ghost" />
@@ -82,7 +76,7 @@ export const buttons = () => {
         <Button label="Dark" color="dark" kind="ghost" />
         <Button round icon="menu" kind="ghost" />
         <Button label="Loading" loading kind="ghost" />
-      </div>
+      </Flex>
     </>
   )
 }

@@ -34,7 +34,7 @@ exports[`Chip component renders a chip with default color and close button 1`] =
     Default
   </span>
   <button
-    className="ButtonStyle-sc-120zjl4-0 anqYW"
+    className="ButtonStyle-sc-120zjl4-0 iHcOpt"
     color="sub"
     disabled={false}
     kind="ghost"
@@ -66,6 +66,10 @@ exports[`Chip component renders a chip with default color and close button 1`] =
         y2="18"
       />
     </svg>
+    <span
+      className="Ripple__RippleContainer-sc-1dqnp9a-0 URvnd"
+      onMouseDown={[Function]}
+    />
   </button>
 </div>
 `;

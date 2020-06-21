@@ -12,12 +12,21 @@ export const opacityInOut  = `opacity 0.3s ease-in-out`
 
 export const allEase  = `all .2s ease`
 
-export const scale = keyframes`
+export const scaleUp = keyframes`
   0% {
     transform: scale(0);
   }
   100% {
     transform: scale(1);
+  }
+`
+
+export const scaleDown = keyframes`
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
   }
 `
 
@@ -37,3 +46,21 @@ export const fadeInFromNone = keyframes`
     opacity: 1;
   }
 `
+
+
+export const pulse = keyframes`
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 currentColor;
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 6px rgba(0, 0, 0, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+`;

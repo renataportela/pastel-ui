@@ -2,24 +2,40 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
+import { useToggleAnimation } from '~/hooks'
 import { ModalBase } from '~/components/Modal'
 import { Button, Flex, Heading, Portal } from '~/components'
 
 function Dialog({
   actions,
   children,
+  onClose,
   closeLabel,
   closeKind,
   closeColor,
   message,
+  open,
+  scrollable,
   title,
   ...props
 }) {
-  if (!props.open) return null
+  const [animate, onAnimateClose, onTransitionEnd] = useToggleAnimation(
+    open,
+    onClose
+  )
+
+  if (!open) return null
 
   return (
     <Portal>
-      <DialogStyle {...props}>
+      <DialogStyle
+        $scrollable={scrollable}
+        isOpen={open}
+        shouldAnimate={animate}
+        onAnimateEnd={onTransitionEnd}
+        onClose={onAnimateClose}
+        {...props}
+      >
         {title && <Heading size="4">{title}</Heading>}
         {message}
         <Flex justify="end" alignItems="center" gap="8px" margin="15px 0 0">
@@ -38,7 +54,7 @@ function Dialog({
 
 const DialogStyle = styled(ModalBase)`
   & > div {
-    overflow: ${props => (props.scrollable ? 'auto' : 'hidden')};
+    overflow: ${props => (props.$scrollable ? 'auto' : 'hidden')};
     max-height: 90%;
   }
 
@@ -57,11 +73,11 @@ Dialog.defaultProps = {
 
 Dialog.propTypes = {
   children: PropTypes.node,
-  close: PropTypes.func.isRequired,
   closeLabel: PropTypes.string,
   closeColor: PropTypes.string,
   closeKind: PropTypes.string,
   message: PropTypes.node.isRequired,
+  onClose: PropTypes.func.isRequired,
   open: PropTypes.bool.isRequired,
   title: PropTypes.node,
   scrollable: PropTypes.bool,

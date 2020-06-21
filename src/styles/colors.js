@@ -1,12 +1,12 @@
 
 export default {
   text: '#4a1660',
-  label: '#a661e2',
+  label: '#ad7ed6',
   textContrast: '#FFF',
   bgColor: '#FFF',
   input: {
     bg: '#fcfcfc',
-    border: '#e9e9e9',
+    border: '#e6e6e6',
     text: '#4a1660',
     borderHover: '#e8d4f9',
     borderFocused: '#d9aaff',

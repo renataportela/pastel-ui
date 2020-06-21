@@ -6,10 +6,10 @@ import { FONT_SIZES } from '~/styles/tokens'
 import { allEase } from '~/styles/transitions'
 
 const PADDING = {
-  sm: { y: '0.5em', x: '1.1em' },
-  md: { y: '0.8em', x: '1.6em' },
-  lg: { y: '1em', x: '2em' },
-  xl: { y: '1.1em', x: '2.4em' },
+  sm: { y: '0.5em', x: '0.75em' },
+  md: { y: '0.8em', x: '1.2em' },
+  lg: { y: '1em', x: '1.5em' },
+  xl: { y: '1.1em', x: '1.6em' },
 };
 
 const ROUND_SIZES = {
@@ -40,15 +40,16 @@ const buttonVariant = props => {
     border: isNeutral ? '1px solid '+chosenColor.border : '0',
     boxShadow: props.flat ? null : shadowSm,
     '&:hover:enabled': {
-      boxShadow: props.flat ? null : shadowLg,
       backgroundColor: hoverColor,
       borderColor: hoverColor,
+      boxShadow: props.flat ? null : shadowLg,
     },
     '&:focus': {
       boxShadow: shadowOutline,
     },
     '&:active': {
       boxShadow: 'none !important',
+      opacity: '0.8'
     },
     '&:disabled': {
       cursor: 'not-allowed',
@@ -70,7 +71,7 @@ const buttonVariant = props => {
 
       styles = {
         ...styles, 
-        border: '2px solid',
+        border: '1px solid',
         borderColor: outlineColor,        
         '&:hover:enabled': {
           ...styles['&:hover:enabled'],
@@ -88,7 +89,7 @@ const buttonVariant = props => {
           ...styles['&:hover:enabled'],
           backgroundColor: props.colors.transparentDark,
           borderColor: 'transparent',
-          boxShadow: 'none'
+          boxShadow: 'none',
         },
       };
       
@@ -114,7 +115,9 @@ const ButtonStyle = styled.button.attrs(props => {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  text-transform: uppercase;  
+  text-transform: uppercase; 
+  box-sizing: border-box;
+  text-rendering: auto;
 
   & > svg {
     width: 1.1em;

@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react'
 import styled from 'styled-components'
 
-import { scale } from '~/styles/transitions'
+import { scaleUp } from '~/styles/transitions'
 import { shadowLg } from '~/styles/shadows'
 
 function MenuBox(props, ref) {
@@ -24,7 +24,7 @@ const Outer = styled.div`
 
 const MenuBoxStyle = styled.div`
   z-index: 100;
-  animation: ${scale} .1s;
+  animation: ${scaleUp} .1s;
   background-color: white;
   display: flex;
   flex-direction: column;

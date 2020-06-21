@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import useCloneInput from './useCloneInput'
 import FormField from '~/components/FormField'
 import FormFields from './FormFields'
-import FormButton from './FormButton'
+import FormFooter from './FormFooter'
 
 function Form({ errors, onChangeField, values, onSubmit, ...props }) {
   const [submitting, setSubmitting] = useState(false)
@@ -52,7 +52,7 @@ Form.defaultProps = {
   values: {},
 }
 
-Form.Button = FormButton
+Form.Footer = FormFooter
 Form.Field = FormField
 Form.Fields = FormFields
 

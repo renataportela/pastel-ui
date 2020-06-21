@@ -20,7 +20,7 @@ exports[`Checkbox component renders a checked checkbox with label "Option A" 1`]
       />
     </div>
     <div
-      className="CheckedIcon__Box-sc-6ampc6-0 ggntMq box"
+      className="CheckedIcon__Box-sc-6ampc6-0 dJgnsJ box"
     >
       <svg
         className="Svg__SvgStyle-pyey0i-0 gYARyh"
@@ -69,7 +69,7 @@ exports[`Checkbox component renders a unchecked checkbox with label "Option A" 1
       />
     </div>
     <div
-      className="CheckedIcon__Box-sc-6ampc6-0 ggntMq box"
+      className="CheckedIcon__Box-sc-6ampc6-0 dJgnsJ box"
     />
     <span
       className="CheckInput__Label-gntg3z-0 hZkJZf"

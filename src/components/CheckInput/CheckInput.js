@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components'
 
 import { Flex, useTheme } from '~/components'
 import CheckedIcon from './CheckedIcon'
-import { shadowOutline } from '~/styles/shadows'
+import { shadowXs, shadowOutline } from '~/styles/shadows'
 import { INPUT_PROPS } from '~/components/Input'
 
 function CheckInput({

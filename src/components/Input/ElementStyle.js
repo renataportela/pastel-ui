@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 
-import { shadowOutline } from '~/styles/shadows'
+import { shadowXs, shadowOutline } from '~/styles/shadows'
 
 function ElementStyle({ children, left, right, ...props }) {
   return (
@@ -28,12 +28,13 @@ export const inputStyles = css`
   align-items: center;
   transition: border-color .2s ease-in-out, box-shadow .2s ease;
   outline: 0;  
-  border: 2px solid;  
+  border: 1px solid;  
+  box-shadow: ${props => props.$isFocused ? shadowOutline : shadowXs };
 
   ${({ $colors, disabled, $error, $isFocused }) => css`
     cursor: ${disabled ? 'not-allowed' : 'default'};
     border-color: ${$error 
-      ? $colors.dangerLight.bg 
+      ? $colors.dangerAlt.bg 
       : (disabled ? $colors.input.disabledBorder : 
         ($isFocused ? $colors.input.borderFocused : $colors.input.border))
       };
@@ -51,9 +52,8 @@ export const inputStyles = css`
 const InputStyle = styled.div`  
   justify-content: space-between;
   position: relative;
-  border-radius: 6px;
-  box-shadow: ${props => props.$isFocused ? shadowOutline : 'none' };
-  ${inputStyles}
+  border-radius: 4px;  
+  ${inputStyles}  
 `
 
 ElementStyle.propTypes = {

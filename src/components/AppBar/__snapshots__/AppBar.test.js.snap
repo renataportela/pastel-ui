@@ -8,7 +8,7 @@ exports[`AppBar component renders an AppBar with brand Brand, text "left" and a 
     className="AppBar__Slot-sc-1dfcr7j-1 AppBar__MenuIconSlot-sc-1dfcr7j-5 hJFspI"
   >
     <button
-      className="ButtonStyle-sc-120zjl4-0 bnXTHk"
+      className="ButtonStyle-sc-120zjl4-0 igBNNn"
       color="primary"
       disabled={false}
       kind="ghost"
@@ -47,6 +47,10 @@ exports[`AppBar component renders an AppBar with brand Brand, text "left" and a 
           y2="18"
         />
       </svg>
+      <span
+        className="Ripple__RippleContainer-sc-1dqnp9a-0 URvnd"
+        onMouseDown={[Function]}
+      />
     </button>
   </div>
   <div
@@ -65,13 +69,17 @@ exports[`AppBar component renders an AppBar with brand Brand, text "left" and a 
     className="AppBar__Slot-sc-1dfcr7j-1 AppBar__RightSlot-sc-1dfcr7j-3 jAbhgh"
   >
     <button
-      className="ButtonStyle-sc-120zjl4-0 fElFDL AppBarButton-sc-642fva-0 dFEtZr"
+      className="ButtonStyle-sc-120zjl4-0 bMxttm AppBarButton-sc-642fva-0 dFEtZr"
       color="primary"
       disabled={false}
       kind="ghost"
       size="md"
     >
       Login
+      <span
+        className="Ripple__RippleContainer-sc-1dqnp9a-0 URvnd"
+        onMouseDown={[Function]}
+      />
     </button>
   </div>
 </div>
@@ -85,7 +93,7 @@ exports[`AppBar component renders an AppBar with brand Brand, text "left" and a 
     className="AppBar__Slot-sc-1dfcr7j-1 AppBar__MenuIconSlot-sc-1dfcr7j-5 hJFspI"
   >
     <button
-      className="ButtonStyle-sc-120zjl4-0 bnXTHk"
+      className="ButtonStyle-sc-120zjl4-0 igBNNn"
       color="secondary"
       disabled={false}
       kind="ghost"
@@ -124,6 +132,10 @@ exports[`AppBar component renders an AppBar with brand Brand, text "left" and a 
           y2="18"
         />
       </svg>
+      <span
+        className="Ripple__RippleContainer-sc-1dqnp9a-0 URvnd"
+        onMouseDown={[Function]}
+      />
     </button>
   </div>
   <div
@@ -144,7 +156,7 @@ exports[`AppBar component renders an AppBar with brand Brand, text "left" and a 
     className="AppBar__Slot-sc-1dfcr7j-1 AppBar__RightSlot-sc-1dfcr7j-3 jAbhgh"
   >
     <button
-      className="ButtonStyle-sc-120zjl4-0 fElFDL AppBarButton-sc-642fva-0 dFEtZr"
+      className="ButtonStyle-sc-120zjl4-0 bMxttm AppBarButton-sc-642fva-0 dFEtZr"
       color="primary"
       disabled={false}
       kind="ghost"
@@ -152,6 +164,10 @@ exports[`AppBar component renders an AppBar with brand Brand, text "left" and a 
       size="md"
     >
       Options
+      <span
+        className="Ripple__RippleContainer-sc-1dqnp9a-0 URvnd"
+        onMouseDown={[Function]}
+      />
     </button>
   </div>
 </div>

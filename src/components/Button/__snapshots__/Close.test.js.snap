@@ -2,7 +2,7 @@
 
 exports[`Close component renders a close button with large size 1`] = `
 <button
-  className="ButtonStyle-sc-120zjl4-0 bnXTHk"
+  className="ButtonStyle-sc-120zjl4-0 igBNNn"
   color="primary"
   disabled={false}
   kind="ghost"
@@ -34,5 +34,9 @@ exports[`Close component renders a close button with large size 1`] = `
       y2="18"
     />
   </svg>
+  <span
+    className="Ripple__RippleContainer-sc-1dqnp9a-0 URvnd"
+    onMouseDown={[Function]}
+  />
 </button>
 `;

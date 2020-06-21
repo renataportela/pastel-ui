@@ -1,6 +1,4 @@
-import styled, { css } from 'styled-components'
-
-import { fadeInFromNone } from '~/styles/transitions'
+import styled from 'styled-components'
 
 const Overlay = styled.div`
   background-color: rgba(0,0,0,0.4);
@@ -13,14 +11,16 @@ const Overlay = styled.div`
   align-items: center;
   justify-content: center;
   z-index: 200;
-  ${props => props.show 
-    ? css`animation: ${fadeInFromNone} 150ms ease-in;`
-    : css`visibility: hidden;`
+  pointer-events: auto;
+  opacity: 0;
+  will-change: opacity;
+  pointer-events: none;
+  transition: opacity 0.3s cubic-bezier(0,0,0.3,1);
+
+  &.visible {
+    opacity: 1;
+    pointer-events: auto;
   }
 `;
-
-Overlay.defaultProps = {
-  show: true,
-}
 
 export default Overlay

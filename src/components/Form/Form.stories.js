@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import { Checkbox, Form, Radio, Input } from '~/components'
+import { Button, Checkbox, Form, Radio, Input } from '~/components'
 
 export default {
   title: 'Form',
@@ -85,7 +85,10 @@ export const form = () => {
         inputField={<Checkbox name="checkbox[]" optionValue="C" label="Option C" />}
       />
 
-      <Form.Button label="Submit" />
+      <Form.Footer>
+        <Button type="submit" label="Submit" />
+        <Button label="Cancel" color="neutral" kind="outline" />
+      </Form.Footer>
     </Form>
   )
 }

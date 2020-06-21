@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useState, useRef } from 'react'
 import PropTypes from 'prop-types'
 
 import { useOutsideClose } from '~/hooks'
@@ -16,19 +16,26 @@ function Drawer({
 
   useOutsideClose(paperRef, open && !docked, close)
 
+  let classNames = open ? 'open ' : ''
+
+  const handleTransitionEnd = () => {
+    console.log('end');
+  }
+
   return (
-    <Portal selector="#portal-root">
-      <Overlay show={open && !docked} />
-      <Paper className={open ? 'open' : ''} ref={paperRef} {...props}>
-        {children}
-      </Paper>
+    <Portal>
+      <Overlay className={open ? 'visible' : ''} OnTransitionEnd={handleTransitionEnd} show={open && !docked}>
+        <Paper className={classNames} ref={paperRef} {...props}>
+          {children}
+        </Paper>
+      </Overlay>
     </Portal>
   )
 }
 
 Drawer.defaultProps = {
   position: 'left',
-  width: '310px',
+  width: '400px',
 }
 
 Drawer.propTypes = {

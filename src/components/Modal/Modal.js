@@ -2,22 +2,27 @@ import React, { useLayoutEffect } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
+import { useToggleAnimation } from '~/hooks'
 import { Portal } from '~/components'
 import Close from '~/components/Button/Close'
 import ModalBase from './ModalBase'
 
-function Modal({ children, open, close, ...props }) {
+function Modal({ children, open, onClose, ...props }) {
+  const [animate, onAnimateClose, onTransitionEnd] = useToggleAnimation(open, onClose)
+
   useLayoutEffect(() => {
     // not scroll the body while the modal is open
-    document.body.style.position = open ? 'fixed' : 'static';
+    document.body.style.position = open ? 'fixed' : 'static'
     // compensates the scrollbar width
-    document.body.style.paddingRight = open ? '15px' : '0';
+    document.body.style.paddingRight = open ? '15px' : '0'
   }, [open])
+
+  if (!open) return null
 
   return (
     <Portal selector="#modal-root">
-      <ModalStyle open={open} close={close} {...props}>
-        <CloseButton onClick={close} />
+      <ModalStyle isOpen={open} shouldAnimate={animate} onClose={onAnimateClose} onAnimateEnd={onTransitionEnd}>
+        <CloseButton onClick={onAnimateClose} />
         {children}
       </ModalStyle>
     </Portal>
@@ -25,8 +30,6 @@ function Modal({ children, open, close, ...props }) {
 }
 
 const ModalStyle = styled(ModalBase)`
-  display: ${props => props.open ? 'flex' : 'none'};
-
   & > div {
     overflow: auto;
   }
@@ -42,7 +45,7 @@ const CloseButton = styled(Close)`
 
 Modal.propTypes = {
   open: PropTypes.bool.isRequired,
-  close: PropTypes.func.isRequired,
+  onClose: PropTypes.func.isRequired,
 }
 
 export default Modal

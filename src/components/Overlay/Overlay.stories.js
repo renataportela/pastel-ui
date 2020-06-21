@@ -11,7 +11,7 @@ export const overlay = () => {
   return (
     <>
       <Button label="Open" onClick={() => setOpen(true)} />
-      {open && <Overlay onClick={() => setOpen(false)} />}
+      <Overlay className={open ? 'visible' : ''} onClick={() => setOpen(false)} />
     </>
   )
 }

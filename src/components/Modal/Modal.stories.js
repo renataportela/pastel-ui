@@ -15,11 +15,21 @@ export const modal = () => {
   return (
     <>
       <Button label="Open" onClick={() => setOpen(true)} />
-      <Modal open={open} close={handleClose}>
+      <Modal open={open} onClose={handleClose}>
+        <p>Hello!</p>
+        <p>Hello!</p>
+        <p>Hello!</p>
+        <p>Hello!</p>
+        <p>Hello!</p>
+        <p>Hello!</p>
+        <p>Hello!</p>
+        <p>Hello!</p>
+        <p>Hello!</p>
+        <p>Hello!</p>
         <p>Hello!</p>
         <Button label="Open" onClick={() => setOpen2(true)} />
 
-        <Modal open={open2} close={handleClose2}>
+        <Modal open={open2} onClose={handleClose2}>
           <p>Hello again!</p>
         </Modal>
       </Modal>
@@ -31,7 +41,7 @@ export const modal = () => {
         gosta di mim que vai caçá sua turmis!
       </Paragraph>
 
-      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> */}
+      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
       <Paragraph>
         Cevadis im ampola pa arma uma pindureta. Nec orci ornare consequat.

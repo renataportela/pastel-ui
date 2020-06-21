@@ -2,10 +2,13 @@
 
 exports[`Dialog component renders a dialog with a Close and OK buttons 1`] = `
 <div
-  className="Overlay-sc-1udyqqi-0 ModalBase__OverlayStyle-sc-1ykmqu3-0 jaOPLJ Dialog__DialogStyle-el6lu1-0 bGrPHF"
+  className="Overlay-sc-1udyqqi-0 llplCx"
+  onClick={[Function]}
+  onTransitionEnd={[Function]}
 >
   <div
-    className="Paper__PaperStyle-sc-5lofqf-0 dtOYAq"
+    className="Paper__PaperStyle-sc-5lofqf-0 dtOYAq ModalBase__Box-sc-1ykmqu3-0 jmHbrE closing"
+    onClick={[Function]}
   >
     <h4
       as="span"
@@ -25,17 +28,20 @@ exports[`Dialog component renders a dialog with a Close and OK buttons 1`] = `
       className="sc-AxjAm dBzgwg"
     >
       <button
-        className="ButtonStyle-sc-120zjl4-0 jhXbjy"
+        className="ButtonStyle-sc-120zjl4-0 fTsNtX"
         color="neutral"
         disabled={false}
         kind="ghost"
-        onClick={[Function]}
         size="md"
       >
         Close
+        <span
+          className="Ripple__RippleContainer-sc-1dqnp9a-0 URvnd"
+          onMouseDown={[Function]}
+        />
       </button>
       <button
-        className="ButtonStyle-sc-120zjl4-0 iJAzjI"
+        className="ButtonStyle-sc-120zjl4-0 fJHZAc"
         color="primary"
         disabled={false}
         kind="default"
@@ -43,6 +49,10 @@ exports[`Dialog component renders a dialog with a Close and OK buttons 1`] = `
         size="md"
       >
         OK
+        <span
+          className="Ripple__RippleContainer-sc-1dqnp9a-0 URvnd"
+          onMouseDown={[Function]}
+        />
       </button>
     </div>
   </div>

@@ -19,10 +19,10 @@ function withToastProvider(Component, position = 'topRight') {
       <ToastContext.Provider value={{ addToast, removeToast }}>
         <Component {...props} />
 
-        <Portal selector="#portal-root">
+        <Portal>
           <Toasts $position={position}>
             {toasts.map(({ id, ...toastProps }) => (
-              <Toaster key={id} remove={() => removeToast(id)} {...toastProps} />
+              <Toaster key={id} onRemove={() => removeToast(id)} {...toastProps} />
             ))}
           </Toasts>
         </Portal>

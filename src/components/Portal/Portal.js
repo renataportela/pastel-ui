@@ -1,13 +1,21 @@
-import React from 'react'
+import { useLayoutEffect, useRef } from 'react'
+import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
-import { UniversalPortal } from '@jesstelford/react-portal-universal'
 
 function Portal(props) {
-  return (
-    <UniversalPortal selector={props.selector}>
-      {props.children}
-    </UniversalPortal>
-  )
+  const el = useRef(document.createElement('div'))
+
+  useLayoutEffect(() => {
+    if (el.current) {
+      const portal = document.querySelector(props.selector)
+      portal.append(el.current)
+      return () => portal.removeChild(el.current)
+    }
+  }, [el])
+
+  if (!el.current) return null
+
+  return ReactDOM.createPortal(props.children, el.current)
 }
 
 Portal.defaultProps = {

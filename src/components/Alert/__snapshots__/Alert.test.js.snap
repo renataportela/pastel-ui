@@ -23,7 +23,7 @@ exports[`Alert component renders a success alert 1`] = `
   </svg>
   Alert text
   <button
-    className="ButtonStyle-sc-120zjl4-0 anqYW Alert__CloseButton-txovbc-1 gknFni"
+    className="ButtonStyle-sc-120zjl4-0 iHcOpt Alert__CloseButton-txovbc-1 gknFni"
     color="primary"
     disabled={false}
     kind="ghost"
@@ -56,6 +56,10 @@ exports[`Alert component renders a success alert 1`] = `
         y2="18"
       />
     </svg>
+    <span
+      className="Ripple__RippleContainer-sc-1dqnp9a-0 URvnd"
+      onMouseDown={[Function]}
+    />
   </button>
 </div>
 `;

@@ -1,6 +1,7 @@
 import React, { forwardRef } from 'react'
 
 import useTheme from '~/components/Theme/useTheme'
+import Ripple from '~/components/Ripple'
 import Icon from '~/components/Icon'
 import ButtonStyle from './ButtonStyle'
 
@@ -39,6 +40,7 @@ function Button(
       {icon && !loading && <Icon name={icon} />}
       {(loading || submitting) && <Icon name="loader" color={loaderColor} />}
       {label}
+      <Ripple />
     </ButtonStyle>
   )
 }

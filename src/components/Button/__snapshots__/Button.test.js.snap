@@ -2,67 +2,87 @@
 
 exports[`Button component renders a danger button 1`] = `
 <button
-  className="ButtonStyle-sc-120zjl4-0 kIbNBe"
+  className="ButtonStyle-sc-120zjl4-0 hfszzO"
   color="danger"
   disabled={false}
   kind="default"
   size="md"
 >
   Hello
+  <span
+    className="Ripple__RippleContainer-sc-1dqnp9a-0 URvnd"
+    onMouseDown={[Function]}
+  />
 </button>
 `;
 
 exports[`Button component renders a default button 1`] = `
 <button
-  className="ButtonStyle-sc-120zjl4-0 iJAzjI"
+  className="ButtonStyle-sc-120zjl4-0 fJHZAc"
   color="primary"
   disabled={false}
   kind="default"
   size="md"
 >
   Hello
+  <span
+    className="Ripple__RippleContainer-sc-1dqnp9a-0 URvnd"
+    onMouseDown={[Function]}
+  />
 </button>
 `;
 
 exports[`Button component renders a extra large button 1`] = `
 <button
-  className="ButtonStyle-sc-120zjl4-0 jJTQxI"
+  className="ButtonStyle-sc-120zjl4-0 iqvfbt"
   color="primary"
   disabled={false}
   kind="default"
   size="xl"
 >
   Hello
+  <span
+    className="Ripple__RippleContainer-sc-1dqnp9a-0 URvnd"
+    onMouseDown={[Function]}
+  />
 </button>
 `;
 
 exports[`Button component renders a ghost button 1`] = `
 <button
-  className="ButtonStyle-sc-120zjl4-0 kVStQG"
+  className="ButtonStyle-sc-120zjl4-0 gpLSvv"
   color="info"
   disabled={false}
   kind="ghost"
   size="md"
 >
   Hello
+  <span
+    className="Ripple__RippleContainer-sc-1dqnp9a-0 URvnd"
+    onMouseDown={[Function]}
+  />
 </button>
 `;
 
 exports[`Button component renders a large button 1`] = `
 <button
-  className="ButtonStyle-sc-120zjl4-0 kjIRiB"
+  className="ButtonStyle-sc-120zjl4-0 dMDdMJ"
   color="primary"
   disabled={false}
   kind="default"
   size="lg"
 >
   Hello
+  <span
+    className="Ripple__RippleContainer-sc-1dqnp9a-0 URvnd"
+    onMouseDown={[Function]}
+  />
 </button>
 `;
 
 exports[`Button component renders a loading button 1`] = `
 <button
-  className="ButtonStyle-sc-120zjl4-0 iJAzjI"
+  className="ButtonStyle-sc-120zjl4-0 fJHZAc"
   color="primary"
   disabled={true}
   kind="default"
@@ -99,24 +119,32 @@ exports[`Button component renders a loading button 1`] = `
     </path>
   </svg>
   Hello
+  <span
+    className="Ripple__RippleContainer-sc-1dqnp9a-0 URvnd"
+    onMouseDown={[Function]}
+  />
 </button>
 `;
 
 exports[`Button component renders a outline button 1`] = `
 <button
-  className="ButtonStyle-sc-120zjl4-0 ipGwoh"
+  className="ButtonStyle-sc-120zjl4-0 bJxycg"
   color="secondary"
   disabled={false}
   kind="outline"
   size="md"
 >
   Hello
+  <span
+    className="Ripple__RippleContainer-sc-1dqnp9a-0 URvnd"
+    onMouseDown={[Function]}
+  />
 </button>
 `;
 
 exports[`Button component renders a round button with menu icon 1`] = `
 <button
-  className="ButtonStyle-sc-120zjl4-0 dTtWyq"
+  className="ButtonStyle-sc-120zjl4-0 dMLENE"
   color="primary"
   disabled={false}
   kind="default"
@@ -154,17 +182,25 @@ exports[`Button component renders a round button with menu icon 1`] = `
       y2="18"
     />
   </svg>
+  <span
+    className="Ripple__RippleContainer-sc-1dqnp9a-0 URvnd"
+    onMouseDown={[Function]}
+  />
 </button>
 `;
 
 exports[`Button component renders a small button 1`] = `
 <button
-  className="ButtonStyle-sc-120zjl4-0 bkToAt"
+  className="ButtonStyle-sc-120zjl4-0 IYper"
   color="primary"
   disabled={false}
   kind="default"
   size="sm"
 >
   Hello
+  <span
+    className="Ripple__RippleContainer-sc-1dqnp9a-0 URvnd"
+    onMouseDown={[Function]}
+  />
 </button>
 `;

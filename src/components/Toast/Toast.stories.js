@@ -7,10 +7,16 @@ export default {
 }
 
 export const toast = withToastProvider(() => {
-  const [toastConfig, setToastConfig] = useState(JSON.stringify({ message: 'Hello' }))
+  const [count, setCount] = useState(1);
+  const [toastConfig, setToastConfig] = useState(JSON.stringify({ message: 'Hello ' }))
   const handleChangeToast = value => setToastConfig(value)
   const { addToast } = useToast()
-  const showToast = () => addToast(JSON.parse(toastConfig))
+  const showToast = () => {
+    const t = JSON.parse(toastConfig)
+    t.message += ' ' + count;
+    addToast(t)
+    setCount(prev => prev + 1)
+  }
   
   return (
     <>

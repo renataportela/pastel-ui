@@ -2,7 +2,7 @@
 
 exports[`BackTop component renders a default BackTop button 1`] = `
 <button
-  className="ButtonStyle-sc-120zjl4-0 hAbZTw BackTop__BackTopButton-sc-13uw6no-0 eGTwSv"
+  className="ButtonStyle-sc-120zjl4-0 hINIKa BackTop__BackTopButton-sc-13uw6no-0 eGTwSv"
   color="info"
   disabled={false}
   kind="default"
@@ -33,5 +33,9 @@ exports[`BackTop component renders a default BackTop button 1`] = `
       points="5 12 12 5 19 12"
     />
   </svg>
+  <span
+    className="Ripple__RippleContainer-sc-1dqnp9a-0 URvnd"
+    onMouseDown={[Function]}
+  />
 </button>
 `;

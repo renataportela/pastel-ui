@@ -3,13 +3,9 @@ import PropTypes from 'prop-types'
 
 import Toast from './Toast'
 
-function Toaster({
-  duration,
-  remove,
-  ...props
-}) {
+function Toaster({ duration, ...props }) {
   const removeRef = useRef()
-  removeRef.current = remove
+  removeRef.current = props.onRemove
 
   useEffect(() => {
     const id = setTimeout(() => removeRef.current(), duration)
@@ -17,16 +13,17 @@ function Toaster({
   }, [])
 
   return (
-    <Toast remove={remove} {...props} />
+    <Toast {...props} />
   )
 }
 
 Toaster.defaultProps = {
-  duration: 3000,
+  duration: 4000,
 }
 
 Toaster.propTypes = {
   duration: PropTypes.number,
+  onRemove: PropTypes.func.isRequired,
 }
 
 export default Toaster
