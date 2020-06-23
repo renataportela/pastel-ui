@@ -1,81 +1,467 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Checkbox component renders a checked checkbox with label "Option A" 1`] = `
-<div
-  className="sc-AxjAm jDtVgx"
+<ContextProvider
+  value={
+    Object {
+      "colors": Object {
+        "bgColor": "#FFF",
+        "danger": Object {
+          "bg": "#e24944",
+          "hover": "#db332e",
+          "text": "#fff",
+        },
+        "dangerAlt": Object {
+          "bg": "#ff7772",
+          "hover": "#fc5f5f",
+          "text": "#aa1e3a",
+        },
+        "dark": Object {
+          "bg": "#444",
+          "hover": "#393939",
+          "text": "#fff",
+        },
+        "darker": Object {
+          "bg": "#222",
+          "hover": "#202020",
+          "text": "#fff",
+        },
+        "disabled": Object {
+          "bg": "#f5f5f5",
+          "border": "#ccc",
+          "hover": "#e0e0e0",
+          "text": "#999",
+        },
+        "info": Object {
+          "bg": "#26e0cd",
+          "hover": "#1bd3c1",
+          "text": "#fff",
+        },
+        "infoAlt": Object {
+          "bg": "#35ffee",
+          "hover": "#2fefdc",
+          "text": "#187067",
+        },
+        "input": Object {
+          "bg": "#fcfcfc",
+          "border": "#e6e6e6",
+          "borderFocused": "#d9aaff",
+          "borderHover": "#e8d4f9",
+          "disabledBorder": "#f0f0f0",
+          "text": "#4a1660",
+        },
+        "label": "#ad7ed6",
+        "neutral": Object {
+          "bg": "#FFF",
+          "border": "#f0f0f0",
+          "hover": "#e8e8e8",
+          "text": "#5f5f5f",
+        },
+        "primary": Object {
+          "bg": "#8849bc",
+          "hover": "#7b40aa",
+          "text": "#fff",
+        },
+        "primaryAlt": Object {
+          "bg": "#d9aaff",
+          "hover": "#cc8eff",
+          "text": "#4a1660",
+        },
+        "secondary": Object {
+          "bg": "#fc53e5",
+          "hover": "#e83ece",
+          "text": "#fff",
+        },
+        "secondaryAlt": Object {
+          "bg": "#ff72ee",
+          "hover": "#fc53e5",
+          "text": "#961284",
+        },
+        "sub": Object {
+          "bg": "#f0f0f0",
+          "hover": "#e0e0e0",
+          "text": "#444",
+        },
+        "success": Object {
+          "bg": "#96c94a",
+          "hover": "#85b53f",
+          "text": "#fff",
+        },
+        "successAlt": Object {
+          "bg": "#c7f71b",
+          "hover": "#ad0",
+          "text": "#465b24",
+        },
+        "text": "#4a1660",
+        "textContrast": "#FFF",
+        "transparentDark": "rgba(0, 0, 0, 0.08)",
+        "transparentLight": "rgba(255, 255, 255, 0.08)",
+        "warning": Object {
+          "bg": "#ffcc00",
+          "hover": "#ffc700",
+          "text": "#fff",
+        },
+        "warningAlt": Object {
+          "bg": "#fff94f",
+          "hover": "#fff04f",
+          "text": "#ff6e00",
+        },
+      },
+      "fontFamily": "Roboto",
+      "fontSize": 16,
+    }
+  }
 >
-  <div
-    className="CheckInput__Inner-gntg3z-1 Ckljx selected"
-    onClick={[Function]}
-  >
-    <div
-      className="CheckInput__HiddenInputContainer-gntg3z-2 cildDt"
-    >
-      <input
-        name="checkbox[]"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        type="checkbox"
-        value="A"
-      />
-    </div>
-    <div
-      className="CheckedIcon__Box-sc-6ampc6-0 dJgnsJ box"
-    >
-      <svg
-        className="Svg__SvgStyle-pyey0i-0 gYARyh"
-        fill="none"
-        height="24px"
-        size={null}
-        stroke="#8849bc"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={3}
-        viewBox="0 0 24 24"
-        width="24px"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <polyline
-          points="20 6 9 17 4 12"
-        />
-      </svg>
-    </div>
-    <span
-      className="CheckInput__Label-gntg3z-0 hZkJZf"
-    >
-      Option A
-    </span>
-  </div>
-</div>
+  <Memo(GlobalStyleComponent)
+    theme={
+      Object {
+        "colors": Object {
+          "bgColor": "#FFF",
+          "danger": Object {
+            "bg": "#e24944",
+            "hover": "#db332e",
+            "text": "#fff",
+          },
+          "dangerAlt": Object {
+            "bg": "#ff7772",
+            "hover": "#fc5f5f",
+            "text": "#aa1e3a",
+          },
+          "dark": Object {
+            "bg": "#444",
+            "hover": "#393939",
+            "text": "#fff",
+          },
+          "darker": Object {
+            "bg": "#222",
+            "hover": "#202020",
+            "text": "#fff",
+          },
+          "disabled": Object {
+            "bg": "#f5f5f5",
+            "border": "#ccc",
+            "hover": "#e0e0e0",
+            "text": "#999",
+          },
+          "info": Object {
+            "bg": "#26e0cd",
+            "hover": "#1bd3c1",
+            "text": "#fff",
+          },
+          "infoAlt": Object {
+            "bg": "#35ffee",
+            "hover": "#2fefdc",
+            "text": "#187067",
+          },
+          "input": Object {
+            "bg": "#fcfcfc",
+            "border": "#e6e6e6",
+            "borderFocused": "#d9aaff",
+            "borderHover": "#e8d4f9",
+            "disabledBorder": "#f0f0f0",
+            "text": "#4a1660",
+          },
+          "label": "#ad7ed6",
+          "neutral": Object {
+            "bg": "#FFF",
+            "border": "#f0f0f0",
+            "hover": "#e8e8e8",
+            "text": "#5f5f5f",
+          },
+          "primary": Object {
+            "bg": "#8849bc",
+            "hover": "#7b40aa",
+            "text": "#fff",
+          },
+          "primaryAlt": Object {
+            "bg": "#d9aaff",
+            "hover": "#cc8eff",
+            "text": "#4a1660",
+          },
+          "secondary": Object {
+            "bg": "#fc53e5",
+            "hover": "#e83ece",
+            "text": "#fff",
+          },
+          "secondaryAlt": Object {
+            "bg": "#ff72ee",
+            "hover": "#fc53e5",
+            "text": "#961284",
+          },
+          "sub": Object {
+            "bg": "#f0f0f0",
+            "hover": "#e0e0e0",
+            "text": "#444",
+          },
+          "success": Object {
+            "bg": "#96c94a",
+            "hover": "#85b53f",
+            "text": "#fff",
+          },
+          "successAlt": Object {
+            "bg": "#c7f71b",
+            "hover": "#ad0",
+            "text": "#465b24",
+          },
+          "text": "#4a1660",
+          "textContrast": "#FFF",
+          "transparentDark": "rgba(0, 0, 0, 0.08)",
+          "transparentLight": "rgba(255, 255, 255, 0.08)",
+          "warning": Object {
+            "bg": "#ffcc00",
+            "hover": "#ffc700",
+            "text": "#fff",
+          },
+          "warningAlt": Object {
+            "bg": "#fff94f",
+            "hover": "#fff04f",
+            "text": "#ff6e00",
+          },
+        },
+        "fontFamily": "Roboto",
+        "fontSize": 16,
+      }
+    }
+  />
+  <Checkbox
+    label="Option A"
+    name="checkbox[]"
+    onChange={[Function]}
+    optionValue="A"
+    value="A"
+  />
+</ContextProvider>
 `;
 
 exports[`Checkbox component renders a unchecked checkbox with label "Option A" 1`] = `
-<div
-  className="sc-AxjAm jDtVgx"
+<ContextProvider
+  value={
+    Object {
+      "colors": Object {
+        "bgColor": "#FFF",
+        "danger": Object {
+          "bg": "#e24944",
+          "hover": "#db332e",
+          "text": "#fff",
+        },
+        "dangerAlt": Object {
+          "bg": "#ff7772",
+          "hover": "#fc5f5f",
+          "text": "#aa1e3a",
+        },
+        "dark": Object {
+          "bg": "#444",
+          "hover": "#393939",
+          "text": "#fff",
+        },
+        "darker": Object {
+          "bg": "#222",
+          "hover": "#202020",
+          "text": "#fff",
+        },
+        "disabled": Object {
+          "bg": "#f5f5f5",
+          "border": "#ccc",
+          "hover": "#e0e0e0",
+          "text": "#999",
+        },
+        "info": Object {
+          "bg": "#26e0cd",
+          "hover": "#1bd3c1",
+          "text": "#fff",
+        },
+        "infoAlt": Object {
+          "bg": "#35ffee",
+          "hover": "#2fefdc",
+          "text": "#187067",
+        },
+        "input": Object {
+          "bg": "#fcfcfc",
+          "border": "#e6e6e6",
+          "borderFocused": "#d9aaff",
+          "borderHover": "#e8d4f9",
+          "disabledBorder": "#f0f0f0",
+          "text": "#4a1660",
+        },
+        "label": "#ad7ed6",
+        "neutral": Object {
+          "bg": "#FFF",
+          "border": "#f0f0f0",
+          "hover": "#e8e8e8",
+          "text": "#5f5f5f",
+        },
+        "primary": Object {
+          "bg": "#8849bc",
+          "hover": "#7b40aa",
+          "text": "#fff",
+        },
+        "primaryAlt": Object {
+          "bg": "#d9aaff",
+          "hover": "#cc8eff",
+          "text": "#4a1660",
+        },
+        "secondary": Object {
+          "bg": "#fc53e5",
+          "hover": "#e83ece",
+          "text": "#fff",
+        },
+        "secondaryAlt": Object {
+          "bg": "#ff72ee",
+          "hover": "#fc53e5",
+          "text": "#961284",
+        },
+        "sub": Object {
+          "bg": "#f0f0f0",
+          "hover": "#e0e0e0",
+          "text": "#444",
+        },
+        "success": Object {
+          "bg": "#96c94a",
+          "hover": "#85b53f",
+          "text": "#fff",
+        },
+        "successAlt": Object {
+          "bg": "#c7f71b",
+          "hover": "#ad0",
+          "text": "#465b24",
+        },
+        "text": "#4a1660",
+        "textContrast": "#FFF",
+        "transparentDark": "rgba(0, 0, 0, 0.08)",
+        "transparentLight": "rgba(255, 255, 255, 0.08)",
+        "warning": Object {
+          "bg": "#ffcc00",
+          "hover": "#ffc700",
+          "text": "#fff",
+        },
+        "warningAlt": Object {
+          "bg": "#fff94f",
+          "hover": "#fff04f",
+          "text": "#ff6e00",
+        },
+      },
+      "fontFamily": "Roboto",
+      "fontSize": 16,
+    }
+  }
 >
-  <div
-    className="CheckInput__Inner-gntg3z-1 Ckljx"
-    onClick={[Function]}
-  >
-    <div
-      className="CheckInput__HiddenInputContainer-gntg3z-2 cildDt"
-    >
-      <input
-        name="checkbox[]"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        type="checkbox"
-        value="A"
-      />
-    </div>
-    <div
-      className="CheckedIcon__Box-sc-6ampc6-0 dJgnsJ box"
-    />
-    <span
-      className="CheckInput__Label-gntg3z-0 hZkJZf"
-    >
-      Option A
-    </span>
-  </div>
-</div>
+  <Memo(GlobalStyleComponent)
+    theme={
+      Object {
+        "colors": Object {
+          "bgColor": "#FFF",
+          "danger": Object {
+            "bg": "#e24944",
+            "hover": "#db332e",
+            "text": "#fff",
+          },
+          "dangerAlt": Object {
+            "bg": "#ff7772",
+            "hover": "#fc5f5f",
+            "text": "#aa1e3a",
+          },
+          "dark": Object {
+            "bg": "#444",
+            "hover": "#393939",
+            "text": "#fff",
+          },
+          "darker": Object {
+            "bg": "#222",
+            "hover": "#202020",
+            "text": "#fff",
+          },
+          "disabled": Object {
+            "bg": "#f5f5f5",
+            "border": "#ccc",
+            "hover": "#e0e0e0",
+            "text": "#999",
+          },
+          "info": Object {
+            "bg": "#26e0cd",
+            "hover": "#1bd3c1",
+            "text": "#fff",
+          },
+          "infoAlt": Object {
+            "bg": "#35ffee",
+            "hover": "#2fefdc",
+            "text": "#187067",
+          },
+          "input": Object {
+            "bg": "#fcfcfc",
+            "border": "#e6e6e6",
+            "borderFocused": "#d9aaff",
+            "borderHover": "#e8d4f9",
+            "disabledBorder": "#f0f0f0",
+            "text": "#4a1660",
+          },
+          "label": "#ad7ed6",
+          "neutral": Object {
+            "bg": "#FFF",
+            "border": "#f0f0f0",
+            "hover": "#e8e8e8",
+            "text": "#5f5f5f",
+          },
+          "primary": Object {
+            "bg": "#8849bc",
+            "hover": "#7b40aa",
+            "text": "#fff",
+          },
+          "primaryAlt": Object {
+            "bg": "#d9aaff",
+            "hover": "#cc8eff",
+            "text": "#4a1660",
+          },
+          "secondary": Object {
+            "bg": "#fc53e5",
+            "hover": "#e83ece",
+            "text": "#fff",
+          },
+          "secondaryAlt": Object {
+            "bg": "#ff72ee",
+            "hover": "#fc53e5",
+            "text": "#961284",
+          },
+          "sub": Object {
+            "bg": "#f0f0f0",
+            "hover": "#e0e0e0",
+            "text": "#444",
+          },
+          "success": Object {
+            "bg": "#96c94a",
+            "hover": "#85b53f",
+            "text": "#fff",
+          },
+          "successAlt": Object {
+            "bg": "#c7f71b",
+            "hover": "#ad0",
+            "text": "#465b24",
+          },
+          "text": "#4a1660",
+          "textContrast": "#FFF",
+          "transparentDark": "rgba(0, 0, 0, 0.08)",
+          "transparentLight": "rgba(255, 255, 255, 0.08)",
+          "warning": Object {
+            "bg": "#ffcc00",
+            "hover": "#ffc700",
+            "text": "#fff",
+          },
+          "warningAlt": Object {
+            "bg": "#fff94f",
+            "hover": "#fff04f",
+            "text": "#ff6e00",
+          },
+        },
+        "fontFamily": "Roboto",
+        "fontSize": 16,
+      }
+    }
+  />
+  <Checkbox
+    label="Option A"
+    name="checkbox[]"
+    onChange={[Function]}
+    optionValue="A"
+    value=""
+  />
+</ContextProvider>
 `;

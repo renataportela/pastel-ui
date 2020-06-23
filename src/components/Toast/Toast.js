@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import { Button, Flex } from '~/components'
+import { Flex } from '~/components'
 import Alert from '~/components/Alert'
 
 function Toast({ actions, closeButton, color, message, position, onRemove, ...props }) {

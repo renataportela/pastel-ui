@@ -21,7 +21,7 @@ function Modal({ children, open, onClose, ...props }) {
 
   return (
     <Portal selector="#modal-root">
-      <ModalStyle isOpen={open} shouldAnimate={animate} onClose={onAnimateClose} onAnimateEnd={onTransitionEnd}>
+      <ModalStyle open={animate} onClose={onAnimateClose} onAnimateEnd={onTransitionEnd}>
         <CloseButton onClick={onAnimateClose} />
         {children}
       </ModalStyle>

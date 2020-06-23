@@ -30,8 +30,7 @@ function Dialog({
     <Portal>
       <DialogStyle
         $scrollable={scrollable}
-        isOpen={open}
-        shouldAnimate={animate}
+        open={animate}
         onAnimateEnd={onTransitionEnd}
         onClose={onAnimateClose}
         {...props}
@@ -43,7 +42,7 @@ function Dialog({
             label={closeLabel}
             kind={closeKind}
             color={closeColor}
-            onClick={props.close}
+            onClick={onAnimateClose}
           />
           {children}
         </Flex>

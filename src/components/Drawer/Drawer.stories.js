@@ -18,7 +18,7 @@ export const drawer = () => {
       <Button label="Open Drawer" onClick={handleToggle} />
       <Drawer 
         open={isOpen} 
-        close={handleToggle} 
+        onClose={handleToggle} 
         position={select('Position', ['left', 'right', 'top', 'bottom'], 'left')}
         docked={boolean('Docked', false)}
       >

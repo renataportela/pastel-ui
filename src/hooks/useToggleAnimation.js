@@ -1,11 +1,11 @@
 import { useState, useLayoutEffect } from 'react'
 
-function useToggleAnimation(open, close) {
+function useToggleAnimation(open, onClose) {
   const [animate, setAnimate] = useState(false)
   const onAnimateClose = () => setAnimate(false)
 
   const onTransitionEnd = () => {
-    if (!animate) close()
+    if (!animate) onClose()
   }
 
   useLayoutEffect(() => {

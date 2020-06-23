@@ -4,14 +4,8 @@ import renderer from 'react-test-renderer'
 import { Theme, Button } from '~/components'
 
 describe('Button component', () => {
-  it('renders a default button', () => {
-    const tree = renderer
-      .create(<Theme><Button label="Hello" /></Theme>)
-      .toJSON()
-    expect(tree).toMatchSnapshot()
-  })
-
-  it('renders a danger button', () => {
+  
+  it('renders a button', () => {
     const tree = renderer
       .create(<Theme><Button label="Hello" color="danger" /></Theme>)
       .toJSON()

@@ -1,26 +1,20 @@
-import React, { useLayoutEffect } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import { scaleDown, scaleUp } from '~/styles/transitions'
+import { scaleUp } from '~/styles/transitions'
+import { useEscClose } from '~/hooks'
 import { Overlay } from '~/components'
 import Paper from '~/components/Paper'
 
-function ModalBase({ children, isOpen, shouldAnimate, onAnimateEnd, onClose, ...props }) {
-  const stopClick = e => e.stopPropagation();
+function ModalBase({ children, open, onAnimateEnd, onClose, ...props }) {
+  const stopClick = e => e.stopPropagation()
 
-  useLayoutEffect(() => {
-    const handleEsc = e => e.key === 'Escape' && onClose();
-    document.addEventListener('keyup', handleEsc);
-
-    return () => {
-      document.removeEventListener('keyup', handleEsc);
-    }
-  }, [onClose]);
+  useEscClose(onClose, open)
 
   return (
-    <Overlay onClick={onClose} onTransitionEnd={onAnimateEnd} className={shouldAnimate ? 'visible' : ''}>
-      <Box onClick={stopClick} className={isOpen && !shouldAnimate ? 'closing' : ''} shadow="xl">
+    <Overlay onClick={onClose} onTransitionEnd={onAnimateEnd} className={open ? 'visible' : ''}>
+      <Box onClick={stopClick} shadow="xl">
         {children}
       </Box>
     </Overlay>
@@ -33,16 +27,11 @@ const Box = styled(Paper)`
   min-width: 300px;
   min-height: 60px;
   animation: ${scaleUp} 0.1s;
-
-  .closing {
-    animation: ${scaleDown} 0.1s;
-  }
 `
 
 ModalBase.propTypes = {
   children: PropTypes.node,
-  isOpen: PropTypes.bool.isRequired,
-  shouldAnimate: PropTypes.bool.isRequired,
+  open: PropTypes.bool.isRequired,
   onAnimateEnd: PropTypes.func.isRequired,
   onClose: PropTypes.func.isRequired,
 }

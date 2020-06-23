@@ -1,25 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button component renders a danger button 1`] = `
+exports[`Button component renders a button 1`] = `
 <button
   className="ButtonStyle-sc-120zjl4-0 hfszzO"
   color="danger"
-  disabled={false}
-  kind="default"
-  size="md"
->
-  Hello
-  <span
-    className="Ripple__RippleContainer-sc-1dqnp9a-0 URvnd"
-    onMouseDown={[Function]}
-  />
-</button>
-`;
-
-exports[`Button component renders a default button 1`] = `
-<button
-  className="ButtonStyle-sc-120zjl4-0 fJHZAc"
-  color="primary"
   disabled={false}
   kind="default"
   size="md"

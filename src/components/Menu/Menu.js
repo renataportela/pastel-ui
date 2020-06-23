@@ -1,7 +1,7 @@
 import React, { useLayoutEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 
-import useOutsideClose from '~/hooks/useOutsideClose'
+import useClickEscClose from '~/hooks/useClickEscClose'
 import MenuBox from './MenuBox'
 import MenuItem from './MenuItem'
 
@@ -13,19 +13,19 @@ function Menu({ activator, children, cover }) {
     left: null,
   })
 
-  const open = () => setIsOpen(true)
-  const close = () => setIsOpen(false)
+  const handleOpen = () => setIsOpen(true)
+  const handleClose = () => setIsOpen(false)
 
   const activatorRef = useRef()
   const menuRef = useRef()
 
   const clonnedButton = React.cloneElement(activator, {
     ref: activatorRef,
-    onClick: open,
+    onClick: handleOpen,
     className: isOpen ? 'opened' : null,
   })
 
-  useOutsideClose(menuRef, isOpen, close)
+  useClickEscClose(menuRef, handleClose, isOpen)
 
   const menuEl = menuRef.current
   const activatorEl = activatorRef.current
@@ -47,7 +47,7 @@ function Menu({ activator, children, cover }) {
     <>
       {clonnedButton}
       {isOpen && (createPortal(
-        <MenuBox ref={menuRef} style={position} close={close}>
+        <MenuBox ref={menuRef} style={position} close={handleClose}>
           {children}
         </MenuBox>,
         document.body

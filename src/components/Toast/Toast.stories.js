@@ -12,7 +12,7 @@ export const toast = withToastProvider(() => {
   const { addToast } = useToast()
   const showToast = kind => () => {
     const t = JSON.parse(toastConfig)
-    t.color = kind;
+    t.color = kind
     addToast(t)
   }
   

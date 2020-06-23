@@ -7,7 +7,7 @@ exports[`Dialog component renders a dialog with a Close and OK buttons 1`] = `
   onTransitionEnd={[Function]}
 >
   <div
-    className="Paper__PaperStyle-sc-5lofqf-0 dtOYAq ModalBase__Box-sc-1ykmqu3-0 jmHbrE closing"
+    className="Paper__PaperStyle-sc-5lofqf-0 dtOYAq ModalBase__Box-sc-1ykmqu3-0 tAPHK"
     onClick={[Function]}
   >
     <h4
@@ -32,6 +32,7 @@ exports[`Dialog component renders a dialog with a Close and OK buttons 1`] = `
         color="neutral"
         disabled={false}
         kind="ghost"
+        onClick={[Function]}
         size="md"
       >
         Close

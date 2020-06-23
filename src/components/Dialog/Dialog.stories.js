@@ -14,7 +14,7 @@ export const dialog = () => {
       <Button label="Open" onClick={() => setOpen(true)} />
       <Dialog 
         open={open} 
-        close={handleClose} 
+        onClose={handleClose} 
         title={<p>Hi</p>}
         message={<p>Hello!</p>}
       >        
