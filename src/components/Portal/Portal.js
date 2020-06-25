@@ -8,7 +8,7 @@ function Portal(props) {
   useLayoutEffect(() => {
     if (el.current) {
       const portal = document.querySelector(props.selector)
-      portal.append(el.current)
+      portal.prepend(el.current)
       return () => portal.removeChild(el.current)
     }
   }, [el])

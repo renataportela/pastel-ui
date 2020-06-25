@@ -52,7 +52,7 @@ const GlobalStyle = createGlobalStyle`
 `
 
 Theme.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   theme: PropTypes.shape({
     fontFamily: PropTypes.string,
     fontSize: PropTypes.number,

@@ -11,7 +11,7 @@ export const pageLoading = () => {
   return (
     <>
       <Button label="Open" onClick={() => setOpen(true)} />
-      {open && <PageLoading onClick={() => setOpen(false)} />}
+      {open && <PageLoading className="show" onClick={() => setOpen(false)} />}
     </>
   )
 }

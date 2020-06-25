@@ -2,39 +2,23 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import { useToggleAnimation } from '~/hooks'
 import { ModalBase } from '~/components/Modal'
 import { Button, Flex, Heading, Portal } from '~/components'
 
 function Dialog({
   actions,
   children,
-  onClose,
   closeLabel,
   closeKind,
   closeColor,
   message,
-  open,
   scrollable,
   title,
   ...props
 }) {
-  const [animate, onAnimateClose, onTransitionEnd] = useToggleAnimation(
-    open,
-    onClose
-  )
-
-  if (!open) return null
-
   return (
     <Portal>
-      <DialogStyle
-        $scrollable={scrollable}
-        open={animate}
-        onAnimateEnd={onTransitionEnd}
-        onClose={onAnimateClose}
-        {...props}
-      >
+      <DialogStyle $scrollable={scrollable} {...props}>
         {title && <Heading size="4">{title}</Heading>}
         {message}
         <Flex justify="end" alignItems="center" gap="8px" margin="15px 0 0">
@@ -42,7 +26,7 @@ function Dialog({
             label={closeLabel}
             kind={closeKind}
             color={closeColor}
-            onClick={onAnimateClose}
+            onClick={props.onClose}
           />
           {children}
         </Flex>

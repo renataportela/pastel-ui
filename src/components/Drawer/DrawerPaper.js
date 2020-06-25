@@ -29,11 +29,11 @@ const DrawerPaper = styled(Paper).attrs(props => ({
     ${props.$top ? 'top' : 'bottom'}: 0;
     ${props.position === 'right' ? 'right' : 'left' }: 0;
   `}
-  z-index: 200;
+  z-index: 800;
   will-change: transform;
-  transition: transform 350ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: transform 350ms cubic-bezier(0.23, 1, 0.32, 1), box-shadow ease;
 
-  &.open {
+  &.show {
     transform: none;
     box-shadow: ${shadowXl};
   }

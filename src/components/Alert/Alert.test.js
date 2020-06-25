@@ -10,11 +10,4 @@ describe('Alert component', () => {
       .toJSON()
     expect(tree).toMatchSnapshot()
   })
-
-  it('renders a dark alert', () => {
-    const tree = renderer
-      .create(<Theme><Alert kind="dark" icon onClose={() => {}}>Alert text</Alert></Theme>)
-      .toJSON()
-    expect(tree).toMatchSnapshot()
-  })
 })

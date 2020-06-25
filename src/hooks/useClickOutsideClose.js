@@ -1,11 +1,14 @@
 import { useLayoutEffect } from 'react'
 
-function useClickOutsideClose(elementRef, close, isOpen){
+function useClickOutsideClose(elementRef, onClose, open){
   useLayoutEffect(() => {
-    if (!elementRef.current || isOpen) return
+    console.log('useClickOutsideClose', open);
+    console.log('elementRef.current', elementRef.current);
+
+    if (!elementRef.current || open !== true) return;
 
     const handleClick = e => {
-      elementRef.current && !elementRef.current.contains(e.target) && close(e)
+      elementRef.current && !elementRef.current.contains(e.target) && onClose(e)
     }
 
     document.addEventListener('click', handleClick)
@@ -15,7 +18,7 @@ function useClickOutsideClose(elementRef, close, isOpen){
       document.removeEventListener('click', handleClick)
       document.removeEventListener('touchstart', handleClick)
     }
-  }, [close, isOpen, elementRef]);
+  }, [onClose, open, elementRef]);
 }
 
 export default useClickOutsideClose

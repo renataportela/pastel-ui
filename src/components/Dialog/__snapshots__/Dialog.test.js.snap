@@ -2,12 +2,11 @@
 
 exports[`Dialog component renders a dialog with a Close and OK buttons 1`] = `
 <div
-  className="Overlay-sc-1udyqqi-0 llplCx"
+  className="Overlay-sc-1udyqqi-0 evswiq show"
   onClick={[Function]}
-  onTransitionEnd={[Function]}
 >
   <div
-    className="Paper__PaperStyle-sc-5lofqf-0 dtOYAq ModalBase__Box-sc-1ykmqu3-0 tAPHK"
+    className="Paper__PaperStyle-sc-5lofqf-0 dtOYAq ModalBase__Box-sc-1ykmqu3-0 gHOHhC show"
     onClick={[Function]}
   >
     <h4

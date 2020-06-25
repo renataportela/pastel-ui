@@ -1,34 +1,21 @@
 import React, { useRef } from 'react'
 import PropTypes from 'prop-types'
 
-import { useEscClose, useClickOutsideClose, useToggleAnimation } from '~/hooks'
+import { useEscClose } from '~/hooks'
 import { Overlay, Portal } from '~/components'
 import Paper from './DrawerPaper'
 
 function Drawer({ children, open, docked, onClose, ...props }) {
-  const [animate, onAnimateClose, onTransitionEnd] = useToggleAnimation(
-    open,
-    onClose
-  )
   const paperRef = useRef()
 
   useEscClose(onClose, open)
-  useClickOutsideClose(paperRef, onClose, open && !docked)
 
   return (
     <Portal>
-      {!docked && (
-        <Overlay
-          onClick={onAnimateClose}
-          onTransitionEnd={onTransitionEnd}
-          className={animate ? 'visible' : ''}
-        />
-      )}
+      {!docked && <Overlay onClick={onClose} className={open ? 'show' : ''} />}
 
       <Paper
-        onClick={onAnimateClose}
-        onTransitionEnd={onTransitionEnd}
-        className={animate ? 'visible' : ''}
+        className={open ? 'show' : ''}
         ref={paperRef}
         {...props}
       >

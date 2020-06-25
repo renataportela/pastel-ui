@@ -2,14 +2,11 @@ import React, { useLayoutEffect } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import { useToggleAnimation } from '~/hooks'
 import { Portal } from '~/components'
 import Close from '~/components/Button/Close'
 import ModalBase from './ModalBase'
 
-function Modal({ children, open, onClose, ...props }) {
-  const [animate, onAnimateClose, onTransitionEnd] = useToggleAnimation(open, onClose)
-
+function Modal({ children, open, onClose }) {
   useLayoutEffect(() => {
     // not scroll the body while the modal is open
     document.body.style.position = open ? 'fixed' : 'static'
@@ -17,12 +14,10 @@ function Modal({ children, open, onClose, ...props }) {
     document.body.style.paddingRight = open ? '15px' : '0'
   }, [open])
 
-  if (!open) return null
-
   return (
     <Portal selector="#modal-root">
-      <ModalStyle open={animate} onClose={onAnimateClose} onAnimateEnd={onTransitionEnd}>
-        <CloseButton onClick={onAnimateClose} />
+      <ModalStyle open={open} onClose={onClose}>
+        <CloseButton onClick={onClose} />
         {children}
       </ModalStyle>
     </Portal>
